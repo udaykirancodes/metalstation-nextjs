@@ -1,0 +1,105 @@
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  
+}
+
+/* CSS Color variales */
+:root {
+  --primary : #24A1FD; 
+  --primary2: #35C0ED;
+  --primary3: #79DAE8;
+  --primary4: #E8F9FD; 
+
+  --light : #607D9B; 
+
+  --red1: #F45C43;;
+
+  --page-color :#EEF8FF;
+
+  --shadow : rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  /* css font variables */
+  --extra-big-heading : 60px ; 
+  --big-heading : 42px ;
+  --h1-heading : 34px;
+  --h2-heading : 28px;
+  --h3-heading : 24px;
+  --h4-heading : 20px;
+
+  --normal-font-size : 18px; 
+  --bread-crumb : 12.5px;
+
+  --small-text : 12px;
+  --highlight-text : 32px; 
+}
+
+.pageTitle{
+  color: red;
+}
+
+.container{
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Desktop View */
+@media screen  and (max-width:1280px){
+  .container{
+          max-width: 95%;
+          margin-right: auto;
+          margin-left: auto;
+  }
+}
+/* Tablet View - Desktop View */
+@media screen  and (max-width:1080px){
+  .container{
+          width: 95%;
+          margin-right: auto;
+          margin-left: auto;
+  }
+  
+}
+/* Mobile View */
+@media screen  and (max-width:768px){
+  :root {
+
+    /* css font in tablet */
+    --extra-big-heading : 35px ; 
+    --big-heading : 34px ;
+    --h1-heading : 30px;
+    --h2-heading : 24px;
+    --h3-heading : 20px;
+    --h4-heading : 16px;
+
+    --normal-font-size : 16px; 
+    --bread-crumb : 12px;
+
+    --small-text : 12px;
+    --highlight-text : 24px; 
+  }
+  .container{
+          width: 95%;
+          margin-right: auto;
+          margin-left: auto;
+  }
+}
+
