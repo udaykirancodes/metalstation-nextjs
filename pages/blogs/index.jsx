@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from "../../components/Navbar"
 import Image from 'next/image'
 import Pagination from '../../components/Pagination'
 import SingleBlog from '../../components/SingleBlog'
 import Link from "next/link"
+import  Context  from '../../context/Context'
 export default function Blogs() {
+        const context = useContext(Context);
   return (
     <>
         
