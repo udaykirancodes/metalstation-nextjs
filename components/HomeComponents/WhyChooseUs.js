@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
                                                 <h5 class="card_title">Why Choose Us ?</h5>
                                         </div>
                                         <div class="card_footer">
-                                                <p class="card_description">Lorem ipsum lorem100 dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellendus, porro iusto odio, quidem corporis aliquam laboriosam voluptates sint odit illum quae atque sapiente earum maxime quaerat provident et molestiae!</p>
+                                                <p class="card_description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet ipsa cum ex. Pariatur odit fugit delectus asperiores! Consequuntur excepturi non aliquid ex, rem unde. Modi, totam earum? Nobis, assumenda? </p>
                                         </div>
                                 </div>
                                 <div class="single_card">
@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
                                                 <h5 class="card_title">Why Choose Us ?</h5>
                                         </div>
                                         <div class="card_footer">
-                                                <p class="card_description">Lorem ipsum lorem100 dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellendus, porro iusto odio, quidem corporis aliquam laboriosam voluptates sint odit illum quae atque sapiente earum maxime quaerat provident et molestiae!</p>
+                                                <p class="card_description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet ipsa cum ex. Pariatur odit fugit delectus asperiores! Consequuntur excepturi non aliquid ex, rem unde. Modi, totam earum? Nobis, assumenda? </p>
                                         </div>
                                 </div>
                                 <div class="single_card">
@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
                                                 <h5 class="card_title">Why Choose Us ?</h5>
                                         </div>
                                         <div class="card_footer">
-                                                <p class="card_description">Lorem ipsum lorem100 dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellendus, porro iusto odio, quidem corporis aliquam laboriosam voluptates sint odit illum quae atque sapiente earum maxime quaerat provident et molestiae!</p>
+                                                <p class="card_description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet ipsa cum ex. Pariatur odit fugit delectus asperiores! Consequuntur excepturi non aliquid ex, rem unde. Modi, totam earum? Nobis, assumenda? </p>
                                         </div>
                                 </div>
                                 

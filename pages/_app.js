@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import "../styles/Blogs.css"; 
+import "../styles/Footer.css"; 
 import "../styles/Home.css"; 
 function MyApp({ Component, pageProps }) {
   return (

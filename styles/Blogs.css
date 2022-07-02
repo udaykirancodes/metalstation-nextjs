@@ -323,7 +323,7 @@
                 height: 100px;
         }
         .blogBottom{
-                height: max-content;
+                /* height:min-content; */
                 padding: 5px;
         }
         .pagination{

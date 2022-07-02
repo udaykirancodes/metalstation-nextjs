@@ -1,0 +1,100 @@
+.footer{
+    background-color: var(--primary2);
+    width: 100vw;
+    padding:2rem  1rem;
+
+}
+.footer_image{
+    height: 45px;
+    width: 100px;
+    position: relative;
+
+}
+.trust_text{
+    margin: 10px 0 0 0 ;
+    font-weight: 400;
+    font-size: 16px;
+}
+.footer_options{
+    margin:1rem 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.footer_tags{
+    width: 300px;
+}
+
+.footer_text{
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+.footer_text.headtag{
+    font-weight: 500;
+}
+.footer .headtag{
+    margin : 1.5rem 0 ;
+}
+li{
+    list-style: none;
+}
+.footer_icon{
+    margin-right: 1rem;
+}
+
+
+/* Navbar CSS */
+.navbar{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    display: felx;
+    padding: 0 1rem;
+
+    align-items: center;
+}
+.nav_height{
+    height: 80px;
+}
+.nav_image_container{
+    height: 70px;
+    width: 210px;
+    position: relative;
+}
+.nav_left{
+    position: relative;
+    height: 100%;
+    width: 150px;
+    
+}
+.nav_right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search_bar{
+    position: relative;
+    height: 70px;
+    
+    width: 330px;
+}
+
+.nav_search{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+    height: 60%;
+    border-radius: 55px;
+    outline: none;
+    border: 1px solid #333;
+}
+.search_icon{
+    position: absolute;
+    top: 3px;
+    font-size: 24px;
+    right: 1rem;
+}

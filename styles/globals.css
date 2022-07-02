@@ -29,6 +29,8 @@ a {
   --primary3: #79DAE8;
   --primary4: #E8F9FD; 
 
+
+
   --light : #607D9B; 
 
   --red1: #F45C43;;
@@ -87,7 +89,7 @@ a {
     --big-heading : 34px ;
     --h1-heading : 30px;
     --h2-heading : 24px;
-    --h3-heading : 20px;
+    --h3-heading : 18px;
     --h4-heading : 16px;
 
     --normal-font-size : 16px; 
@@ -103,3 +105,34 @@ a {
   }
 }
 
+
+
+.floating{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  cursor: pointer;
+  z-index: 100;
+}
+.floating_icon_container{
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.floating_text{
+  padding: 10px;
+  box-shadow: var(--shadow);
+  border-radius: 30px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+.floating_icon{
+  font-size: var(--h1-heading);
+  color: greenyellow;
+  font-weight: bold;
+}
