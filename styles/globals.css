@@ -28,11 +28,7 @@ a {
   --primary2: #35C0ED;
   --primary3: #79DAE8;
   --primary4: #E8F9FD; 
-
-
-
   --light : #607D9B; 
-
   --red1: #F45C43;;
 
   --page-color :#EEF8FF;
@@ -135,4 +131,60 @@ a {
   font-size: var(--h1-heading);
   color: greenyellow;
   font-weight: bold;
+}
+
+/* ------------Icon------------------- */
+.fa-heart{
+  color: #8b8c8c;
+}
+.redcolor{
+color: #EB3349 !important;
+}
+.wishhover:hover{
+  color: #EB3349
+}
+i.fa-ellipsis{
+  display: flex;
+  justify-content: center;
+  color: #8b8c8c;
+}
+
+.goback{
+  margin-top: 0.5rem;
+  color: var(--primary);
+}
+.location{
+  margin-top: 0.5rem;
+}
+table, th, td {
+  border: 1px solid rgb(197, 193, 193);
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px 0px 5px 20px;
+  text-align: left;
+}
+/* ----------------carousel -----------------*/
+#carouselExampleControls{
+  width: 100%;
+  border: 1px solid white;
+margin:24px 24px 24px 24px;
+  box-shadow: 5px 10px 8px #dddddd;
+}
+
+@media (max-width: 1280px) {
+  #carouselExampleControls{
+    width: 100%;
+  }
+}
+.carousel-control-prev-icon { 
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); 
+  width: 30px;
+  height: 48px;
+}
+.carousel-control-next-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 48px;
+
 }

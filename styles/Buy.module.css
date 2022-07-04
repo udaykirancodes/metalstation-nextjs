@@ -1,0 +1,242 @@
+.section{
+    display:flex;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.innersection{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 2rem;
+}
+.btn{
+    border: 1px solid #24A1FD;
+    background-color:white;
+    border-radius: 2rem;
+    height: fit-content;
+    color: #24A1FD;
+    padding: 0px 15px 0px 15px;
+}
+.dropdown {
+    overflow: hidden;
+    border: 1px solid #24A1FD;
+    height: fit-content;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: 4rem;
+
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .categorybar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .dropdowncontent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdowncontent a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdowncontent a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdowncontent {
+    display: block;
+  }
+  .contain{
+    margin-left: 8rem;
+  }
+  @media (max-width:700px) {
+    .innersection{
+display: block;
+    }
+    .contain{
+      margin-left: 4rem;
+    }
+    .section{
+      visibility: hidden;
+    }
+    .dropdown {
+       width: 60%;
+       align-items: center;
+      }
+     
+  }
+
+  @media (max-width:950px) {
+    .card{
+      margin-left: 1rem;
+      width: 100%;
+    }
+    }
+
+  @media (max-width:700px) {
+  .card{
+    margin-left: 1rem;
+    width: 110%;
+    
+  }
+  }
+  @media (max-width:400px) {
+    .btn{
+        width: 110%;
+              }
+              .contain{
+                margin-left: 1rem;
+              }
+  }
+  @media (max-width:460px) {
+    .cards{
+      margin-left: 1rem;
+    }
+.card{
+  margin-left: 1rem;
+ width: 146%;
+}
+  }
+
+  .card{
+    background-color: white;
+    border-radius: 0.25rem;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     
+    
+  }
+  .cards {
+    width: 70%;
+   margin:auto;
+    display: grid;
+    gap: 1rem;
+   
+  }
+  
+  @media (min-width: 700px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (min-width: 950px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+  .cards_item {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 40rem) {
+    .cards_item {
+      width: 50%;
+    }
+  }
+  @media (min-width: 56rem) {
+    .cards_item {
+      width: 33.3333%;
+    }
+  }
+  .Product{
+    position: relative;
+  }
+  .card_content {
+    padding: 1rem;
+  }
+  .card_title {
+    color: #24A1FD;
+    font-size: 1.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+  .display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    list-style: none;
+  }
+  .displaycol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px;
+    list-style: none;
+  }
+  .Product_Quantity {
+    color: #000000;
+   font-weight: bolder;
+    margin-top: 10px;
+  }
+  
+  .Product_Title{
+      color: #24A1FD;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .bottom_right_detail{
+    background-color: rgba(132, 131, 142, 0.1);
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  .product_inside{
+    
+    margin-top: 20px;
+    text-align: left;
+  }
+  .Product_detail{
+    padding: 10px 10px;
+  }
+  .wishlist{
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .wishlist:hover{
+  color: red;
+  }
+    .HomeProduct{
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .Product_Price{
+      color: #18C749;
+      font-weight: bold;
+      font-size: 20px;
+  }
+  .icons{
+    float: right;
+  }
+  
+  
+  
+  

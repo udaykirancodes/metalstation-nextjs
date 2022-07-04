@@ -1,0 +1,106 @@
+.cards {
+  max-width: 1000px;
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  
+}
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+.card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: fit-content;
+  width: 20rem;
+  background-color: white;
+}
+.Product{
+  position: relative;
+}
+.card_content {
+  padding: 1rem;
+}
+.card_title {
+  color: #24A1FD;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.display{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px;
+  list-style: none;
+}
+.displaycol{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2px;
+  list-style: none;
+}
+.Product_Quantity {
+  color: #000000;
+ font-weight: bolder;
+  margin-top: 10px;
+}
+
+.Product_Title{
+    color: #24A1FD;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom_right_detail{
+  background-color: rgba(132, 131, 142, 0.1);
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.Product_detail{
+  padding: 10px 10px;
+}
+.wishlist{
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.wishlist:hover{
+color: red;
+}
+.HomeProduct{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Product_Price{
+    color: #18C749;
+    font-weight: bold;
+    font-size: 20px;
+}
+.icons{
+  float: right;
+}
+
+@media (min-width: 400px) {
+  .cards { grid-template-columns: repeat(1, 1fr); }
+}
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
+}
+
+
+

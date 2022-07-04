@@ -1,0 +1,9 @@
+.border_box{
+    border: 1px solid rgb(108, 186, 255);
+    width: 100%;
+    height: fit-content;
+    margin-left: 1rem;
+    padding: 4px;
+    border-radius: 1rem;
+    padding: 2rem 2rem 2rem 2rem;
+  }
