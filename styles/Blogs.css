@@ -88,6 +88,11 @@
         align-items: center;
         justify-content: center;
 }
+.blogBottom .info{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
 .blog_small{
         font-size: 16px;
         font-weight: 200;
@@ -248,7 +253,7 @@
         width: 100%;
 }
 .feedbackComponent{
-        margin: 2rem 0;
+        margin: 2rem 0 ;
 }
 .input{
         height: 60px;
@@ -278,8 +283,10 @@
         width: 250px;
         font-size: 24px;
         text-align: center;
+
 }
 .centerButtonContainer{
+        margin-bottom: 4rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -321,6 +328,11 @@
 
         .singleBlog .blogTop{
                 height: 100px;
+                position: relative;
+        }
+        .testimonial .blogTop{
+                height: 100px;
+                position: relative;
         }
         .blogBottom{
                 /* height:min-content; */

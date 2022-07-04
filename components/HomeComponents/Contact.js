@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <>
         <div className="page">
-        <section class="container">
+        <section className="container">
                 <div className="title_container">
                         <h2 className="page_title">We will be happy to help</h2>
                         <p className="page_subtitle">Out team is ready to answer any questions you have about the products and services offered by us</p>
@@ -26,7 +26,7 @@ export default function Contact() {
                                     <i className="uil uil-phone"></i>
                                 </div>
                                 <div className="contact_details">
-                                    <p className="contact_field">View <span className="text_red">FAQ's</span></p>
+                                    <p className="contact_field">View <span className="text_red">FAQ&apos;s</span></p>
                                     <p className="contact_text">Find answers to frequently asked questions</p>
                                 </div>
                             </div>

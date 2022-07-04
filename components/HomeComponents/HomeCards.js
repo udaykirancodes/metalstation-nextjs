@@ -9,7 +9,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image alt="Image" src="/metal.png" layout='fill'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Buy Scrap</h3>
@@ -23,7 +23,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image alt="Image" src="/metal.png" layout='fill'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Sell Scrap</h3>
@@ -39,7 +39,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image alt="Image" src="/metal.png" layout='fill'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Optional</h3>
@@ -54,15 +54,17 @@ export default function HomeCards() {
         </div>
 
 
-        {/* whatsapp icon */}
-        <div className="floating">
-                <div className="floating_text_container">
-                        <p className="floating_text category">Want to ask doubts?</p>
+        {/* whatsapp icon & redirecting link */}
+        <a target="_blank" href="https://wa.me/+918977672395?text=Welcome to Metal Station. Send your queries"> 
+                <div className="floating">
+                        <div className="floating_text_container">
+                                <p className="floating_text category">Want to ask doubts?</p>
+                        </div>
+                        <div className="floating_icon_container center">
+                                <i className="uil uil-whatsapp floating_icon"></i>
+                        </div>
                 </div>
-                <div className="floating_icon_container center">
-                        <i className="uil uil-whatsapp floating_icon"></i>
-                </div>
-        </div>
+        </a>
     </>
   )
 }

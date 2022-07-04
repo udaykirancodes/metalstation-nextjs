@@ -33,7 +33,7 @@ export default function Blogs() {
                 </div>
 
                 <div className="singleBlogImageContainer container">
-                    <Image src="/metal.png" height="630px" width="1280px"></Image>
+                    <Image src="/metal.png" height="630px" alt='Image' width="1280px"></Image>
                 </div>
 
                 <div className="blogDescription">
@@ -50,9 +50,9 @@ export default function Blogs() {
                 <div className="sharing">
                   <div className="tags">
                     <p className="shareText">Share : </p>
-                    <i class="bi bi-instagram">I</i>
-                    <i class="bi bi-facebook">F</i>
-                    <i class="bi bi-whatsapp">W</i>
+                    <i className="bi bi-instagram">I</i>
+                    <i className="bi bi-facebook">F</i>
+                    <i className="bi bi-whatsapp">W</i>
                   </div>
                   <div className="tags">
                     <p className="shareText">Tags : </p>

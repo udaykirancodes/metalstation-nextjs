@@ -2,8 +2,8 @@ import React from 'react'
 export default function WhyChooseUs() {
   return (
     <>
-        <div class="page">
-                <section class="container">
+        <div className="page">
+                <section className="container">
                         <div className="title_container">
                                 <h2 className="page_title">How it Works ?</h2>
                         </div> 

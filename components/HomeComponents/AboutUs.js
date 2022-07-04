@@ -3,8 +3,8 @@ import React from 'react'
 export default function AboutUs() {
   return (
     <>
-        <div class="colorpage">
-                <section class="container">
+        <div className="colorpage">
+                <section className="container">
                         <div className="title_container">
                                 <h2 className="page_title">About Us</h2>
                         </div> 
