@@ -1,31 +1,41 @@
 import React from 'react'
 import Link from "next/link"
-export default function SingleBlog() {
-  return (
-    <>
-        <Link href="/blogs/Title of the Blog">
-        <div className="singleBlog">
-                <div className="blogTop">
-                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
-                </div>
-                <div className="blogBottom">
-                        <div className="info">
-                                <p className="blog_small">
-                                        <i className="icon fa-thin fa-timer">#</i>
-                                        20 June 2022 
-                                </p>
-                                <p className="blog_small">
-                                        <i className="icon fa-thin fa-timer">#</i>
-                                        Vehicle  
-                                </p>
+import Image from 'next/image'
+import { backendurl } from '../urls'
+import { useRouter } from 'next/router';
+export default function SingleBlog({blog}) {
+        let date = new Date(blog.createdAt); 
+        let displaydate = date.getDay().toString()+ '-' + (date.getMonth()+1).toString()+'-' + date.getFullYear(); 
+        
+        let link = '/blogs/'+blog._id; 
+
+        const router = useRouter(); 
+
+        return (
+        <>
+                <div className="singleBlog" onClick={()=>router.push(link)}>
+                        <div className="blogTop">
+                                <Image src={backendurl+blog.img} alt="Blog_Image" layout="fill" className="blogImage" />
                         </div>
-                        <div className="details">
-                                <h5 className="blog_title">Title of the Blog 01</h5>
-                                <p className="blog_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, voluptate.</p>
+                        <div className="blogBottom">
+                                <div className="info">
+                                        <p className="blog_small">
+                                                <i className="icon uil-clock uil"></i>
+                                                        {
+                                                                displaydate        
+                                                        }
+                                        </p>
+                                        <p className="blog_small">
+                                                <i className="icon  uil-pricetag-alt uil"></i>
+                                                {blog.category[0]}  
+                                        </p>
+                                </div>
+                                <div className="details">
+                                        <h5 className="blog_title">{blog.title}</h5>
+                                        <p className="blog_desc">{blog.description.slice(0,90)+"..."}</p>
+                                </div>
                         </div>
                 </div>
-        </div>
-        </Link>
-    </>
+        </>
   )
 }

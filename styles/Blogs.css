@@ -75,6 +75,7 @@
 }
 .blogTop{
         height: 65%;
+        position: relative;
 }
 .blogImage{
         height: 100%;
@@ -82,6 +83,7 @@
 }
 .icon{
         font-size: 1rem;
+        margin-right: 5px;
 }
 .info{
         display: flex;
@@ -203,8 +205,11 @@
         color: #222;
         overflow: visible;
         justify-content: center;
+        position: relative;
 }
-.specialEffect::before ,.specialEffect::after{
+.specialEffect::before {
+        position: absolute;
+        left: 0;
         content: '';
         height: 200px;
         width: 200px;
@@ -213,6 +218,14 @@
         transform: translateX(-50%);
 }
 .specialEffect::after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: '';
+        height: 200px;
+        width: 200px;
+        background: rgba(53, 192, 237, 0.3);
+        border-radius: 50%;
         transform: translateX(50%);
 }
 .specialText{
@@ -228,10 +241,14 @@
         align-items: center;
         justify-content: space-between;
 }
+.shareText{
+        margin: auto 0;
+}
 .sharing .tags{
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        justify-content: center;
         align-items: center;
 }
 .tag{
@@ -239,6 +256,7 @@
         border: 1px solid var(--primary);
         color: var(--primary);
         border-radius: 3px;
+        margin: auto 0;
 }
 .form_feed{
         display: flex;

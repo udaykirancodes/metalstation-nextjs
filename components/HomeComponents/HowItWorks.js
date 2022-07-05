@@ -1,5 +1,5 @@
 import React from 'react'
-export default function WhyChooseUs() {
+export default function HowItWorks() {
   return (
     <>
         <div className="page">
