@@ -1,0 +1,228 @@
+.ab{
+  background-color: #E0F4FF;
+}
+.about{
+  margin-bottom: 3%;
+}
+.aboutHeading{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+/* ---------------------Know ABout Us-------------------------- */
+.KnowAboutUs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100vw;
+  height: fit-content;
+  background-color: #E0F4FF;
+  margin-bottom: 3%;
+}
+.knowAboutUsImg{
+  position: relative;
+  width: 40%;
+  height: 30rem;
+}
+.KnowAboutUsInsideRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+  margin: 1.5rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.KnowAboutUsInsideRightHeading, .AboutPresenceInsideLeftHeading{
+  color: var(--primary);
+  font-size: var(--big-heading);
+}
+.Svg{
+  position: absolute;
+  top: 44%;
+  /* opacity: 0.5; */
+}
+
+
+
+/* ----------------------------------------Presence-------------------------------- */
+.AboutPresence{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100vw;
+  height: fit-content;
+}
+.AboutPresenceImg{
+  position: relative;
+  width: 40%;
+  height: 30rem;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.AboutPresenceInsideLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+  margin: 1.5rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.AboutPresenceInsideRightLeft{
+  color: #24A1FD;
+  font-size: 42px;
+}
+.Title{
+  color: var(--primary);
+  text-align: center;
+  font-size: var(--h1-heading);
+  text-decoration: underline;
+}
+
+
+
+
+/* -----------------------------Why Choose Us--------------------------- */
+
+
+.AboutwhyChooseUs{
+  margin: auto;
+  display: block;
+  height: 280px;
+  width: 390px;
+  border-radius: 14px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 3%;
+  background-color: white;
+}
+.AboutChooseUs{
+  display: flex;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  gap: 1.5rem;
+  /* overflow-x: scroll; */
+  flex-wrap: wrap;
+
+}
+.AboutwhyChooseUs_inside{
+  display: flex;
+}
+.HomeRecommendation{
+  margin-top: 5%;
+}
+.AboutwhyChooseUsImage{
+  position: relative;
+  width: 218px;
+  height: 150px;
+}
+.AboutwhyChooseUsText{
+  padding: 0.8rem;
+  line-height: 1;
+  font-size: var(--normal-font-size);
+}
+.ChooseLink{
+  color: #24A1FD;
+  font-size: var(--h2-heading);
+}
+
+
+/* ------------------------------Service----------------------------------------- */
+.Service{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+}
+.ServiceLeft, .ServiceRight{
+  display: flex;
+  width: 47%;
+  margin: auto;
+  height: fit-content;
+  margin-bottom: 3%;
+}
+.ServiceLeftImg{
+  position: relative;
+  width: 100%;
+  height: 17rem;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.serviceLeftInfo, .serviceRightInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ServiceRightImg{
+  position: relative;
+  width: 100%;
+  height: 17rem;
+}
+.buyBtn{
+  width: 232px;
+  height: 66px;
+  background-color: #24A1FD;
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+.ServiceTitle{
+  font-weight: bold;
+  font-size: var(--h2-heading);
+}
+.ServiceText{
+  font-size: var(--normal-font-size);
+}
+
+@media screen and (max-width: 1080px) {
+  .AboutChooseUs{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: scroll;
+  }
+  .AboutwhyChooseUs{
+      min-width: calc(100%/3 - 20px);
+  }
+  
+  .ServiceLeft, .ServiceRight{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .knowAboutUsImg, .AboutPresenceImg{
+      width: 100%;
+      height: 10rem;
+  }
+  .KnowAboutUsInsideRight, .AboutPresenceInsideLeft{
+      width: 100%;
+  }
+  .AboutwhyChooseUs{
+      min-width: calc(100%/2 - 20px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .knowAboutUsImg{
+      width: 100%;
+      height: 10rem;
+  }
+  .KnowAboutUsInsideRight{
+      width: 100%;
+  }
+  .AboutwhyChooseUs{
+      min-width: calc(100% - 20px);
+  }
+  .ServiceLeft{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .ServiceRight{
+      display: flex;
+      flex-wrap: wrap-reverse;
+  }
+}

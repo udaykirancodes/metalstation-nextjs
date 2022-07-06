@@ -1,0 +1,194 @@
+.container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+.confirmation{
+  display: flex;
+  width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.confirmationLeft{
+  width: 49%;
+  margin-right: 2%;
+}
+.vertical {
+  border-left: 2px solid gray;
+  height: 62vh;
+  position:absolute;
+  left: 50%;
+}
+.delivaryAddress{
+  /* display: flex; */
+  margin-bottom: 48px;
+  width: 100%;
+
+}
+.delivaryAdd{
+  margin-top: 15px;
+  font-size: var(--h3-heading);
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+.addNewAddressBtn{
+  position: relative;
+  float: right;
+  margin-top: 0rem;
+}
+.newAddBtn{
+  border: none;
+  background-color: #24A1FD;
+  width: 228px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50px;
+  text-align: center;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+.selectedAddress{
+  border: 1px solid #08376B;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 47px;
+}
+.updatedSlectedaddress{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: -4rem;
+}
+.updateSelectedAddBtn{
+  width: 76px;
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid #24A1FD;
+  background-color: white;
+  color: #24A1FD;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+
+}
+.radioAddress{
+  overflow-y: hidden;
+}
+.radioSelectAddLabel, .radioOtherAddLabel{
+  font-size: 16px;
+  margin-left: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+.updateSelectedAddBtn:hover{
+  color: white;
+  background-color: #24A1FD;
+}
+.otherAddress{
+  border: 1px solid #08376B;
+  border-radius: 4px;
+  width: 100%;
+  height: 15%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.radioSelectAdd, .radioOtherAdd{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  margin-left: 23px;
+}
+
+.confirmationRight{
+  width: 49%;
+}
+
+
+.confirmationBill{
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.continuePaymentBtn{
+  width: 80%;
+  height: 50px;
+  background-color: #24A1FD;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
+  margin-bottom: 20px ;
+  margin-left: 10%
+}
+.delivaryEsti{
+  font-size: var(--h3-heading);
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+.delivaryEstimate{
+  display: flex;
+  width: 100%;
+  height: 20%;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  border-radius: 4px;
+  margin-bottom: 26px;
+}
+.estimateImg{
+  position: relative;
+  width: 30%;
+  height: 90%;
+}
+.estimateDetails{
+  margin-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.productName{
+  font-size: var(--h3-heading);
+  color: #24A1FD;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+.productDetail{
+  font-size: var(--normal-font-size);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  margin-right: 10px;
+}
+.Detail{
+  padding: 20px;
+  margin: auto;
+}
+.paymentBtn{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  .confirmation{
+      display: flex;
+      flex-direction: column;
+  }
+  .confirmationLeft, .confirmationRight{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .updatedSlectedaddress{
+      display: none;
+  }
+}
