@@ -64,11 +64,11 @@ export default function Blogs({blogs}) {
                 const {data} = await axios.get(AllBlgos+`?page=${currentPage}&limit=${postsPerPage}&category=${active}`);
                 if(data.success){
                         setData(data.data); 
-                        console.log(data.data); 
+                        console.log(data.data.results); 
                 }
         }
         useEffect(() => {
-                        getdata(); 
+                getdata(); 
         }, [currentPage,active])
        
         return (
@@ -95,18 +95,19 @@ export default function Blogs({blogs}) {
                                 }
                                 {
                                         categories && 
-                                        categories.map((element)=>{
-                                                return <span onClick={()=>setActive(element)} className={active===`${element}`?'category active':'category'}>{element}</span>
+                                        categories.map((element,index)=>{
+                                                return <span key={index} onClick={()=>setActive(element)} className={active===`${element}`?'category active':'category'}>{element}</span>
                                         })
                                 }
                         </div>
 
                         <div className="blogs_container">
                                 {
-                                        Data && 
+                                        
                                         Data.results.map((blog)=>{
                                                 return <SingleBlog key={blog._id} blog={blog} />
                                         })
+                                        
                                 }
                         </div>
 

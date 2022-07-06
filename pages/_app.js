@@ -5,13 +5,16 @@ import "../styles/Home.css";
 import  GlobalState  from '../context/GlobalState';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
+     
+    return (
       <GlobalState>
-        <Component {...pageProps} />
-      </GlobalState>
-    </>
-  )
+      <Component {...pageProps} />
+    </GlobalState>
+    )
+    {/* <GlobalState>
+      <Component {...pageProps} />
+    </GlobalState> */}
+
 }
 
 export default MyApp
