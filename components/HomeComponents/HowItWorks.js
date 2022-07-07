@@ -1,16 +1,17 @@
 import React from 'react'
+import Image from 'next/image'
 export default function WhyChooseUs() {
   return (
     <>
-        <div class="page">
-                <section class="container">
+        <div className="page">
+                <section className="container">
                         <div className="title_container">
                                 <h2 className="page_title">How it Works ?</h2>
                         </div> 
                         <div className="card_container">
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -21,7 +22,7 @@ export default function WhyChooseUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -32,7 +33,7 @@ export default function WhyChooseUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
