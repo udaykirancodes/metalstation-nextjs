@@ -23,3 +23,5 @@ export const AllScrapUrl = backendurl+'sell/getscrap';
 export const BlogCategories = backendurl+'blogs/categories';
 export const ProductCategories = backendurl+'products/categories';
 export const SingleBlogUrl = backendurl+'blogs';
+export const EmailVerificationUrl = backendurl+'auth/user/verify';
+export const ResetRequestUrl = backendurl+'auth/user/reset';
