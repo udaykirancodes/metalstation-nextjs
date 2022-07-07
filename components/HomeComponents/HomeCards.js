@@ -9,7 +9,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image src="/metal.png" layout='fill' alt='img'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Buy Scrap</h3>
@@ -23,7 +23,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image src="/metal.png" layout='fill' alt='img'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Sell Scrap</h3>
@@ -39,7 +39,7 @@ export default function HomeCards() {
                     <div className="home_card">
                             <div className="home_card_top">
                                     <div className="home_card_image_container">
-                                            <Image src="/metal.png" layout='fill'  />
+                                            <Image src="/metal.png" layout='fill' alt='img'  />
                                     </div>
                                     <div className="home_card_title_container">
                                         <h3 className="home_card_title">Optional</h3>

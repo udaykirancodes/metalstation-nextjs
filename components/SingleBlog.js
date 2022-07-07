@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from "next/link"
+import Image from "next/image"
 export default function SingleBlog() {
   return (
     <>
         <Link href="/blogs/Title of the Blog">
         <div className="singleBlog">
                 <div className="blogTop">
-                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                 </div>
                 <div className="blogBottom">
                         <div className="info">

@@ -3,15 +3,15 @@ import React from 'react'
 export default function AboutUs() {
   return (
     <>
-        <div class="colorpage">
-                <section class="container">
+        <div className="colorpage">
+                <section className="container">
                         <div className="title_container">
                                 <h2 className="page_title">About Us</h2>
                         </div> 
                         <div className="card_container vertical_container">
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -22,7 +22,7 @@ export default function AboutUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -33,7 +33,7 @@ export default function AboutUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">

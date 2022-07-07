@@ -3,15 +3,15 @@ import Image from 'next/image'
 export default function Testimonials() {
   return (
     <>
-        <div class="page">
-                <section class="container">
+        <div className="page">
+                <section className="container">
                         <div className="title_container">
                                 <h2 className="page_title">Testimonials</h2>
                         </div> 
                         <div className="card_container testimonial">
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/testimonial.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/testimonial.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -22,7 +22,7 @@ export default function Testimonials() {
                             </div>      
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/testimonial.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/testimonial.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -33,7 +33,7 @@ export default function Testimonials() {
                             </div>      
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/testimonial.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/testimonial.png" alt="Blog_Image" className="blogImage" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
