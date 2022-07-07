@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import sgCss from '../../styles/Signup.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState , useEffect } from 'react'
 import { UserRegister } from "../../urls";
 import { useRouter } from 'next/router'
+import Context from '../../context/Context'
 const Signup = () => {
   const router  = useRouter(); 
   const [error , setError] = useState('')
   useEffect(() => {
     document.title = 'Metal Station - Login'; 
   }, [])
+
+  // context api 
+  const {email , user , setuser, setEmail} = useContext(Context); 
   
   const [input , setInput] = useState({
     email:'',
@@ -50,6 +54,8 @@ const Signup = () => {
       if(data.success){
           let authToken = data.authToken; 
           localStorage.setItem('authToken',authToken); 
+          localStorage.setItem('email',input.email); 
+          setEmail(input.email); 
           router.push('/verify'); 
       }
       else{

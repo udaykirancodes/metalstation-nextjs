@@ -8,6 +8,9 @@
         margin-top: 2rem;
         font-size: 1rem;
 }
+.breadCrumbs i{
+        font-size: 12px;
+}
 .breadCrumbsText{
         font-size: 12px;
         font-family: sans-serif;
