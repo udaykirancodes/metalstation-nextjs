@@ -1,5 +1,5 @@
-export const backendurl = 'http://localhost:8000/'; 
-// export const backendurl = 'http://metalstation.herokuapp.com/'; 
+// export const backendurl = 'http://localhost:8000/'; 
+export const backendurl = 'http://metalstation.herokuapp.com/'; 
 export const AdminLogin = backendurl+'auth/admin/login'; 
 export const UserLogin = backendurl+'auth/user/login'; 
 export const UserRegister = backendurl+'auth/user/register'; 
