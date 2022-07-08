@@ -55,7 +55,7 @@ export default function HomeCards() {
 
 
         {/* whatsapp icon & redirecting link */}
-        <a target="_blank" href="https://wa.me/+918977672395?text=Welcome to Metal Station. Send your queries"> 
+        <a target="_blank" rel="noreferrer" href="https://wa.me/+918977672395?text=Welcome to Metal Station. Send your queries"> 
                 <div className="floating">
                         <div className="floating_text_container">
                                 <p className="floating_text category">Want to ask doubts?</p>
