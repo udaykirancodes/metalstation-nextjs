@@ -77,8 +77,8 @@
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .blogTop{
-        height: 65%;
         position: relative;
+        height: 65%;
 }
 .blogImage{
         height: 100%;
