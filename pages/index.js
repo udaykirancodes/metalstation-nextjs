@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import Contact from "../components/HomeComponents/Contact";
 import Navbar from "../components/Navbar";
 import Login from "./Authenticate/Login";
+import About from "./about";
 
 export default function Home() {
   useEffect(()=>{
