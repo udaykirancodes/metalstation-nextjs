@@ -13,7 +13,7 @@ import { useRouter } from 'next/router'
 
 const postsPerPage = 3 ; 
 
-export const getStaticProps = async ()=> {
+export const getServerSideProps = async ()=> {
         const {data} = await axios.get(AllBlgos+`?page=${1}&limit=${postsPerPage}`);
         // in data we have {success : true , data : [ array of blogs ]}
         if(data.success){
@@ -48,7 +48,7 @@ export default function Blogs({blogs}) {
         useEffect(() => {
                 document.title="Metal Station - Blogs"
                 getCategories()
-        }, [])
+        }, [router])
         
         
         // functions to change the state 

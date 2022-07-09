@@ -34,8 +34,8 @@ export default function Contact() {
                     <div className="contact_box">
                                 <h4 className='text_red contact_filed contact_highlight text_center'>Want to sell a Scrap ?</h4>
                                 <div className="contact_details_2">
-                                    <div className="contact_image_container">
-                                        <img src="/metal.png" alt='hello' layout='fill' className='image'  />
+                                    <div className="contact_image_container" style={{position:'relative',height:'100%',width:'100%'}}>
+                                        <Image src="/metal.png" alt='hello' layout='fill' className='image'  />
                                     </div>
                                     <div className="contact_extra center">
                                             <button className="button">Sell Scrap Vehicles</button>

@@ -22,7 +22,7 @@ const Verification = () => {
       console.log(email); 
       setEmail(mail); 
 
-    }, [])
+    }, [email])
     
 
     const handleSubmit = async () => {

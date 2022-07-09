@@ -444,6 +444,11 @@ border-radius: 61px;
     margin: 0;
     width: 100%;
   }
+  .blogTop{
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
   .contact_icon_container i{
     font-size: var(--h2-heading);
     height: 30%;

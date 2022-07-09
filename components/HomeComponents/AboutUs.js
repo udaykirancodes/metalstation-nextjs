@@ -10,8 +10,8 @@ export default function AboutUs() {
                         </div> 
                         <div className="card_container vertical_container">
                             <div className="single_card">
-                                <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                <div className="blogTop" style={{position:'relative',height:'400px',width:'100%'}}>
+                                        <Image src={'/metal.png'} width="100%" height={"100%"} alt="Blog_Image" layout="fill" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -21,8 +21,8 @@ export default function AboutUs() {
                                 </div>
                             </div>      
                             <div className="single_card howitworks">
-                                <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                <div className="blogTop" style={{position:'relative',height:'400px',width:'100%'}}>
+                                        <Image layout="fill" src="/metal.png" alt="Blog_Image" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -32,8 +32,8 @@ export default function AboutUs() {
                                 </div>
                             </div>      
                             <div className="single_card howitworks">
-                                <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                <div className="blogTop" style={{position:'relative',height:'400px',width:'100%'}}>
+                                        <Image layout="fill" src="/metal.png" alt="Blog_Image" />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">

@@ -19,7 +19,7 @@ const Resetpass = () => {
        router.push('/auth/forgotpassword'); 
     }
     setEmail(email); 
-  }, [])
+  }, [email])
   
   const handleSubmit = async ()=>{
     // console.log(otp,password,confirmPassword);

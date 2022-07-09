@@ -9,7 +9,9 @@ import { backendurl, SingleBlogUrl , AllBlgos } from '../../urls';
 import axios from 'axios';
 import Link from 'next/link';
 
-export default function Blogs({data}) {
+
+
+export default function Blogs() {
         const router = useRouter(); 
         const {name} = router.query; 
         const [blog , setblog] = useState({}); 
@@ -31,12 +33,13 @@ export default function Blogs({data}) {
                         }
                 }
                 getdata(); 
-        },[name])
+        },[name,router])
 
 
         // get some related blogs with current blog
         const [array , setarray] = useState([]); 
         useEffect(()=>{
+                document.title="Metal Station - Blogs"
                 const getdata = async()=>{
                         if(!loading){
                                 const {data} = await axios.get(AllBlgos+`?page=${1}&limit=${3}&category=${blog.category[0]}`);
