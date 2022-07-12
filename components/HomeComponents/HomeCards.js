@@ -61,7 +61,7 @@ export default function HomeCards() {
                                 <p className="floating_text category">Want to ask doubts?</p>
                         </div>
                         <div className="floating_icon_container center">
-                                <i className="uil uil-whatsapp floating_icon"></i>
+                                <i className="fa-brands fa-whatsapp floating_icon"></i>
                         </div>
                 </div>
         </a>

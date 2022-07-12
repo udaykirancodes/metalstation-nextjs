@@ -14,7 +14,8 @@ export default function Contact() {
                     <div className="contact_box">
                             <div className="contact">
                                 <div className="contact_icon_container center">
-                                    <i className="uil uil-phone"></i>
+                                    {/* <i className="fa-thin fa-phone"></i> */}
+                                    <i className="fa-light fa-phone"></i>
                                 </div>
                                 <div className="contact_details">
                                     <p className="contact_field">Call us at <span className="text_red">+91 938 140 0582</span></p>
@@ -23,7 +24,8 @@ export default function Contact() {
                             </div>
                             <div className="contact">
                                 <div className="contact_icon_container center">
-                                    <i className="uil uil-phone"></i>
+                                    {/* <i className="fa-thin fa-phone"></i> */}
+                                    <i className="fa-light fa-phone"></i>
                                 </div>
                                 <div className="contact_details">
                                     <p className="contact_field">View <span className="text_red">FAQ&apos;s</span></p>

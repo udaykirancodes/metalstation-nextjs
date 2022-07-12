@@ -78,7 +78,8 @@ export default function Blogs({blogs}) {
                                 <p className="breadCrumbsText">
                                         <Link href="/">
                                                 <>Home 
-                                                 <i className="uil uil-angle-right"></i>
+                                                 {/* <i className="fa-light fa-angle-right"></i> */}
+                                                 <i className='uil uil-angle-right'></i>
                                                 </>
                                         </Link>
                                         <b className="activeText">

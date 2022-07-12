@@ -57,7 +57,10 @@ a {
 .pageTitle{
   color: red;
 }
-
+.text_green{
+  color: #18C749;
+  padding: 0;
+}
 .container{
   max-width: 1280px;
   margin-right: auto;
@@ -128,6 +131,7 @@ a {
   padding: 10px;
   box-shadow: var(--shadow);
   border-radius: 30px;
+  font-weight: 200;
   background-color: rgba(255,255,255,1);
   margin-right: 10px;
 }
