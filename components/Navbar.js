@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-const Navbar = () => {
+const Navbar = ({scroll}) => {
     return (
         <>
 
-            <nav className="navbar">
+            <nav className="navbar" style={{position: scroll ? 'static' : 'sticky' }} >
                 {/* <div className="nav_left ">
                     <div className="nav_image_container">
                         <Image  src="/Metal_Station_Logo.png" layout='fill' />
@@ -25,7 +25,7 @@ const Navbar = () => {
                     <button className="button">Login <i className="uil uil-arrow">I</i> </button>
                 </div> */}
             </nav>
-            <div className='nav_height'></div>
+            {/* <div className='nav_height'></div> */}
 
         </>
     )

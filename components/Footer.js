@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Footer = () => {
     return (
         <>
-        <div className="footer">
+        <div className="footer" style={{paddingBottom:'2rem'}}>
 
             <div className="container">
                 <div className=" center">

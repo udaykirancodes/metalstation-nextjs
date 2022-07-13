@@ -11,10 +11,12 @@ export default function
             </div>
             <div className="productBottom">
               <div className="product_text_container">
+                <div className="icon_container">
+                    <i  className="uil uil-heart"></i>
+                </div>
                 <h4 className="product_name text_blue">Aluminium Scrap </h4>
-                <i className="uil uil-heart"></i>
                 <p className="product_desc">
-                  loerem3 Lorem, ipsum dolor. Lorem, ipsum dolor.
+                  loerem3 Lorem, ipsum dolor. Lorem, ipsum dolor. Lorem, ipsum.
                 </p>
                 <div className="bottom_price">
                       <p className="tag_price_bottom">1 Ton (min-order)</p>
