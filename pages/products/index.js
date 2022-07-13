@@ -37,7 +37,7 @@ export default function Products() {
             <div className="category_bar_container">
                 <div className="category_bar container">
                     <div className="go_back desktop_none" onClick={()=>router.push('/')}>
-                      <i class="uil uil-arrow-left icon"></i> Back 
+                      <i className="uil uil-arrow-left icon"></i> Back 
                     </div>
                     <div className="category_bar_left mobile_none">
                         <select name="" className='form-selector selector_input' id="">
@@ -132,7 +132,7 @@ export default function Products() {
               </div>
               <div className='line_height'></div>
               <div className="bottom_button" onClick={openFilter} >
-                  <p className='bottom_button_text'><i class="uil icon uil-filter"></i>Filter</p>
+                  <p className='bottom_button_text'><i className="uil icon uil-filter"></i>Filter</p>
               </div>
         </div>
 
