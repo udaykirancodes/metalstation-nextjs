@@ -1,0 +1,179 @@
+.cards {
+    display: grid;
+    list-style: none;
+    margin-left: -2rem;
+  }
+  .cards_item {
+    display: flex;
+    padding: 0.8rem;
+  }
+  .card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: fit-content;
+    width: 20rem;
+    background-color: white;
+  }
+  .Product{
+    position: relative;
+  }
+  .button{
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #24A1FD;
+    border-radius: 30px;
+    margin: auto;
+    display: flex;
+}  
+  .card_title {
+    color: #24A1FD;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+  .display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    list-style: none;
+  }
+  .displaycol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px;
+    list-style: none;
+  }
+  
+  .Product_Title{
+      color: #24A1FD;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .bottom_right_detail{
+    background-color: rgba(132, 131, 142, 0.1);
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+ 
+  .wishlist{
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .wishlist:hover{
+  color: red;
+  }
+
+  .Product_Price{
+      color: #18C749;
+      font-weight: bold;
+      font-size: 24px;
+  }
+  .icons{
+    float: right;
+  }
+  
+  @media (min-width:10px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 400px) {
+    .cards { grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+  
+    
+  }
+  @media (max-width: 768px) {
+    .card4 {
+      display: none;
+    }
+    .card {
+      height: fit-content;
+      width: 25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card4, .card3 {
+      display: none;
+    }
+    .card {
+      height: fit-content;
+      width: 30rem;
+      font-size: 30px;
+      
+    }
+    .Product_Price{
+      font-size: 32px;
+    }
+    .Product_Title h3{
+      font-size: 48px;
+    }
+    
+  }
+  @media (max-width: 220px) {
+    .card {
+      height: fit-content;
+      width: 20rem;
+    }
+    .cards{
+      width: 10%;
+      margin-left: -3rem;
+    }
+    
+  }
+  @media (max-width: 170px) {
+    .card {
+      height: fit-content;
+      width: 16rem;
+    }
+  }
+  
+  @media screen and (max-width: 220px) and (min-width: 200px){
+    .card{
+      width: 24rem;
+    }
+  }
+  @media screen and (max-width: 200px) and (min-width: 170px){
+    .card{
+      width: 20rem;
+    }
+  }
+  @media screen and (max-width: 170px) and (min-width: 150px){
+    .card{
+      width: 16.5rem;
+    }
+  }
+  @media screen and (max-width: 260px) and (min-width: 200px){
+    .card{
+width: 25rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .button{
+      font-size: 25px;
+      margin-bottom: 0.8rem;
+    }
+  }

@@ -1,0 +1,242 @@
+.hidecontainer{
+  
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.flexcontainer{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pageLink{
+  margin-top: 1rem;
+}
+.goback {
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+    color: #24A1FD;
+}
+.mobgoback{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 0.4rem;
+  margin-top: 0.5rem;
+    color: #24A1FD;
+  }
+  
+  .smallbox {
+  width: fit-content;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px 5px 10px 15px;
+    display: flex;
+  }
+  .bold{
+    font-weight: bolder;
+  }
+  .button{
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #24A1FD;
+    border-radius: 30px;
+    margin: auto;
+    display: flex;
+	margin-left: 2rem;
+}
+.confirmation{
+  display: flex;
+  width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.confirmationLeft{
+  width: 100%;
+  margin-right: 2%;
+}
+.confirmationRight{
+  width: 49%;
+  margin-top: 2rem;
+}
+.delivaryEstimate{
+  display: flex;
+  width: 100%;
+  height: 27%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 4px;
+  margin-bottom: 26px;
+}
+.estimateImg{
+  position: relative;
+  width: 30%;
+  height: 90%;
+}
+.estimateDetails{
+  margin-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 3rem;
+  width: 50%;
+}
+.content {
+  width: 100%;
+	position: relative;
+	margin-left: 1rem;
+}
+.producttitle{
+	color: #24A1FD;
+}
+.removeSlecteditems{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: 1rem;
+}
+.updateSelectedAddBtn{
+  width: 76px;
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid #24A1FD;
+  background-color: white;
+  color: #24A1FD;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+
+}
+.name{
+  font-weight: bold;
+  font-size: 15px;
+}
+.updateSelectedAddBtn:hover{
+  color: white;
+  background-color: #24A1FD;
+}
+.display{
+  display: flex;
+  justify-content:space-between ;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .pageLink{
+    font-size: 1.5rem;
+    width: max-content;
+    margin-top: 1rem;
+  }
+  .hidecontainer{
+    display: none;
+  }
+  .delivaryEstimate{
+    width: 85%;
+  }
+  .removeSlecteditems{
+    display: none;
+  }
+.content{
+  width: 125%;
+}
+.producttitle{
+  font-size: 1rem;
+}
+.smallbox{
+  width: max-content;
+  margin-left: -0.2rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  padding: 5px 5px 10px 8px;
+  display: flex;
+}
+.button{
+ 
+    padding:8px 8px;
+    text-align: center;
+    font-size: 6px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: auto;
+    display: flex;
+	margin-left: 0.4rem;
+
+}
+
+}
+
+@media screen and (min-width: 481px) {
+	.mobgoback{
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+  .mobgoback{
+    font-size: 0.8rem;
+  }
+  .content h3 {
+		margin-bottom: 15px;
+	}
+	.content h4 {
+		margin-bottom: 20px;
+	}
+  .confirmation{
+    display: flex;
+    flex-direction: column;
+}
+.confirmationLeft, .confirmationRight{
+    width: 100%;
+}
+.display h2{
+  font-size: 1rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .display h2{
+    font-size: 1.3rem;
+    }
+    .smallbox{
+     font-size: 0.8rem;
+    }
+    .button{
+      font-size: 0.8rem;
+    }
+    .delivaryEstimate{
+      height: 24%;
+      width: 95%;
+    }
+    .updateSelectedAddBtn{
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 6px 1px 6px;
+    font-size: 0.6rem;
+    }
+    .estimateDetails{
+      width: 55%;
+      font-size: 12px;
+    }
+}
+@media screen and (max-width: 350px) {
+.delivaryEstimate{
+  width: 110%;
+}
+.button{
+  margin-left: 0px;
+}
+}
