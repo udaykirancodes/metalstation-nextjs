@@ -12,14 +12,18 @@ import Contact from "../components/HomeComponents/Contact";
 import Navbar from "../components/Navbar";
 import Login from "./Authenticate/Login";
 import About from "./about";
+import Wishlist from "./Wishlist";
+import Sell from "./Sell";
+import Sell2 from "./Sell2";
 
-export default function Home() {
+export default function Home({wishlist, addToWishlist}) {
+  console.log(wishlist, addToWishlist);
   useEffect(()=>{
     document.title = 'Metal Station'; 
   },[])
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/>
       <HomeComponent/>
       <HomeCards/>
       <WhyChooseUs />
@@ -28,8 +32,11 @@ export default function Home() {
       <FeaturedProducts />
       <Category />     
       <Testimonials/>
-      <Contact /> 
-      <Footer />
+      <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
+      <Footer /> */}
+      {/* <Wishlist wishlist={wishlist}/> */}
+      <Sell/>
+      {/* <Sell2/> */}
     </>
   )
 }

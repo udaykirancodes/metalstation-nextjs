@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function Contact() {
+export default function Contact({addToWishlist}) {
   return (
     <>
         <div className="page">
@@ -38,7 +38,7 @@ export default function Contact() {
                                         <img src="/metal.png" alt='hello' layout='fill' className='image'  />
                                     </div>
                                     <div className="contact_extra center">
-                                            <button className="button">Sell Scrap Vehicles</button>
+                                            <button onClick={()=>{addToWishlist(100,'Aluminum Scrap', 1, '1,39, 999', 'Recycled Aluminium scrap from blast furnace' )}} className="button">Sell Scrap Vehicles</button>
                                             <p className="contact_text_small text_center">Book an appointment for free car inspection and sell it instantly on the same day</p>
                                             
                                     </div>

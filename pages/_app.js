@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
   const removeFromWishlist = (productId, name, qty, price, description) => {
     let newWishlist = wishlist;
     if (productId in wishlist) {
-      newWishlist[productId].qty = wishlist[productId].qty - 1;
+      newWishlist[productId].qty = wishlist[productId].qty - qty;
     }
     if(newWishlist[productId].qty<=0){
       delete newWishlist[productId];
