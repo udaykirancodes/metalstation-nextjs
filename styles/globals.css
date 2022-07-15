@@ -136,3 +136,48 @@ a {
   color: greenyellow;
   font-weight: bold;
 }
+
+
+/* ------------Icon------------------- */
+.fa-heart{
+  color: #8b8c8c;
+}
+.redcolor{
+color: #EB3349 !important;
+}
+.wishhover:hover{
+  color: #EB3349
+}
+i.fa-ellipsis{
+  display: flex;
+  justify-content: center;
+  color: #8b8c8c;
+}
+
+.goback{
+  margin-top: 0.5rem;
+  color: #24A1FD;
+}
+.location{
+  margin-top: 0.5rem;
+}
+table, th, td {
+  border: 1px solid rgb(197, 193, 193);
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px 0px 5px 20px;
+  text-align: left;
+}
+#flexCheckDefault{
+border-color: #24A1FD;
+}
+#flexRadioDefault1{
+  border-color: #24A1FD;
+  }
+.addwish{
+  font-size:1.2rem;
+}
+.fa-caret-down{
+  margin-left: 4px;
+}
