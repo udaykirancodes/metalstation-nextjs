@@ -6,9 +6,16 @@ import SingleProduct from '../../components/ProductsPage/SingleProduct'
 import Pagination from "../../components/Pagination"
 import Footer from "../../components/Footer"
 import { useRouter } from 'next/router'
+import axios from 'axios'
+
+import { GetAllProducts } from '../../urls'
+
+const perPage = 6; 
+
 export default function Products() {
 
   const router = useRouter(); 
+
 
   // variables for bottom show or not 
   const [sortShow , setSortShow] = useState(false); 
@@ -26,11 +33,24 @@ export default function Products() {
     setSortShow(false); 
     setFilterShow(true); 
   }
+  // pagination required variables 
+  const [products , setProducts] = useState([]); 
+  const [currentPage , setcurrentPage] = useState(1); 
 
-  useEffect(()=>{
-    document.title = "Metal Station - Buy"
-    // alert(window.innerWidth + ' '+ window.innerHeight);
-  },[])
+  // data fetching 
+  const getdata = async()=>{
+    console.log(currentPage); 
+    const {data} = await axios.get(GetAllProducts+`?page=${currentPage}&limit=${perPage}}`);
+    if(data.success){
+            setProducts(data.pagination); 
+    }
+}
+useEffect(() => {
+    getdata(); 
+}, [currentPage])
+useEffect(()=>{
+  document.title = "Metal Station - Buy"
+},[]);
   return (
     <>
           <Navbar scroll={true}/>
@@ -94,24 +114,15 @@ export default function Products() {
                         </div> 
                     {/* products */}
                     <div className="listofproducts">
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
+                      {
+                        // console.log(products.results)
+                        products.results && 
+                        products.results.map((pro)=>{return <SingleProduct key={pro._id} product={pro} />})
+                      }
                     </div>
                     {/* pagination */}
                     <div className="center" style={{width:'100%'}}>
-                      <Pagination  pages={5} current={3} previous={2}  next={4} />
+                      <Pagination  pages={products.pages} current={currentPage} setcurrentPage={setcurrentPage} previous={products.previous}  next={products.next} />
                     </div>
                     </div>
             </div>
