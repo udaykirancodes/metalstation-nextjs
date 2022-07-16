@@ -1,7 +1,18 @@
 .card{
   background-color: white;
   border-radius: 0.25rem;
-   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.cards {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+}
+
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
    
   
 }
@@ -101,7 +112,7 @@ display: none;
 .bottom_right_detail{
   background-color: rgba(132, 131, 142, 0.1);
   position: absolute;
-  bottom: -8px;
+  bottom: 8px;
   right: 16px;
 }
 
@@ -114,14 +125,14 @@ display: none;
   padding: 10px 10px;
 }
 .wishlist{
-	height: 25px;
-	width: 25px;
-	background-color: #eee;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .wishlist:hover{
 color: red;
@@ -139,6 +150,7 @@ color: red;
 .icons{
   float: right;
 }
+
 
 .cartbutton{
   border: none;

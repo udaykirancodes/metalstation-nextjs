@@ -1,8 +1,9 @@
 import React from 'react'
-import Knowaboutus from '../components/AboutComponenets/Knowaboutus'
-import Presence from '../components/AboutComponenets/Presence'
-import Whychooseus from '../components/AboutComponenets/Whychooseus'
-import Service from '../components/AboutComponenets/Service'
+import Knowaboutus from '../components/AboutComponents/Knowaboutus'
+import Presence from '../components/AboutComponents/Presence'
+import Whychooseus from '../components/AboutComponents/Whychooseus'
+import Service from '../components/AboutComponents/Service'
+import abCss from '../styles/About.module.css'
 
 
 const About = () => {
