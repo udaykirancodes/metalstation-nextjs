@@ -1,6 +1,8 @@
 export const backendurl = 'http://localhost:8000/'; 
 // export const backendurl = 'http://metalstation.herokuapp.com/'; 
 export const AdminLogin = backendurl+'auth/admin/login'; 
+export const UserLogin = backendurl+'auth/user/login'; 
+export const UserRegister = backendurl+'auth/user/register'; 
 export const AllSubscribers = backendurl+'subscribers/getall'; 
 export const AllUsers = backendurl+'auth/user/getall'; 
 export const AllBlgos = backendurl+'blogs/getall'; 
@@ -21,3 +23,5 @@ export const AllScrapUrl = backendurl+'sell/getscrap';
 export const BlogCategories = backendurl+'blogs/categories';
 export const ProductCategories = backendurl+'products/categories';
 export const SingleBlogUrl = backendurl+'blogs';
+export const EmailVerificationUrl = backendurl+'auth/user/verify';
+export const ResetRequestUrl = backendurl+'auth/user/reset';

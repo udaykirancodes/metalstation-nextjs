@@ -27,8 +27,10 @@ export default function Pagination({ pages , current , previous , setcurrentPage
                         
                         <div className="nextButton">
                                 {
-                                        next && current < pages && 
+                                        next && current < pages ?
                                         <button className="button" onClick={()=>{ setcurrentPage(prev => prev+1)}}>Next &gt;</button>
+                                        :
+                                        <button className="button" onClick={()=>{ setcurrentPage(prev => prev-1)}}>Previous &lt;</button>
                                 }
                         </div>
                 </section>

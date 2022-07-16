@@ -136,3 +136,88 @@ a {
   color: greenyellow;
   font-weight: bold;
 }
+
+
+/* ------------Icon------------------- */
+.fa-heart{
+  color: #8b8c8c;
+}
+.redcolor{
+color: #EB3349 !important;
+}
+.wishhover:hover{
+  color: #EB3349
+}
+i.fa-ellipsis{
+  display: flex;
+  justify-content: center;
+  color: #8b8c8c;
+}
+
+.goback{
+  margin-top: 0.5rem;
+  color: #24A1FD;
+}
+.location{
+  margin-top: 0.5rem;
+}
+table, th, td {
+  border: 1px solid rgb(197, 193, 193);
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px 0px 5px 20px;
+  text-align: left;
+}
+#flexCheckDefault{
+border-color: #24A1FD;
+}
+#flexRadioDefault1{
+  border-color: #24A1FD;
+  }
+.addwish{
+  font-size:1.2rem;
+}
+.fa-caret-down{
+  margin-left: 4px;
+}
+
+
+
+/*---------------------- Navbar global CSS---------------- */
+.fa-bell, .fa-magnifying-glass{
+  color: #08376B;
+font-size: 1.3rem;
+}
+.fa-angle-right{
+  margin-left: 3px;
+}
+.fa-user{
+  background-color: white;
+    border-radius: 100rem;
+    height: 30px;
+    width: 30px;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    padding: 5px 0px 0px 7px;
+}
+.fa-user::before , .fa-house-chimney{
+  margin-right: 2rem;
+}
+.search{
+  padding: 10px 2px 10px 10px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 2rem;
+  border: 2px solid #08376B
+}
+ul li p{
+  display: block;
+    margin: -35px 0px 0px 58px;
+}
+@media only screen and (max-width: 977px) {
+  .search{
+  width: 80%;
+  }
+}
