@@ -1,0 +1,410 @@
+
+.container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+.pageLink{
+  margin-top: 1rem;
+}
+.goback {
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+    color: #24A1FD;
+}
+.mobgoback{
+margin-bottom: 1rem;
+margin-top: 1rem;
+margin-left: 2rem;
+font-size: 1.2rem;
+margin-top: 0.5rem;
+  color: #24A1FD;
+}
+
+.smallbox {
+width: fit-content;
+margin-left: 2rem;
+margin-bottom: 2rem;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 5px 5px 10px 15px;
+	display: flex;
+}
+
+.bold{
+	font-weight: bolder;
+}
+
+.button{
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #24A1FD;
+    border-radius: 30px;
+    margin: auto;
+    display: flex;
+	margin-left: 2rem;
+}
+
+.cart{
+  display: flex;
+  width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cartLeft{
+  width: 49%;
+  margin-right: 2%;
+}
+.cartRight{
+  width: 49%;
+  margin-top: 2rem;
+}
+
+.display{
+    display: flex;
+    justify-content:space-between ;
+    margin-bottom: 1rem;
+}
+
+.displaybtn{
+	display: flex;
+	justify-content: center;
+  margin-top: 4rem;
+ 
+}
+.delivaryEstimate{
+  display: flex;
+  width: 100%;
+  height: 30%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 4px;
+  margin-bottom: 26px;
+}
+
+.estimateImg{
+  position: relative;
+  width: 30%;
+  height: 90%;
+}
+.estimateDetails{
+  margin-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 3rem;
+}
+.content {
+  width: 100%;
+	position: relative;
+	margin-left: 1rem;
+}
+.producttitle{
+	color: #24A1FD;
+}
+.btn{
+	color: rgb(9, 8, 8);
+	text-align: center;
+    text-decoration: none;
+	cursor: pointer;
+	border: none;
+	background-color: #fff;
+}
+.ton{
+	font-weight: bolder;
+}
+.price{
+color: rgb(21, 206, 21);
+}
+.removeSlecteditems{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: 1rem;
+}
+.updateSelectedAddBtn{
+  width: 76px;
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid #24A1FD;
+  background-color: white;
+  color: #24A1FD;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+
+}
+.updateSelectedAddBtn:hover{
+  color: white;
+  background-color: #24A1FD;
+}
+.rightbar {
+  margin-right: 2rem;
+	padding: 20px;
+	height: fit-content;
+	width: 30rem;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.rightbar hr {
+	margin-bottom: 25px;
+}
+.rightbar p {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+.rightbar a {
+	background-color: #76bfb6;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 900;
+}
+
+.rightbar i {
+	margin-right: 15px;
+}
+.rightbar a:hover {
+	background-color: #3972a7;
+}
+.paymentBtn{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.continuePaymentBtn{
+  width: 80%;
+  height: 50px;
+  background-color: #24A1FD;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
+  margin-bottom: 20px ;
+  margin-left: 10%
+}
+
+.bottomsection{
+  width: 100%;
+  margin-top: 4%;
+  
+}
+.Title{
+    margin-left: 1rem;
+	width: 56rem;
+  margin-top: 4rem;
+}
+.footer{
+text-align: center;
+color: #24A1FD;
+margin-bottom: 1rem;
+font-size: 1.2rem;
+width: inherit;
+}
+
+.scrollcontainer{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+.floating {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  cursor: pointer;
+  z-index: 100;
+}
+.category {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  font-weight: 200;
+  border: 1px solid var(--primary);
+  color:white;
+  font-size:38px;
+  cursor: pointer;
+  background-color: var(--primary);
+  width:82rem;
+  
+}
+
+@media screen and (max-width: 480px) {
+  .pageLink{
+    font-size: 1.5rem;
+    width: max-content;
+    margin-top: 1rem;
+  }
+  .hidecontainer{
+    display: none;
+  }
+ .delivaryEstimate{
+    width: 85%;
+  }
+.contain{
+	display: none;
+}
+.smallbox {
+	width: max-content;
+}
+.selectbtn{
+display: none;
+}
+ .removeSlecteditems{
+    display: none;
+  }
+.floating .category{
+  width: 65rem;
+  height: 5rem;
+  font-size: 48px;
+}
+ .category {
+    width: 70rem;
+      font-size: 38px;
+      }
+	.footersec{
+    width: max-content;
+	margin-left: 12rem;
+	}
+}
+@media screen and (min-width: 481px) {
+	.mobgoback{
+		display: none;
+	}
+  .floating,.category{
+    display: none;
+  }
+	.displaybtn{
+		display: none;
+	}
+  .footersec{
+    width: 82rem;
+	}
+	.placebtn{
+display: none;
+	}
+
+}
+@media (max-width: 170px) {
+	.footersec{
+		width: 22rem;
+		margin-left: 4rem;
+		}
+
+}
+ @media (max-width: 200px) {
+	.shop{
+		width:80%;
+	  }
+	  .rightbar{
+		margin-left: 2rem;
+	  }
+	  .footersec{
+		width: max-content;
+		margin-left: 2rem;
+		}
+		.placebtn{
+width: 42rem;
+		}
+}
+@media screen and (max-width: 220px) and (min-width: 200px){
+
+	.shop{
+		width:100%;
+	  }
+	  .rightbar{
+		margin-left: 2rem;
+	  }
+	  .footersec{
+		width: max-content;
+		margin-left: 2rem;
+		}
+		
+}
+
+@media screen and (max-width: 768px) {
+  .bottomsection{
+  width: 100%;
+  }
+  .rightbar{
+    width: 70%;
+    margin-top: 4rem;
+  }
+  .display h2{
+    font-size: 3rem;
+  }
+  .mobgoback{
+    font-size: 1.5rem;
+  }
+  .displaybtn{
+    margin-top: 6rem;
+  }
+	.content h3 {
+		margin-bottom: 15px;
+	}
+	.content h4 {
+		margin-bottom: 20px;
+	}
+  .displaybtn button{
+font-size: x-large;
+  }
+  .estimateDetails{
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .Title{
+    font-size: 2rem;
+  }
+
+ .cart{
+      display: flex;
+      flex-direction: column;
+  }
+  .cartLeft, .cartRight{
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+.scrollcontainer{
+  display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+	
+	.rightbar {
+		margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+	}
+}
+@media screen and (max-width: 768px) and (min-width: 480px){
+.rightbar{
+  margin-top: 4rem;
+}
+}

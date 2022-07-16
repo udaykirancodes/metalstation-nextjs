@@ -1,0 +1,208 @@
+.cards {
+  display: grid;
+  list-style: none;
+  
+}
+.cards_item {
+  display: flex;
+  padding: 0.8rem;
+}
+.card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: fit-content;
+  width: 18rem;
+  background-color: white;
+}
+.Product{
+  position: relative;
+}
+.card_content {
+  padding: 1rem;
+}
+.card_title {
+  color: #24A1FD;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.display{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px;
+  list-style: none;
+}
+.displaycol{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2px;
+  list-style: none;
+}
+.Product_Quantity {
+  color: #000000;
+ font-weight: bolder;
+  margin-top: 10px;
+}
+
+.Product_Title{
+    color: #24A1FD;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom_right_detail{
+  background-color: rgba(132, 131, 142, 0.1);
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.Product_detail{
+  padding: 10px 10px;
+  font-size: 1rem;
+}
+.wishlist{
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.wishlist:hover{
+color: red;
+}
+.HomeProduct{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Product_Price{
+    color: #18C749;
+    font-weight: bold;
+    font-size: 20px;
+}
+.icons{
+  float: right;
+}
+
+@media (min-width:10px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 300px) {
+  .cards { grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 700px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
+
+  
+}
+@media (max-width: 700px) {
+  .card4 {
+    display: none;
+  }
+  .card {
+    height: fit-content;
+    width: 25rem;
+  }
+  .Product_detail{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .card4, .card3 {
+    display: none;
+  }
+  .Product_Price{
+font-size: 3rem;
+  }
+  .card {
+    height: fit-content;
+    font-size: 34px;
+    width:55rem;
+    margin-left: 2rem;
+  }
+  
+.Product_detail{
+  font-size: 3rem;
+}
+  .Product_Title h3{
+    font-size: 48px;
+  }
+  
+}
+@media (max-width: 220px) {
+  .card {
+    height: fit-content;
+    width: 20rem;
+  }
+  .cards{
+    width: 10%;
+    margin-left: -3rem;
+  }
+  
+}
+
+@media (max-width: 300px) {
+  .card {
+    height: fit-content;
+    width: 25rem;
+  }
+  .cards{
+    width: 10%;
+    margin-left: -3rem;
+  }
+  
+}
+
+@media screen and (max-width: 480px) and (min-width: 400px){
+  .card {
+    height: fit-content;
+    width: 45rem;
+  }
+  .cards{
+    width: 10%;
+    margin-left: -3rem;
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 350px){
+  .card {
+    height: fit-content;
+    width:42rem;
+  }
+  
+}
+@media screen and (max-width: 350px) and (min-width: 150px){
+  .card {
+    height: fit-content;
+    width:36rem;
+  }
+}
+@media (max-width: 170px) {
+  .card {
+    height: fit-content;
+    width: 16rem;
+  }
+}
+
+@media screen and (max-width: 220px) and (min-width: 200px){
+  .card{
+    width: 24rem;
+  }
+}
+@media screen and (max-width: 200px) and (min-width: 170px){
+  .card{
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 170px) and (min-width: 150px){
+  .card{
+    width: 16.5rem;
+  }
+}
