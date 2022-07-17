@@ -135,6 +135,9 @@ padding-right: 1rem;
   background-color: #24A1FD;
   margin-top: 2%;
 }
+.sell_multi{
+  margin-bottom: 10%;
+}
 @media screen  and (max-width:782px){
   .howItWorkContainer{
     flex-wrap: wrap;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 export default function HomeCards() {
   return (
     <>
@@ -12,7 +13,7 @@ export default function HomeCards() {
                                             <Image alt="Image" src="/metal.png" layout='fill'  />
                                     </div>
                                     <div className="home_card_title_container">
-                                        <h3 className="home_card_title">Buy Scrap</h3>
+                                    <Link href="/AllCategory"><a><h3 className="home_card_title">Buy Scrap</h3></a></Link>
                                     </div>
                             </div>
                             <div className="home_card_bottom">
@@ -26,7 +27,7 @@ export default function HomeCards() {
                                             <Image alt="Image" src="/metal.png" layout='fill'  />
                                     </div>
                                     <div className="home_card_title_container">
-                                        <h3 className="home_card_title">Sell Scrap</h3>
+                                        <Link href="/Sell"><a><h3 className="home_card_title">Sell Scrap</h3></a></Link>
                                     </div>
                             </div>
                             <div className="home_card_bottom">

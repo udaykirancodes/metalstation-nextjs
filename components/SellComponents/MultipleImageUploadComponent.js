@@ -28,6 +28,7 @@ export default class MultipleImageUploadComponent extends Component {
     }
     render() {
         return (
+            <div className={sCss.sell_multi}>
             <div className="container">
                 <form className={sCss.imgForm}>
                     <div className={sCss.inputContianer}>
@@ -51,6 +52,7 @@ export default class MultipleImageUploadComponent extends Component {
                         <button className={sCss.submitbtn} onClick={this.uploadFiles}>Submit</button>
                     </div>
                 </form >
+            </div>
             </div>
         )
     }

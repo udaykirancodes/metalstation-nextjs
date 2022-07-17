@@ -23,7 +23,7 @@ export default function Home({wishlist, addToWishlist}) {
   },[])
   return (
     <>
-      {/* <Navbar/>
+      {/* <Navbar/> */}
       <HomeComponent/>
       <HomeCards/>
       <WhyChooseUs />
@@ -33,9 +33,9 @@ export default function Home({wishlist, addToWishlist}) {
       <Category />     
       <Testimonials/>
       <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
-      <Footer /> */}
+      {/* <Footer /> */}
       {/* <Wishlist wishlist={wishlist}/> */}
-      <Sell/>
+      {/* <Sell/> */}
       {/* <Sell2/> */}
     </>
   )

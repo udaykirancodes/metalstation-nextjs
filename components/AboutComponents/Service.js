@@ -1,6 +1,7 @@
 import React from 'react'
 import abCss from '../../styles/About.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Service = () => {
     return (
@@ -12,7 +13,7 @@ const Service = () => {
                         <div className={abCss.serviceLeftInfo}>
                             <h3 className={abCss.ServiceTitle}>Start As Buyer</h3>
                             <p className={abCss.ServiceText}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci at dolor voluptatem aspernatur laudantium excepturi ea earum culpa sunt fugiat cupiditate, quas laboriosam accusantium, nobis harum rerum? Reiciendis, explicabo iste.</p>
-                            <button className={abCss.buyBtn}>Buy Scrap</button>
+                            <Link href="/AllCategory"><a><button className={abCss.buyBtn}>Buy Scrap</button></a></Link>
                         </div>
                         <div className={abCss.ServiceLeftImg}>
                             <Image layout='fill' src="/metal.png" alt="" />
@@ -25,7 +26,7 @@ const Service = () => {
                         <div className={abCss.serviceRightInfo}>
                             <h3 className={abCss.ServiceTitle}>Start As Seller</h3>
                             <p className={abCss.ServiceText}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci at dolor voluptatem aspernatur laudantium excepturi ea earum culpa sunt fugiat cupiditate, quas laboriosam accusantium, nobis harum rerum? Reiciendis, explicabo iste.</p>
-                            <button className={abCss.buyBtn}>Buy Scrap</button>
+                            <Link href="/Sell"><a><button className={abCss.buyBtn}>Sell Scrap</button></a></Link>
                         </div>
                     </div>
                 </div>

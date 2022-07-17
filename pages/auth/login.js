@@ -85,7 +85,7 @@ const Login = () => {
                               <label htmlFor="rememberme"> Remember me</label><br />
                             </div>
 
-                            <Link  href='#'><a>Forgot Passord</a></Link>
+                            <Link  href='/auth/forgotpassword'><a>Forgot Passord</a></Link>
                         </div>
                         <div className={lgCss.loginButton}>
                             <button className={lgCss.loginBtn} type="submit" onClick={(e)=>handleSubmit(e)}>
