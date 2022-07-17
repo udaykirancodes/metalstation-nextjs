@@ -4,6 +4,7 @@ import Presence from '../components/AboutComponents/Presence'
 import Whychooseus from '../components/AboutComponents/Whychooseus'
 import Service from '../components/AboutComponents/Service'
 import abCss from '../styles/About.module.css'
+import Link from 'next/link'
 
 
 const About = () => {
@@ -11,7 +12,7 @@ const About = () => {
     <>
       <div className="container">
         <div className="aboutPath">
-          <p>Home - <b>AboutUs</b></p>
+          <p><Link href="/"><a>Home</a></Link>-<b>AboutUs</b></p>
         </div>
         <div className={abCss.aboutHeding}>
           <h2>About Us</h2>

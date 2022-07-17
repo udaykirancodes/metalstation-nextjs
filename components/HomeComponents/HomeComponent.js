@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image"
+import Link from 'next/link'
 export default function HomeComponent() {
   return (
     <>
@@ -20,13 +21,13 @@ export default function HomeComponent() {
               </div>  
               <div className="home_right">
                     <div className="right_container">
-                            <div className="home_button center">Buy Scrap</div>
+                            <div className="home_button center"><Link href="/AllCategory"><a>Buy Scrap</a></Link></div>
                             <div className="or_box center">
                               <span className='line'></span>
                               <div className="center or">or</div>
                               <span className='line'></span>
                             </div>
-                            <div className="home_button center">Sell Scrap</div>
+                            <div className="home_button center"><Link href="/Sell"><a>Sell Scrap</a></Link></div>
                             <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
                             <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
                     </div>
