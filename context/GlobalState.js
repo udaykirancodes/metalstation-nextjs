@@ -45,7 +45,7 @@ export default function GlobalState({ children }) {
         }
     const fetchCart = async () => {
         return 
-
+        // cart backend yet to be done 
         let authToken = localStorage.getItem('authToken');
         const res = await fetch( GetWishList, {
             method:'GET',
