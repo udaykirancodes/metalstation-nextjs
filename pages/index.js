@@ -7,7 +7,7 @@ import FeaturedProducts from "../components/HomeComponents/FeaturedProducts";
 import Category from "../components/HomeComponents/Category";
 import Footer from "../components/Footer";
 import Testimonials from "../components/HomeComponents/Testimonials";
-import { useEffect } from "react";
+import { useEffect , useContext} from "react";
 import Contact from "../components/HomeComponents/Contact";
 import Navbar from "../components/Navbar";
 import Login from "./Authenticate/Login";
@@ -15,11 +15,22 @@ import About from "./about";
 import Wishlist from "./Wishlist";
 import Sell from "./Sell";
 import Sell2 from "./Sell2";
+import Context from "../context/Context";
 
 export default function Home({wishlist, addToWishlist}) {
-  console.log(wishlist, addToWishlist);
+  // console.log(wishlist, addToWishlist);
+  const {fetchUserData} = useContext(Context); 
+
+  const getData = () => {
+    // this function get all the data like wishlist,cart if the user is logged in 
+    let authToken = localStorage.getItem('authToken');
+    if(authToken){
+      fetchUserData(authToken); // function is in context 
+    }
+  }
   useEffect(()=>{
     document.title = 'Metal Station'; 
+    getData(); // this function get all the data like wishlist,cart if the user is logged in 
   },[])
   return (
     <>

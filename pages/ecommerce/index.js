@@ -51,6 +51,50 @@ export default function Products() {
   useEffect(() => {
     document.title = "Metal Station - Buy"
   }, []);
+
+
+  // filters 
+
+  const [filters , setFilters] = useState([]); 
+  const remove = (min , max)=>{ // remove applied filters 
+    const checkedDoc = document.querySelectorAll('.checkboxA');
+    checkedDoc.forEach(element => {
+      if(element.checked && element.min == min && element.max == max){
+          element.checked = false; // unchecking the checkbox 
+      }
+    });
+    let newF = filters.filter((f)=>f.min != min && f.max!=max);
+    setFilters(newF); 
+  }
+
+  const [min , setMin] = useState(100000); // initially max
+  const [max , setMax] = useState(0); // initially min 
+  useEffect(() => {
+    console.log(min,max); 
+  }, [min,max])
+  const handleAllFilters = (e)=> {
+    let tempFilters = [];
+    setFilters([]);
+    let minArray = [];
+    let maxArray = [];
+    const checkedDoc = document.querySelectorAll('.checkboxA');
+    checkedDoc.forEach(element => {
+      if(element.checked){
+        let curMin = parseInt(element.min);
+        let curMax = parseInt(element.max) ; 
+        minArray.push(curMin)
+        maxArray.push(curMax)
+        tempFilters.push({min:curMin,max:curMax});
+      }
+    });
+    setFilters(tempFilters);
+    minArray.sort();
+    
+    // console.log('Min Array : ',minArray);
+    // console.log('Max Array : ',maxArray);
+    setMin(minArray[0]);
+    setMax(maxArray[minArray.length-1]);
+  }
   return (
     <>
       {/* <Navbar scroll={true} /> */}
@@ -95,17 +139,22 @@ export default function Products() {
             <p className="filters_text">Filters</p>
             <p className="filters_text">Clear All</p>
           </div>
-          <Filters />
+          <Filters handleAllFilters={handleAllFilters} />
         </div>
         <div className="buy_right">
           <div className="selected_top another_box mobile_none">
-            <p className="text_small" >Total Items - 100</p>
-            <span className="category ">All X</span>
+            <p className="text_small" >Total Items - {products.pages*perPage}</p>
+            {
+              filters.map((fil,index)=>{
+                return <span key={index} className="category"style={{fontSize:'10px',padding:'5px',height:'20px'}} onClick={()=>remove(fil.min,fil.max)}>{fil.min+' - '+fil.max}</span>
+              })
+            }
+            
+            {/* <span className="category">All X</span>
             <span className="category">All X</span>
             <span className="category">All X</span>
             <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span>
+            <span className="category">All X</span> */}
             <select name="" id="" className="mobile_none form-selector text_blue">
               <option value="">Sort By : Relevance </option>
               <option value="">Sort By : Relevance </option>
@@ -178,20 +227,28 @@ export default function Products() {
           </div>
           <li className='filter_header'>Price</li>
           <label className='filter_label'>
-            <span className='input_text'>&#8377;  25,000-50,000</span>
-            <input type="checkbox" className='checkbox' name="radio" />
+            <span className='input_text'>&#8377; 0-10,000  </span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={0} max={10000} name="radio" />
           </label>
           <label className='filter_label'>
-            <span className='input_text'>&#8377;  25,000-50,000</span>
-            <input type="checkbox" className='checkbox' name="radio" />
+            <span className='input_text'>&#8377;   10,000 - 20,000</span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={10000} max={20000} name="radio" />
           </label>
           <label className='filter_label'>
-            <span className='input_text'>&#8377;  25,000-50,000</span>
-            <input type="checkbox" className='checkbox' name="radio" />
+            <span className='input_text'>&#8377;  20,000 - 30,000</span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={20000} max={30000} name="radio" />
           </label>
           <label className='filter_label'>
-            <span className='input_text'>&#8377;  25,000-50,000</span>
-            <input type="checkbox" className='checkbox' name="radio" />
+            <span className='input_text'>&#8377; 30,000 - 40,000</span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={30000} max={40000} name="radio" />
+          </label>
+          <label className='filter_label'>
+            <span className='input_text'>&#8377; 40,000 - 50,000</span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={40000} max={50000} name="radio" />
+          </label>
+          <label className='filter_label'>
+            <span className='input_text'>&#8377; 50,000+</span>
+            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={50000} max={100000} name="radio" />
           </label>
         </ul>
       </div>

@@ -2,19 +2,24 @@ import React, { useState , useEffect } from 'react'
 import Image from 'next/image'
 import lgCss from '../../styles/Login.module.css'
 import Link from 'next/link'
-import {UserLogin} from '../../urls'; 
+import {UserLogin } from '../../urls'; 
 import { useRouter } from 'next/router';
+
+
 const Login = () => {
   const router = useRouter(); 
   const [error , setError] = useState('')
   useEffect(() => {
     document.title = 'Metal Station - Login'
   }, [])
+
   
   const [input , setInput] = useState({
     email:'',
     password:''
   });
+
+
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     if(input.email === '' || input.password === ''){
