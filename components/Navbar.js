@@ -92,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const Navbar = () => {
   const classes = useStyles();
   const [active, setActive] = useState(false);
@@ -136,27 +135,27 @@ const Navbar = () => {
             <div className={Nav.Design}>
             </div>
             <ul className={classes.ul}>
-              <li><i className="fa-solid fa-house-chimney"></i> Home</li>
+              <li><i className="fa-solid fa-house-chimney"></i><Link href="/"><a> Home</a></Link></li>
               <li> <Image src="/buy.png" alt="" className="img"
                 height={30}
                 width={30}
-              /><p><Link href="/buy"><a>Buy Scrap </a></Link></p></li>
+              /><p className="nav_link"><Link href="/buy"><a>Buy Scrap </a></Link></p></li>
               <li> <Image src="/sell.png" alt="" className="img"
                 height={30}
                 width={30}
-              /><p><Link href="/sellscrap"><a> Sell Scrap </a></Link></p></li>
+              /><p className="nav_link"><Link href="/sellscrap"><a> Sell Scrap </a></Link></p></li>
               <li><Image src="/blog.png" alt="" className="img"
                 height={30}
                 width={30}
-              /> <p><Link href="/blogs"><a> Blog </a></Link></p></li>
+              /> <p className="nav_link"><Link href="/blogs"><a> Blog </a></Link></p></li>
               <li><Image src="/info.png" alt="" className="img"
                 height={30}
                 width={30}
-              /><p><Link href="/about"><a> About us </a></Link></p> </li>
+              /><p className="nav_link"><Link href="/about"><a> About us </a></Link></p> </li>
               <li> <Image src="/information.png" alt="" className="img"
                 height={30}
                 width={30}
-              /><p><Link href="/about"><a>FAQ </a></Link></p></li>
+              /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
             </ul>
           </div>
         </div>

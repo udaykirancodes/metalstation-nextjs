@@ -7,8 +7,9 @@
   box-shadow: var(--shadow);
   width: 100vw;
   position: sticky;
-  top: 0;
-  z-index: 1000;
+  top: 4rem;
+    z-index: -1;
+  margin-top: 3rem;
   height: var(--category-height);
 }
 .category_bar{
@@ -306,6 +307,7 @@
           max-width: 95%;
           margin-right: auto;
           margin-left: auto;
+          margin-top: 3rem;
   }
   .singleProduct{
     height: 350px;
@@ -340,7 +342,6 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  
 }
 /* Mobile View */
 @media screen  and (max-width:968px){

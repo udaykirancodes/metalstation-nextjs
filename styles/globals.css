@@ -212,7 +212,7 @@ font-size: 1.3rem;
   border-radius: 2rem;
   border: 2px solid #08376B
 }
-ul li p{
+ul li .nav_link{
   display: block;
     margin: -35px 0px 0px 58px;
 }
