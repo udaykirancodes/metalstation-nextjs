@@ -1,5 +1,5 @@
-export const backendurl = 'http://localhost:8000/'; 
-// export const backendurl = 'http://metalstation.herokuapp.com/'; 
+// export const backendurl = 'http://localhost:8000/'; 
+export const backendurl = 'http://metalstation.herokuapp.com/'; 
 export const AdminLogin = backendurl+'auth/admin/login'; 
 export const UserLogin = backendurl+'auth/user/login'; 
 export const UserRegister = backendurl+'auth/user/register'; 
@@ -24,5 +24,6 @@ export const BlogCategories = backendurl+'blogs/categories';
 export const ProductCategories = backendurl+'products/categories';
 export const SingleBlogUrl = backendurl+'blogs';
 export const GetWishList = backendurl+'wishlist';
+export const RemoveFromWishlistUrl = backendurl+'wishlist/delete';
 export const EmailVerificationUrl = backendurl+'auth/user/verify';
 export const ResetRequestUrl = backendurl+'auth/user/reset';

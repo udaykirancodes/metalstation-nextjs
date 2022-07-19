@@ -3,8 +3,40 @@ import Link from 'next/link';
 import cartCss from '../styles/Cart.module.css'
 import Image from 'next/image'
 import Card from "../components/CartCard"
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import Context from '../context/Context';
 
 const Cart = () => {
+    const router = useRouter(); 
+
+    const {cart , setCart} = useContext(Context); 
+
+  // remove from cart 
+  const removeFromCart = async (id)=>{
+    let authToken = localStorage.getItem('authToken'); 
+    if(!authToken){
+        router.push('/'); 
+        return; 
+    }
+    // let res = await fetch('remove from cart url',{
+    //     method:'DELETE',
+    //     headers : {
+    //       'Content-Type':'application/json',
+    //       'authToken':authToken
+    //     },
+    //     body : JSON.stringify({
+    //       productid:id  
+    //     })
+    // })
+    // let data = await res.json(); 
+    // if(data.success){
+      // remove item from the frontend 
+      console.log(id);
+      let newList = cart.filter((item)=>item._id != id);
+      setCart(newList); 
+    // }
+  }
     const initialCount = 1
     const [count, setCount] = useState(initialCount)
     return (
@@ -89,13 +121,42 @@ const Cart = () => {
                     <div className={cartCss.cart}>
                         <div className={cartCss.cartLeft}>
                             <div className={cartCss.display}>
+                                {/* selected items */}
                                 <h2 className={cartCss.Selectitem}>Selected Items</h2>
                                 <div className={cartCss.selectbtn}>
                                     <button type="button" className="btn btn-outline-primary addwish"><i className="fa-solid fa-heart redcolor ">
                                     </i>Add more items from wishlist</button>
                                 </div>
                             </div>
-                            <div className={cartCss.delivaryEstimate}>
+                            {
+                                cart.map((item,index)=>{
+                                    return (
+                                        <div className={cartCss.delivaryEstimate}>
+                                            <div className={cartCss.estimateImg}>
+                                                <Image layout='fill' src="/metal.png" alt="" />
+                                            </div>
+                                            <div className={cartCss.estimateDetails}>
+                                                <div className={cartCss.content}>
+                                                    <Link href="/product"><a><h3 className={cartCss.producttitle}>Aluminium Scrap</h3></a></Link>
+                                                    <p className="unit">Quantity :
+                                                        <button onClick={() => setCount(count - 1)} className={cartCss.btn}>  <i className="fa-solid fa-minus"></i></button>
+                                                        <span>{count}</span>
+                                                        <button onClick={() => setCount(count + 1)} className={cartCss.btn}>  <i className="fa-solid fa-plus"></i></button>
+                                                        <small className={cartCss.ton}>Tons</small></p>
+                                                    <h4 className={cartCss.price}> 1,39,999</h4>
+                                                    <p>Delivered by &nbsp;<span className={cartCss.bold}> 18 june 2022</span></p>
+            
+                                                </div>
+                                            </div>
+                                            <div className={cartCss.removeSlecteditems}>
+                                                <button  className={cartCss.updateSelectedAddBtn}>Remove</button>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                           
+                            {/* <div className={cartCss.delivaryEstimate}>
                                 <div className={cartCss.estimateImg}>
                                     <Image layout='fill' src="/metal.png" alt="" />
                                 </div>
@@ -115,8 +176,8 @@ const Cart = () => {
                                 <div className={cartCss.removeSlecteditems}>
                                     <button className={cartCss.updateSelectedAddBtn}>Remove</button>
                                 </div>
-                            </div>
-                            <div className={cartCss.delivaryEstimate}>
+                            </div> */}
+                            {/* <div className={cartCss.delivaryEstimate}>
                                 <div className={cartCss.estimateImg}>
                                     <Image layout='fill' src="/metal.png" alt="" />
                                 </div>
@@ -136,28 +197,7 @@ const Cart = () => {
                                 <div className={cartCss.removeSlecteditems}>
                                     <button className={cartCss.updateSelectedAddBtn}>Remove</button>
                                 </div>
-                            </div>
-                            <div className={cartCss.delivaryEstimate}>
-                                <div className={cartCss.estimateImg}>
-                                    <Image layout='fill' src="/metal.png" alt="" />
-                                </div>
-                                <div className={cartCss.estimateDetails}>
-                                    <div className={cartCss.content}>
-                                        <Link href="/product"><a><h3 className={cartCss.producttitle}>Aluminium Scrap</h3></a></Link>
-                                        <p className="unit">Quantity :
-                                            <button onClick={() => setCount(count - 1)} className={cartCss.btn}>  <i className="fa-solid fa-minus"></i></button>
-                                            <span>{count}</span>
-                                            <button onClick={() => setCount(count + 1)} className={cartCss.btn}>  <i className="fa-solid fa-plus"></i></button>
-                                            <small className={cartCss.ton}>Tons</small></p>
-                                        <h4 className={cartCss.price}> 1,39,999</h4>
-                                        <p>Delivered by &nbsp;<span className={cartCss.bold}> 18 june 2022</span></p>
-
-                                    </div>
-                                </div>
-                                <div className={cartCss.removeSlecteditems}>
-                                    <button className={cartCss.updateSelectedAddBtn}>Remove</button>
-                                </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className={cartCss.displaybtn}>
                             <button type="button" className="btn btn-outline-primary addwish"><i className="fa-solid fa-heart redcolor ">
