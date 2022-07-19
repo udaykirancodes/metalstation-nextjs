@@ -7,15 +7,20 @@ import GlobalState from '../context/GlobalState';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import Script from 'next/script'
 function MyApp({ Component, pageProps }) {
 
   return (
+    <>
+    
     <GlobalState>
       <Navbar />
+      <br/>
       <Component {...pageProps} />
       <Footer />
     </GlobalState>
+    </>
+    
   )
   {/* <GlobalState>
       <Component {...pageProps} />

@@ -1,14 +1,14 @@
 .main{
     max-width: 1280px;
     margin: auto;
+    margin-left: 2rem;
+    z-index: 1;
 }
-
-.democontainer{
-    height: 7vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between; 
-    background-color: #24A1FD;
+.container{
+position: fixed;
+margin: auto;
+width: 90vw;
+z-index: 1;
 }
 .mobcontainer{
     width: 100%;
@@ -27,8 +27,9 @@
 .searchcontainer{
     display: flex;
     justify-content: center;
-    margin-right: 3rem;
+    margin-right: 4rem;
     margin-top: -0.5rem;
+    margin-left: 0.3rem;
 }
 
 .search{
@@ -71,12 +72,20 @@ border: none;
 }
 .hidetitles{
     display:flex;
-    margin-left: 2rem;
+    
 }
 .hideham{
     float: right;
     margin-right: 2rem;
     margin-top: -3rem;
+}
+@media only screen and (max-width: 1145px) {
+.img{
+    margin-right: 2rem;
+}
+.searchcontainer{
+    margin-right: 1rem;
+}
 }
 @media only screen and (min-width: 768px) {
     .hideham{
@@ -93,6 +102,11 @@ border: none;
 .hidetitles{
     display: none;
 }
+.container{
+    width: 95vw;
+    margin-left: 0rem;
+    margin-bottom: 3rem;
+}
 }
 .Design{
     width: 100%;
@@ -102,9 +116,12 @@ border: none;
     border-bottom: 60px solid white;
     border-left: 619px solid transparent;
 }
-@media only screen and (max-width: 1065px) {
+@media only screen and (max-width: 1112px) {
     .img{
-        margin-right:5rem;
+        margin-right:2.2rem;
+    }
+    .searchcontainer{
+        margin-left: 1rem;
     }
 }
 @media only screen and (max-width: 977px) {
@@ -118,8 +135,7 @@ border: none;
 
 @media only screen and (max-width: 840px) {
     .searchcontainer{
-        margin-right: 0rem;
-       
+        
     }
     .btn{
         margin-left: -18%;
