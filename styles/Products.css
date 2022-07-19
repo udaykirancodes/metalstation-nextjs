@@ -2,6 +2,12 @@
   --navbar-height : 80px; 
   --category-height : 70px;
 }
+.container{
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3rem;
+}
 .category_bar_container{
   background-color: #fff;
   box-shadow: var(--shadow);
@@ -303,12 +309,7 @@
 }
 /* Desktop View */
 @media screen  and (max-width:1280px){
-  .container{
-          max-width: 95%;
-          margin-right: auto;
-          margin-left: auto;
-          margin-top: 3rem;
-  }
+ 
   .singleProduct{
     height: 350px;
     width: calc(100%/3 - 15px);
