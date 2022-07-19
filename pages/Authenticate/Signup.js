@@ -1,5 +1,5 @@
 import React from 'react'
-import sgCss from '../../styles/Singup.module.css'
+import sgCss from '../../styles/Signup.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 

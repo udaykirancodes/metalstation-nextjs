@@ -26,3 +26,4 @@ export const SingleBlogUrl = backendurl+'blogs';
 export const GetWishList = backendurl+'wishlist';
 export const EmailVerificationUrl = backendurl+'auth/user/verify';
 export const ResetRequestUrl = backendurl+'auth/user/reset';
+export const WishlistPushUrl = backendurl+'wishlist/add';

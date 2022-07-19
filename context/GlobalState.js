@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import Context from './Context'
+import { WishlistPushUrl } from '../urls';
 
 import { GetWishList } from '../urls';
 import { useEffect } from 'react';
 
 export default function GlobalState({ children }) {
     const [user, setuser] = useState({
-        email:'',
-        name:'',
-        phone:''
+        email: '',
+        name: '',
+        phone: ''
     });
 
-    const [wishlist , setWishlist] = useState([]); 
+    const [wishlist, setWishlist] = useState([]);
 
-    const [cart , setCart ] = useState([]); 
+    const [cart, setCart] = useState([]);
 
     // const [wlist, setWlist] = useState({});
     // const pushwList = async () => {
@@ -28,37 +29,37 @@ export default function GlobalState({ children }) {
     // }
     const fetchWishlist = async () => {
         let authToken = localStorage.getItem('authToken');
-        const res = await fetch( GetWishList, {
-            method:'GET',
-            headers :{
-              'content-Type' : 'application/json',
-              'authToken': authToken
-            }
-          }) 
-          // let {resp} = await axios.post(UserLogin , input)
-          const data = await res.json(); 
-          console.log('Wishlist : ',data);
-          if(data.success){
-              // console.log(data.products);
-              setWishlist(data.products);
-            }
-        }
-    const fetchCart = async () => {
-        return 
-        // cart backend yet to be done 
-        let authToken = localStorage.getItem('authToken');
-        const res = await fetch( GetWishList, {
-            method:'GET',
-            headers :{
-                'content-Type' : 'application/json',
+        const res = await fetch(GetWishList, {
+            method: 'GET',
+            headers: {
+                'content-Type': 'application/json',
                 'authToken': authToken
             }
         })
         // let {resp} = await axios.post(UserLogin , input)
-        const data = await res.json(); 
-        console.log('ca : ',data);
-        console.log(data); 
-        if(data.success){
+        const data = await res.json();
+        console.log('Wishlist : ', data);
+        if (data.success) {
+            // console.log(data.products);
+            setWishlist(data.products);
+        }
+    }
+    const fetchCart = async () => {
+        return
+        // cart backend yet to be done 
+        let authToken = localStorage.getItem('authToken');
+        const res = await fetch(GetWishList, {
+            method: 'GET',
+            headers: {
+                'content-Type': 'application/json',
+                'authToken': authToken
+            }
+        })
+        // let {resp} = await axios.post(UserLogin , input)
+        const data = await res.json();
+        console.log('ca : ', data);
+        console.log(data);
+        if (data.success) {
             console.log(data.products);
             setCart(data.products);
         }
@@ -68,11 +69,11 @@ export default function GlobalState({ children }) {
         fetchWishlist();
         fetchCart();
     }
-    useEffect(()=>{
-        fetchUserData(); 
-    },[])
+    useEffect(() => {
+        fetchUserData();
+    }, [])
     return (
-        <Context.Provider value={{ user,setuser , wishlist , setWishlist , cart , setCart , fetchUserData }}>
+        <Context.Provider value={{ user, setuser, wishlist, setWishlist, cart, setCart, fetchUserData }}>
             {children}
         </Context.Provider>
     )
