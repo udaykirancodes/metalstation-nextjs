@@ -26,9 +26,9 @@ width: 90vw;
 .searchcontainer{
     display: flex;
     justify-content: center;
-    margin-right: 1rem;
+    margin-right: 4rem;
     margin-top: -0.5rem;
-    margin-left: 4rem;
+    margin-left: 0.3rem;
 }
 
 .search{
@@ -71,12 +71,20 @@ border: none;
 }
 .hidetitles{
     display:flex;
-    margin-left: 2rem;
+    
 }
 .hideham{
     float: right;
     margin-right: 2rem;
     margin-top: -3rem;
+}
+@media only screen and (max-width: 1145px) {
+.img{
+    margin-right: 2rem;
+}
+.searchcontainer{
+    margin-right: 1rem;
+}
 }
 @media only screen and (min-width: 768px) {
     .hideham{
@@ -109,10 +117,10 @@ border: none;
 }
 @media only screen and (max-width: 1112px) {
     .img{
-        margin-right:3rem;
+        margin-right:2.2rem;
     }
     .searchcontainer{
-        margin-left: 3rem;
+        margin-left: 1rem;
     }
 }
 @media only screen and (max-width: 977px) {
@@ -126,8 +134,7 @@ border: none;
 
 @media only screen and (max-width: 840px) {
     .searchcontainer{
-        margin-right: 0rem;
-       
+        
     }
     .btn{
         margin-left: -18%;
