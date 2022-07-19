@@ -95,6 +95,13 @@ export default function Products() {
     setMin(minArray[0]);
     setMax(maxArray[minArray.length-1]);
   }
+  const clearAllFilters = () => {
+    const checkedDoc = document.querySelectorAll('.checkboxA');
+    checkedDoc.forEach(element => {
+      element.checked = false ;  // unchecking all the checkboxes
+    });
+    setFilters([]); // clearing array with min & max 
+  }
   return (
     <>
       {/* <Navbar scroll={true} /> */}
@@ -137,16 +144,16 @@ export default function Products() {
         <div className="buy_left">
           <div className="filters_top another_box mobile_none">
             <p className="filters_text">Filters</p>
-            <p className="filters_text">Clear All</p>
+            <p className="filters_text" onClick={()=>clearAllFilters()}>Clear All</p>
           </div>
           <Filters handleAllFilters={handleAllFilters} />
         </div>
         <div className="buy_right">
           <div className="selected_top another_box mobile_none">
-            <p className="text_small" >Total Items - {products.pages*perPage}</p>
+            <p className="text_small" >Total Items - {products.length}</p>
             {
               filters.map((fil,index)=>{
-                return <span key={index} className="category"style={{fontSize:'10px',padding:'5px',height:'20px'}} onClick={()=>remove(fil.min,fil.max)}>{fil.min+' - '+fil.max}</span>
+                return <span key={index} className="category"style={{fontSize:'10px',padding:'5px',height:'20px'}} onClick={()=>remove(fil.min,fil.max)}>{fil.min+' - '+fil.max+'   '+'   X'}</span>
               })
             }
             

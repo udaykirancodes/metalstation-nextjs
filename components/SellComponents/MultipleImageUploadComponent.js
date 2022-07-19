@@ -37,7 +37,7 @@ export default class MultipleImageUploadComponent extends Component {
                         </div>
                         {/* <div className={sCss.img}> */}
                         <Carousel className={sCss.img}>
-                            {(this.fileArray || []).map(url => (<div className={`form-group multi-preview ${sCss.multi}`}>
+                            {(this.fileArray || []).map((url,index) => (<div key={index} className={`form-group multi-preview ${sCss.multi}`}>
 
                                 <Image layout='fill' src={url} alt="..." />
 
