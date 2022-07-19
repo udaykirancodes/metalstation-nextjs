@@ -18,7 +18,7 @@ export default function ({product}) {
     <>
         <div className="singleProduct">
             <div className="productTop">
-                <Image src="/metal.png" layout='fill' />
+                <Image src="/metal.png" layout='fill' alt='Image' />
             </div>
             <div className="productBottom">
               <div className="product_text_container">

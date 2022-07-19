@@ -131,7 +131,7 @@ const Cart = () => {
                             {
                                 cart.map((item,index)=>{
                                     return (
-                                        <div className={cartCss.delivaryEstimate}>
+                                        <div key={index} className={cartCss.delivaryEstimate}>
                                             <div className={cartCss.estimateImg}>
                                                 <Image layout='fill' src="/metal.png" alt="" />
                                             </div>
