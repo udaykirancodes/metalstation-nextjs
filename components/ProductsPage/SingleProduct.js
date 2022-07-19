@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router';
 import React from 'react'
 
-export default function ({product}) {
+export default function SingleProduct({product}) {
   const router = useRouter(); 
   const addToWishlist = (id)=>{
     let authToken = localStorage.getItem('authToken'); 

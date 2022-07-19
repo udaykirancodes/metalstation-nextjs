@@ -10,7 +10,7 @@ import Testimonials from "../components/HomeComponents/Testimonials";
 import { useEffect , useContext} from "react";
 import Contact from "../components/HomeComponents/Contact";
 import Navbar from "../components/Navbar";
-import Login from "./Authenticate/Login";
+// import Login from "./Authenticate/Login";
 import About from "./about";
 import Wishlist from "./Wishlist";
 import Sell from "./Sell";
