@@ -114,6 +114,7 @@ const Cart = () => {
                         <p>House name, Locality, District , State</p>
                     </div>
                     <button className={cartCss.button} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Address</button>
+                
                 </div>
             </div>
             <div className="container">

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '../styles/Navbar.module.css'
@@ -93,12 +95,81 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const classes = useStyles();
   const [active, setActive] = useState(false);
   return (
+
+<>
+
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton className="NotiHeader">
+          <Modal.Title>Notification</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className={Nav.displaybtn}>
+<button className={Nav.Allbtn}>All</button>
+<button className={Nav.orderbtn}>Order Info</button>
+<button className={Nav.enquibtn}>Enquires</button>
+</div>
+<hr/>
+<div className={Nav.Notibox}>
+<div >
+  <div className={ Nav.noticard}>
+    <div className={Nav.noticar}>
+  <i className="fa-solid fa-car-side"></i>
+  </div>
+  <div className={Nav.noticontent}>
+<h4>Shipped  : <span className={Nav.blue}>Aluminium Scrap</span>
+  <p className={Nav.notitext}>Your order for Aluminium Scrap has been shipped
+     </p>
+     </h4>
+     </div>
+     </div> 
+     <div className={Nav.smalldisplay}>
+      <small>3hrs ago</small>
+      <small>Click here to view more</small>
+      
+     </div>
+     <hr/>
+
+
+</div>
+
+<div >
+  <div className={ Nav.noticard}>
+    <div className={Nav.noticar}>
+    <i className="fa-solid fa-memo"></i>
+  </div>
+  <div className={Nav.noticontent}>
+<h4>Enquiry : <span className={Nav.blue}>Aluminium Scrap</span>
+  <p className={Nav.notitext}>Your enquiry of Aluminium Scrap is successfull.<br/>
+  <p className={Nav.notitext}>The price per ton of Aluminium Scrap is <b>₹1,35,000 </b></p>
+     </p>
+     </h4>
+     </div>
+     </div> 
+     <div className={Nav.smalldisplay}>
+      <small>3hrs ago</small>
+      <small>Click here to view more</small>
+      
+     </div>
+     <hr/>
+</div>
+</div>
+        </Modal.Body>
+       
+      </Modal>
+
+
+
     <div className={Nav.main}>
       <div className={Nav.container}>
-        <div className={Nav.img}>
+      <div className={Nav.img}>
           <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
             width={150}
             height={60}
@@ -116,7 +187,7 @@ const Navbar = () => {
             <li className={Nav.nav_item}><Link href="/Sell"><a>Sell</a></Link></li>
             <li className={Nav.nav_item}><Link href="/blogs/"><a>Blog</a></Link></li>
             <li className={Nav.nav_item}><Link href="/about"><a>About us</a></Link></li>
-            <li className={Nav.nav_item}><Link href="/notify"><a><i className="fa-regular fa-bell"></i></a></Link></li>
+            <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
             <button className={Nav.login}><Link href="/auth/login"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
           </div>
         </div>
@@ -159,9 +230,11 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+        
       </div>
-
+      
     </div>
+    </>
   );
 };
 
