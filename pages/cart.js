@@ -10,33 +10,9 @@ import Context from '../context/Context';
 const Cart = () => {
     const router = useRouter(); 
 
-    const {cart , setCart} = useContext(Context); 
+    const {cart , setCart , removeFromCart} = useContext(Context); 
 
-  // remove from cart 
-  const removeFromCart = async (id)=>{
-    let authToken = localStorage.getItem('authToken'); 
-    if(!authToken){
-        router.push('/'); 
-        return; 
-    }
-    // let res = await fetch('remove from cart url',{
-    //     method:'DELETE',
-    //     headers : {
-    //       'Content-Type':'application/json',
-    //       'authToken':authToken
-    //     },
-    //     body : JSON.stringify({
-    //       productid:id  
-    //     })
-    // })
-    // let data = await res.json(); 
-    // if(data.success){
-      // remove item from the frontend 
-      console.log(id);
-      let newList = cart.filter((item)=>item._id != id);
-      setCart(newList); 
-    // }
-  }
+
     const initialCount = 1
     const [count, setCount] = useState(initialCount)
     return (
@@ -95,13 +71,13 @@ const Cart = () => {
                         </Link>
                     </div>
                     <div className={cartCss.goback}>
-                        <Link href="/buy" >
+                        <Link href="/ecommerce" >
                             <a><i className="fa-solid fa-arrow-left-long goback"></i>
                                 Go back</a></Link>
                     </div>
                 </div>
                 <div className={cartCss.mobgoback}>
-                    <Link href="/buy" >
+                    <Link href="/ecommerce" >
                         <a><i className="fa-solid fa-arrow-left-long goback"></i>
                             Go back</a></Link>
                 </div>
@@ -138,7 +114,7 @@ const Cart = () => {
                                             </div>
                                             <div className={cartCss.estimateDetails}>
                                                 <div className={cartCss.content}>
-                                                    <Link href="/product"><a><h3 className={cartCss.producttitle}>Aluminium Scrap</h3></a></Link>
+                                                    <Link href="/ecommerce"><a><h3 className={cartCss.producttitle}>Aluminium Scrap</h3></a></Link>
                                                     <p className="unit">Quantity :
                                                         <button onClick={() => setCount(count - 1)} className={cartCss.btn}>  <i className="fa-solid fa-minus"></i></button>
                                                         <span>{count}</span>

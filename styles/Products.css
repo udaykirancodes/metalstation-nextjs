@@ -1,22 +1,16 @@
 :root {
-  --navbar-height : 80px; 
-  --category-height : 70px;
-}
-.container{
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 3rem;
+  --navbar-height : 4rem; 
+  --category-height : 4rem;
 }
 .category_bar_container{
+  margin-top: 2rem;
   background-color: #fff;
   box-shadow: var(--shadow);
   width: 100vw;
-  position: sticky;
-  top: 4rem;
-    z-index: -1;
-  margin-top: 3rem;
-  height: var(--category-height);
+  /* position: sticky; */
+  /* top: 0; */
+  z-index: 1000;
+  /* height: var(--category-height); */
 }
 .category_bar{
   display: flex;
@@ -27,7 +21,6 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem;
 }
 .another_box{
   position: sticky;
@@ -48,6 +41,7 @@
 .category_bar_left{
   display: flex;
   gap: 10px 1rem;
+  margin: 0;
   align-items: center;
 }
 .category_bar_right{
@@ -106,7 +100,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 .selected_top{
   display: flex;
@@ -121,6 +115,7 @@
 }
 .filters_text{
   font-weight: 400;
+  margin-top: 1rem;
   font-size: var(--normal-font-size);
 }
 .sidebar_filters{
@@ -191,7 +186,6 @@
   gap: 1rem;
   width: 100%;
   padding-left: 1rem;
-  padding-top: 1rem;
 }
 .products_only_top{
   display: flex;
@@ -367,8 +361,8 @@
     width: calc(100%/2 - 10px);
   }
   .listofproducts{
-    padding: 10px 0;
-    gap: 5px;
+    padding: 1.5rem 0;
+    gap: 10px;
   }
   .filters_section{
     position: fixed;

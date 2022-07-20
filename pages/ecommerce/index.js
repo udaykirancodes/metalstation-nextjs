@@ -157,11 +157,6 @@ export default function Products() {
               })
             }
             
-            {/* <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span> */}
             <select name="" id="" className="mobile_none form-selector text_blue">
               <option value="">Sort By : Relevance </option>
               <option value="">Sort By : Relevance </option>
@@ -182,10 +177,6 @@ export default function Products() {
           </div>
         </div>
       </div>
-
-
-      {/* Footer component  */}
-      <Footer />
 
 
 

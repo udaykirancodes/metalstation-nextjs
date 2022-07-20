@@ -167,8 +167,8 @@ const Navbar = () => {
 
 
 
-    <div className={Nav.main}>
-      <div className={Nav.container}>
+    <div className={Nav.main} style={{backgroundColor:'#fff',zIndex:100000}}>
+      <div className={Nav.container} style={{backgroundColor:'#fff',zIndex:'100000'}}>
       <div className={Nav.img}>
           <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
             width={150}

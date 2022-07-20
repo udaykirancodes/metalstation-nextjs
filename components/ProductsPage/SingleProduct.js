@@ -1,19 +1,30 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router';
-import React from 'react'
-
+import React, { useContext, useEffect, useState } from 'react'
+import Context from '../../context/Context';
+import Link from 'next/link';
 export default function SingleProduct({product}) {
-  const router = useRouter(); 
-  const addToWishlist = (id)=>{
-    let authToken = localStorage.getItem('authToken'); 
-    if(!authToken){
-        console.log('Please Login First'); 
-        // here we have to show alert 
-    }else{
 
-      console.log('Product Added to Wishlist '+id); 
-    }
+
+
+  const {wishlist , addToWishlist} = useContext(Context); 
+  const router = useRouter(); 
+  
+  const [liked , setLiked] = useState(false); 
+  useEffect(()=>{
+     wishlist.forEach(element => {
+          if(element._id === product._id){
+              setLiked(true); 
+          }
+     });
+  },[])
+  const link = '/ecomerse/'+product._id;
+  
+  const add = (id )=> {
+    setLiked(true); 
+    addToWishlist(id  , product);
   }
+  
   return (
     <>
         <div className="singleProduct">
@@ -22,10 +33,17 @@ export default function SingleProduct({product}) {
             </div>
             <div className="productBottom">
               <div className="product_text_container">
-                <div className="icon_container" onClick={()=>addToWishlist(product._id)}>
-                    <i  className="uil uil-heart"></i>
+                <div className="icon_container" onClick={()=>add(product._id )}>
+                  {
+                    liked ?  
+                    <i className="uil uil-heart"></i>
+                    : 
+                    <i className="uil uil-heart"></i>
+                  }
                 </div>
-                <h4 className="product_name text_blue">{product.name} </h4>
+                <Link href={link}>
+                    <h4 className="product_name text_blue">{product.name} </h4>
+                </Link>
                 <p className="product_desc">
                   {product.description.slice(0,150)+"..."}
                 </p>

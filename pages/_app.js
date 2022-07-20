@@ -15,16 +15,13 @@ function MyApp({ Component, pageProps }) {
     
     <GlobalState>
       <Navbar />
-      <br/>
+      {/* <br/> */}
       <Component {...pageProps} />
       <Footer />
     </GlobalState>
     </>
     
   )
-  {/* <GlobalState>
-      <Component {...pageProps} />
-    </GlobalState> */}
 }
 
 export default MyApp
