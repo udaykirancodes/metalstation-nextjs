@@ -1,0 +1,108 @@
+.ImagePreview {
+  padding: 2rem 0;
+
+}
+
+.ImageLabel {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  border-radius: 20px;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: large;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+.ImageLabelSpan {
+  font-weight: lighter;
+  font-size: small;
+  padding-top: 0.5rem;
+}
+
+.ImagePreviewInput {
+  display: none;
+}
+
+.preview {
+  padding: 0;
+  margin: 0;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  background-color: rgb(252, 247, 247);
+  /* height: 17rem; */
+  overflow-x: scroll;
+}
+
+.image {
+  margin: 1rem 0.5rem;
+  position: relative;
+  box-shadow: var(--shadow);
+  background-color: aliceblue;
+  /* width: 16rem; */
+}
+
+.ImageDelete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: lightcoral;
+}
+
+.ImageDelete:hover {
+  background-color: red;
+}
+
+.ImageP {
+  padding: 0 0.5rem;
+  margin: 0;
+}
+
+.uploadbtn {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+  background-color: var(--primary);
+}
+
+.ImageLabelSpan:hover,
+.upload-btn:hover {
+  box-shadow: var(--shadow);
+}
+
+.error {
+  text-align: center;
+}
+
+.error span {
+  color: red;
+}
+
+.ImageInputContainer{
+  display: flex;
+  
+}

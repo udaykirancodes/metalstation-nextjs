@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <GlobalState>
       <Navbar />
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </GlobalState>
   )
   {/* <GlobalState>
