@@ -5,10 +5,11 @@
 }
 .container{
 position: fixed;
-margin: auto;
+margin: 0 auto;
 width: 100vw;
 z-index: 1;
 background-color: white;
+box-shadow: var(--shadow);
 }
 .resp{
 max-width: fit-content;
@@ -160,7 +161,7 @@ border: none;
 .container{
     width: 100vw;
     margin-left: 0rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 }
 .Design{
@@ -189,9 +190,6 @@ border: none;
 }
 
 @media only screen and (max-width: 840px) {
-    .searchcontainer{
-        
-    }
     .btn{
         margin-left: -18%;
         }

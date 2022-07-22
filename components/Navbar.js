@@ -1,6 +1,5 @@
 import React, { useState,useEffect ,useRef} from "react";
 import Modal from 'react-bootstrap/Modal';
-import User from '/public/user.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '../styles/Navbar.module.css'

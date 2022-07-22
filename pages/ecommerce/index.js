@@ -55,69 +55,112 @@ export default function Products() {
 
   // filters 
 
-  const [filters , setFilters] = useState([]); 
-  const remove = (min , max)=>{ // remove applied filters 
+  const [filters, setFilters] = useState([]);
+  const remove = (min, max) => { // remove applied filters 
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
-      if(element.checked && element.min == min && element.max == max){
-          element.checked = false; // unchecking the checkbox 
+      if (element.checked && element.min == min && element.max == max) {
+        element.checked = false; // unchecking the checkbox 
       }
     });
-    let newF = filters.filter((f)=>f.min != min && f.max!=max);
-    setFilters(newF); 
+    let newF = filters.filter((f) => f.min != min && f.max != max);
+    setFilters(newF);
   }
 
-  const [min , setMin] = useState(100000); // initially max
-  const [max , setMax] = useState(0); // initially min 
+  const [min, setMin] = useState(100000); // initially max
+  const [max, setMax] = useState(0); // initially min 
   useEffect(() => {
-    console.log(min,max); 
-  }, [min,max])
-  const handleAllFilters = (e)=> {
+    console.log(min, max);
+  }, [min, max])
+  const handleAllFilters = (e) => {
     let tempFilters = [];
     setFilters([]);
     let minArray = [];
     let maxArray = [];
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
-      if(element.checked){
+      if (element.checked) {
         let curMin = parseInt(element.min);
-        let curMax = parseInt(element.max) ; 
+        let curMax = parseInt(element.max);
         minArray.push(curMin)
         maxArray.push(curMax)
-        tempFilters.push({min:curMin,max:curMax});
+        tempFilters.push({ min: curMin, max: curMax });
       }
     });
     setFilters(tempFilters);
     minArray.sort();
-    
+
     // console.log('Min Array : ',minArray);
     // console.log('Max Array : ',maxArray);
     setMin(minArray[0]);
-    setMax(maxArray[minArray.length-1]);
+    setMax(maxArray[minArray.length - 1]);
   }
   const clearAllFilters = () => {
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
-      element.checked = false ;  // unchecking all the checkboxes
+      element.checked = false;  // unchecking all the checkboxes
     });
     setFilters([]); // clearing array with min & max 
   }
+  // arrow 
+  const [arrowUp, setArrowUp] = useState(false);
   return (
     <>
       {/* <Navbar scroll={true} /> */}
       <div className="category_bar_container">
         <div className="category_bar container">
-          <div className="go_back desktop_none" onClick={() => router.push('/')}>
-            <i className="uil uil-arrow-left icon"></i> Back
+          <div className="go_back desktop_none">
+            <Link href="/">
+              <>
+                <i className="uil uil-arrow-left icon"></i> Back
+              </>
+            </Link>
           </div>
           <div className="category_bar_left mobile_none">
-            <select name="" className='form-selector selector_input' id="">
-              <option value="">All Categories</option>
-              <option value="">Steel</option>
-              <option value="">Copper</option>
-              <option value="">Aluminium</option>
-              <option value="">Auto Parts</option>
-            </select>
+            <div className="all-category-hover">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span className="category_text" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)} >All Categories {arrowUp ? <i className="uil uil-angle-up arrow-icon" style={{ fontSize: '16px' }}></i> : <i className="uil uil-angle-down arrow-icon"></i>}  </span>
+              </div>
+
+              <div className="onHoverCategories" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)}>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>STEEL</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                  <li className='onHover-li'>Steel Bar</li>
+                  <li className='onHover-li'>Steel Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg-2'>
+                  <li className='onHover-li-main'>ALUMINIUM</li>
+                  <li className='onHover-li'>Aluminium Rod</li>
+                  <li className='onHover-li'>Aluminium Pipe</li>
+                  <li className='onHover-li'>Aluminium Wire</li>
+                  <li className='onHover-li'>Aluminium Bar</li>
+                  <li className='onHover-li'>Aluminium Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>COPPER</li>
+                  <li className='onHover-li'>Copper Rod</li>
+                  <li className='onHover-li'>Copper Pipe</li>
+                  <li className='onHover-li'>Copper Wire</li>
+                  <li className='onHover-li'>Copper Bar</li>
+                  <li className='onHover-li'>Copper Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg-2'>
+                  <li className='onHover-li-main'>MACHINERY</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                </ul>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>AUTO PARTS</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                </ul>
+              </div>
+            </div>
             <span className="category_text">STEEL</span>
             <span className="category_text">ALUMINIUM</span>
             <span className="category_text">COPPER</span>
@@ -144,7 +187,7 @@ export default function Products() {
         <div className="buy_left">
           <div className="filters_top another_box mobile_none">
             <p className="filters_text">Filters</p>
-            <p className="filters_text" onClick={()=>clearAllFilters()}>Clear All</p>
+            <p className="filters_text" onClick={() => clearAllFilters()}>Clear All</p>
           </div>
           <Filters handleAllFilters={handleAllFilters} />
         </div>
@@ -152,16 +195,11 @@ export default function Products() {
           <div className="selected_top another_box mobile_none">
             <p className="text_small" >Total Items - {products.length}</p>
             {
-              filters.map((fil,index)=>{
-                return <span key={index} className="category"style={{fontSize:'10px',padding:'5px',height:'20px'}} onClick={()=>remove(fil.min,fil.max)}>{fil.min+' - '+fil.max+'   '+'   X'}</span>
+              filters.map((fil, index) => {
+                return <span key={index} className="category" style={{ fontSize: '10px', padding: '5px', height: '20px' }} onClick={() => remove(fil.min, fil.max)}>{fil.min + ' - ' + fil.max + '   ' + '   X'}</span>
               })
             }
-            
-            {/* <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span>
-            <span className="category">All X</span> */}
+
             <select name="" id="" className="mobile_none form-selector text_blue">
               <option value="">Sort By : Relevance </option>
               <option value="">Sort By : Relevance </option>
@@ -182,10 +220,6 @@ export default function Products() {
           </div>
         </div>
       </div>
-
-
-      {/* Footer component  */}
-      <Footer />
 
 
 
@@ -235,27 +269,27 @@ export default function Products() {
           <li className='filter_header'>Price</li>
           <label className='filter_label'>
             <span className='input_text'>&#8377; 0-10,000  </span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={0} max={10000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={0} max={10000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377;   10,000 - 20,000</span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={10000} max={20000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={10000} max={20000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377;  20,000 - 30,000</span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={20000} max={30000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={20000} max={30000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377; 30,000 - 40,000</span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={30000} max={40000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={30000} max={40000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377; 40,000 - 50,000</span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={40000} max={50000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={40000} max={50000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377; 50,000+</span>
-            <input type="checkbox" className='checkboxA' onChange={(e)=>handleAllFilters(e)} min={50000} max={100000} name="radio" />
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={50000} max={100000} name="radio" />
           </label>
         </ul>
       </div>

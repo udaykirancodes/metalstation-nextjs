@@ -23,15 +23,13 @@ function MyApp({ Component, pageProps }) {
     </Head>
     <Script src="https://kit.fontawesome.com/389da53d03.js" crossorigin="anonymous"/>
   
+      {/* <br/> */}
       <Component {...pageProps} />
       <Footer />
     </GlobalState>
     </>
     
   )
-  {/* <GlobalState>
-      <Component {...pageProps} />
-    </GlobalState> */}
 }
 
 export default MyApp

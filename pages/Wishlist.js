@@ -8,65 +8,20 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import Context from '../context/Context'
 import { useRouter } from 'next/router'
-import {RemoveFromWishlistUrl}from '../urls'; 
-const Wishlist = () => {
-  const router = useRouter(); 
-  const {wishlist , setWishlist , cart , setCart} = useContext(Context);
+import { RemoveFromWishlistUrl } from '../urls';
 
-  // Add to cart 
-  const addToCart = async (id) => {
-    let authToken = localStorage.getItem('authToken'); 
-    if(!authToken){
-        router.push('/'); 
-        return; 
-    }
-    // let res = await fetch('add to cart url',{
-    //     method:'POST',
-    //     headers : {
-    //       'Content-Type':'application/json',
-    //       'authToken':authToken
-    //     },
-    //     body : JSON.stringify({
-    //       productid:id  
-    //     })
-    // })
-    // let data = await res.json(); 
-    // if(data.success){
-      // add item to the card in frontend 
-      let item = wishlist.filter((pro)=> pro._id == id); // get the item from the wishlist 
-      setCart({...cart , item}); 
-    // }
-    console.log('Added to Wishlist',cart); 
-  }
-  // remove from wishlist 
-  const removeFromWishlist = async (id)=>{
-    let authToken = localStorage.getItem('authToken'); 
-    if(!authToken){
-        router.push('/'); 
-        return; 
-    }
-    let res = await fetch(RemoveFromWishlistUrl,{
-        method:'DELETE',
-        headers : {
-          'Content-Type':'application/json',
-          'authToken':authToken
-        },
-        body : JSON.stringify({
-          productid:id  
-        })
-    })
-    let data = await res.json(); 
-    if(data.success){
-      // remove item from the frontend 
-      console.log(id);
-      let newList = wishlist.filter((item)=>item._id != id);
-      setWishlist(newList); 
-    }
-  }
+
+const Wishlist = () => {
+  const router = useRouter();
+  const { wishlist, removeFromWishlist, addToCart } = useContext(Context);
+
+
+  const [arrowUp, setArrowUp] = useState(false)
+
   return (
     <>
-      <div className="container">
-        <div className={catcss.categorybar}>
+      <div className="container" style={{ marginTop: '4rem' }}>
+        {/* <div className={catcss.categorybar}>
           <Bar />
           <div className={cardCss.icons}>
             <Link href="/Wishlist">
@@ -85,36 +40,121 @@ const Wishlist = () => {
         </div>
         <div className={wlCss.total_item}>
           <p>Total Item - 0</p>
+
+        </div> */}
+        <div className="category_bar container">
+          <div className="go_back desktop_none">
+            <Link href="/">
+              <>
+                <i className="uil uil-arrow-left icon"></i> Back
+              </>
+            </Link>
+          </div>
+          <div className="category_bar_left mobile_none">
+            <div className="all-category-hover">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span className="category_text" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)} >All Categories {arrowUp ? <i className="uil uil-angle-up arrow-icon" style={{ fontSize: '16px' }}></i> : <i className="uil uil-angle-down arrow-icon"></i>}  </span>
+              </div>
+
+              <div className="onHoverCategories" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)}>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>STEEL</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                  <li className='onHover-li'>Steel Bar</li>
+                  <li className='onHover-li'>Steel Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg-2'>
+                  <li className='onHover-li-main'>ALUMINIUM</li>
+                  <li className='onHover-li'>Aluminium Rod</li>
+                  <li className='onHover-li'>Aluminium Pipe</li>
+                  <li className='onHover-li'>Aluminium Wire</li>
+                  <li className='onHover-li'>Aluminium Bar</li>
+                  <li className='onHover-li'>Aluminium Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>COPPER</li>
+                  <li className='onHover-li'>Copper Rod</li>
+                  <li className='onHover-li'>Copper Pipe</li>
+                  <li className='onHover-li'>Copper Wire</li>
+                  <li className='onHover-li'>Copper Bar</li>
+                  <li className='onHover-li'>Copper Foundary</li>
+                </ul>
+                <ul className='onHover-ul light-bg-2'>
+                  <li className='onHover-li-main'>MACHINERY</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                </ul>
+                <ul className='onHover-ul light-bg'>
+                  <li className='onHover-li-main'>AUTO PARTS</li>
+                  <li className='onHover-li'>Steel Rod</li>
+                  <li className='onHover-li'>Steel Pipe</li>
+                  <li className='onHover-li'>Steel Wire</li>
+                </ul>
+              </div>
+            </div>
+            <span className="category_text">STEEL</span>
+            <span className="category_text">ALUMINIUM</span>
+            <span className="category_text">COPPER</span>
+            <span className="category_text">IRON</span>
+          </div>
+          <div className="category_bar_right">
+            <Link href={"/Wishlist"}>
+              <div className="bar_icon_container">
+                <i className="uil uil-heart"></i>
+                <p className="text_center mobile_none">Wishlist</p>
+              </div>
+            </Link>
+            <Link href={'/cart'}>
+              <div className="bar_icon_container">
+                <i className="uil  uil-shopping-cart-alt"></i>
+                <p className="text_center mobile_none">Cart</p>
+              </div>
+            </Link>
+          </div>
         </div>
         <section className={wlCss.wishlist}>
 
-        {
-          wishlist.map((item,index)=>{
-            return (
-              <div key={index} className={wlCss.wishlist_container}>
-            <div className={wlCss.wishlist_Img}>
-              <Image layout='fill' src="/metal.png" alt="" />
+          {
+            wishlist.length == 0 &&
+            <div style={{ height: '500px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+              <p style={{ fontSize: '20px' }}>Wishlist is Empty</p>
+              <p style={{ fontSize: '16px' }}>Add some products to your wishlist</p>
+              <Link href="/ecommerce">
+                <button className='category active'>Buy Scrap</button>
+              </Link>
             </div>
-            <div className={wlCss.wishlist_lower_body}>
-              <div className={wlCss.wishlist_head_icon}>
-                <h4 className={wlCss.wishlist_head} onClick={()=>removeFromWishlist(item._id)}>{item.name}</h4>
-                <div className={wlCss.wishlist_icon}>
-                  <p className={wlCss.wishIcon}><i role={'button'}   className="fa-solid fa-heart"></i></p>
+          }
+
+          {
+            wishlist.map((item, index) => {
+              return (
+                <div key={index} className={wlCss.wishlist_container}>
+                  <div className={wlCss.wishlist_Img}>
+                    <Image layout='fill' src="/metal.png" alt="" />
+                  </div>
+                  <div className={wlCss.wishlist_lower_body}>
+                    <div className={wlCss.wishlist_head_icon}>
+                      <h4 className={wlCss.wishlist_head} >{item.name}</h4>
+                      <div className={wlCss.wishlist_icon} onClick={() => removeFromWishlist(item._id)}>
+                        <p className={wlCss.wishIcon}><i role={'button'} className="fa-solid fa-heart"></i></p>
+                      </div>
+                    </div>
+                    <div className="wishlist_qty_price">
+                      <p className={wlCss.qty}>1 Ton <small className='text-muted'>min order</small></p>
+                      <h6 className={wlCss.price}>{item.price}</h6>
+                    </div>
+                    <div className={wlCss.wishlist_button}>
+                      <button className={wlCss.wishlistbtn} onClick={() => addToCart(item._id, item)}><i className="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                      {/* <button className={wlCss.wishlistbuybtn}>Buy Now</button> */}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="wishlist_qty_price">
-                <p className={wlCss.qty}>1 Ton <small className='text-muted'>min order</small></p>
-                <h6 className={wlCss.price}>{item.price}</h6>
-              </div>
-              <div className={wlCss.wishlist_button}>
-                <button className={wlCss.wishlistbtn} onClick={()=>addToCart(item._id)}><i className="fa-solid fa-cart-shopping"></i>Add to cart</button>
-                {/* <button className={wlCss.wishlistbuybtn}>Buy Now</button> */}
-              </div>
-            </div>
-          </div>
-            )
-          })
-        }
+              )
+            })
+          }
         </section>
       </div>
     </>
