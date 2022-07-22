@@ -130,6 +130,10 @@ border: none;
     margin-right: 2rem;
     margin-top: -3rem;
 }
+.usericon{
+    margin-top: -2.2rem;
+    font-size: 1.5rem;
+}
 @media only screen and (max-width: 1145px) {
 .img{
     margin-right: 2rem;

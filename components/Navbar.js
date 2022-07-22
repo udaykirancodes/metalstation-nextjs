@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
+import React, { useState,useEffect ,useRef} from "react";
 import Modal from 'react-bootstrap/Modal';
+import User from '/public/user.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '../styles/Navbar.module.css'
@@ -94,7 +94,89 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function NavItem(props) {
+  const [open, setOpen] = useState(false);
+  return (
+    <li className="nav-item">
+      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <Image src='/user.png' alt='' height={30} width={30}/>
+      </a>
+      {open && props.children}
+    </li>
+  );
+}
+
+function DropdownMenu() {
+  const [activeMenu, setActiveMenu] = useState('main');
+  const dropdownRef = useRef(null);
+  function DropdownItem(props) {
+    return (
+      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+        
+        {props.children}
+        
+      </a>
+    );
+  }
+  return (
+    <div className="dropdown" ref={dropdownRef}>
+      <DropdownItem>
+<div className='dropbox'>
+  <div className='dropcontent'>
+        <p>Hello Anjal</p>
+        <p>asdf1234@gmail.com</p>
+        </div>
+        </div>
+      </DropdownItem>
+          <DropdownItem>
+          <div className='dropcontent'>
+            <Link href="/profile"><a>My Profile</a></Link>
+           
+            </div>
+           
+            </DropdownItem>
+            <hr/>
+          <DropdownItem>
+          <div className='dropcontent'>
+          <Link href="/order"><a> Orders and Price enquiries</a></Link>
+            
+            </div>
+            </DropdownItem>
+            <hr/>
+          <DropdownItem>
+          <div className='dropcontent'>
+          <Link href="/wishlist"><a> Wishlist </a></Link>
+            
+            </div>
+            </DropdownItem>
+            <hr/>
+          <DropdownItem>
+          <div className='dropcontent'>
+          <Link href="/cart"><a> Cart</a></Link>
+            
+            </div>
+            </DropdownItem>
+            <hr/>
+          <DropdownItem>
+          <div className='dropcontent'>
+            Logout
+            </div>
+            </DropdownItem>
+        </div>
+  );
+}
+
+
 const Navbar = () => {
+  const [state, setState] = useState(false);
+  useEffect(() => {
+    let auth = localStorage.getItem('authToken');
+    if (auth) {
+      console.log(auth);
+      setState(true);
+    }
+  }, [])
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -143,8 +225,9 @@ const Navbar = () => {
 <div >
   <div className={ Nav.noticard}>
     <div className={Nav.noticar}>
-    <i className="fa-solid fa-memo"></i>
+    <i className="fa-solid fa-car-side"></i>
   </div>
+
   <div className={Nav.noticontent}>
 <h4>Enquiry : <span className={Nav.blue}>Aluminium Scrap</span>
   <p className={Nav.notitext}>Your enquiry of Aluminium Scrap is successfull.<br/>
@@ -169,6 +252,7 @@ const Navbar = () => {
 
     <div className={Nav.main}>
       <div className={Nav.container}>
+       
       <div className={Nav.img}>
           <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
             width={150}
@@ -187,8 +271,21 @@ const Navbar = () => {
             <li className={Nav.nav_item}><Link href="/Sell"><a>Sell</a></Link></li>
             <li className={Nav.nav_item}><Link href="/blogs/"><a>Blog</a></Link></li>
             <li className={Nav.nav_item}><Link href="/about"><a>About us</a></Link></li>
+            <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li>
             <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
-            <button className={Nav.login}><Link href="/auth/login"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+            {
+                state?
+               <> 
+               <NavItem >
+                      
+                      <DropdownMenu></DropdownMenu>
+                      </NavItem>
+
+                   </>
+                
+                  :  
+                  <button className={Nav.login}><Link href="/auth/login"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+              }
           </div>
         </div>
         <div className={Nav.hideham}>
