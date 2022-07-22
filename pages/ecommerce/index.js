@@ -117,16 +117,6 @@ export default function Products() {
             </Link>
           </div>
           <div className="category_bar_left mobile_none">
-            {/* <select name="" className='form-selector selector_input' id="">
-              <option value="">All Categories</option>
-              <option value="">Steel</option>
-              <option value="">Copper</option>
-              <option value="">Aluminium</option>
-              <option value="">Auto Parts</option>
-            </select> */}
-            {/* <div className="all-categories">
-              <p>All Categories <i className="uil uil-arrow-up"></i> </p>
-            </div> */}
             <div className="all-category-hover">
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span className="category_text" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)} >All Categories {arrowUp ? <i className="uil uil-angle-up arrow-icon" style={{ fontSize: '16px' }}></i> : <i className="uil uil-angle-down arrow-icon"></i>}  </span>

@@ -45,7 +45,8 @@ const Cart = () => {
     return (
         <>
             {/* New Address Modal  */}
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style={{ marginTop: '4rem' }}>
+            <div style={{ height: '4rem' }}></div>
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -87,10 +88,10 @@ const Cart = () => {
             <div className="container">
                 <div className={cartCss.hidecontainer}>
                     <div className={cartCss.pageLink}>
-                        <Link href="/home">
+                        <Link href="/">
                             <a>Home &gt;</a>
                         </Link>
-                        <Link href="/buy">
+                        <Link href="/ecommerce">
                             <a>Ecommerce Buy &gt;</a>
                         </Link>
                         <Link href="/cartpage">

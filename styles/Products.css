@@ -12,6 +12,10 @@
   z-index: 1000;
   /* height: var(--category-height); */
 }
+.category_text:not(:first-child){
+  border-right: 1px solid rgba(132, 131, 142, 0.75);
+  padding: 0 1rem;
+}
 .category_bar{
   display: flex;
   height: 100%;
@@ -40,7 +44,7 @@
 }
 .category_bar_left{
   display: flex;
-  gap: 10px 1rem;
+  /* gap: 10px 1rem; */
   margin: 0;
   align-items: center;
 }
