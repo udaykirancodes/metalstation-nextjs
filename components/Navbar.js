@@ -118,7 +118,7 @@ const Navbar = () => {
             <li className={Nav.nav_item}><Link href="/blogs/"><a>Blog</a></Link></li>
             <li className={Nav.nav_item}><Link href="/about"><a>About us</a></Link></li>
             <li className={Nav.nav_item}><Link href="/notify"><a><i className="fa-regular fa-bell"></i></a></Link></li>
-            <button className={Nav.login}><Link href="/auth/login"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+            <button className={Nav.login}><Link href="/Authenticate/NewLogin"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
           </div>
         </div>
         <div className={Nav.hideham}>

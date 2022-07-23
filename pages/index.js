@@ -16,6 +16,7 @@ import Wishlist from "./Wishlist";
 import Sell from "./Sell";
 import Sell2 from "./Sell2";
 import Context from "../context/Context";
+import NewHomeComponent from "../components/HomeComponents/NewHomeComponent";
 
 export default function Home({wishlist, addToWishlist}) {
   // console.log(wishlist, addToWishlist);
@@ -35,7 +36,8 @@ export default function Home({wishlist, addToWishlist}) {
   return (
     <>
       {/* <Navbar/> */}
-      <HomeComponent/>
+      {/* <HomeComponent/> */}
+      <NewHomeComponent/>
       <HomeCards/>
       <WhyChooseUs />
       <HowItWorks />
