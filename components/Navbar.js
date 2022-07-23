@@ -96,9 +96,12 @@ const useStyles = makeStyles((theme) => ({
 function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+    <li className={Nav.nav_item}>
+      <a href="#" onClick={() => setOpen(!open)}>
+        <div >
       <Image src='/user.png' alt='' height={30} width={30}/>
+      <p className={Nav.username}>Anjal</p>
+      </div>
       </a>
       {open && props.children}
     </li>
@@ -110,7 +113,7 @@ function DropdownMenu() {
   const dropdownRef = useRef(null);
   function DropdownItem(props) {
     return (
-      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+      <a href="#"  onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         
         {props.children}
         
@@ -118,46 +121,46 @@ function DropdownMenu() {
     );
   }
   return (
-    <div className="dropdown" ref={dropdownRef}>
+    <div className={Nav.dropdown} ref={dropdownRef}>
       <DropdownItem>
-<div className='dropbox'>
-  <div className='dropcontent'>
+<div className={Nav.dropbox}>
+  <div className={Nav.dropcontent}>
         <p>Hello Anjal</p>
         <p>asdf1234@gmail.com</p>
         </div>
         </div>
       </DropdownItem>
           <DropdownItem>
-          <div className='dropcontent'>
+          <div className={Nav.dropcontent}>
             <Link href="/profile"><a>My Profile</a></Link>
            
             </div>
            
             </DropdownItem>
-            <hr/>
+            <hr className={Nav.horizline}/>
           <DropdownItem>
-          <div className='dropcontent'>
+          <div className={Nav.dropcontent}>
           <Link href="/order"><a> Orders and Price enquiries</a></Link>
             
             </div>
             </DropdownItem>
-            <hr/>
+            <hr className={Nav.horizline}/>
           <DropdownItem>
-          <div className='dropcontent'>
-          <Link href="/wishlist"><a> Wishlist </a></Link>
+          <div className={Nav.dropcontent}>
+          <Link href="/Wishlist"><a> Wishlist </a></Link>
             
             </div>
             </DropdownItem>
-            <hr/>
+            <hr className={Nav.horizline}/>
           <DropdownItem>
-          <div className='dropcontent'>
+          <div className={Nav.dropcontent}>
           <Link href="/cart"><a> Cart</a></Link>
             
             </div>
             </DropdownItem>
-            <hr/>
+            <hr className={Nav.horizline}/>
           <DropdownItem>
-          <div className='dropcontent'>
+          <div className={Nav.dropcontent}>
             Logout
             </div>
             </DropdownItem>
@@ -188,7 +191,7 @@ const Navbar = () => {
 
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton className="NotiHeader">
+        <Modal.Header closeButton className={ Nav.NotiHeader}>
           <Modal.Title>Notification</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -197,6 +200,7 @@ const Navbar = () => {
 <button className={Nav.orderbtn}>Order Info</button>
 <button className={Nav.enquibtn}>Enquires</button>
 </div>
+<br/>
 <hr/>
 <div className={Nav.Notibox}>
 <div >
@@ -230,7 +234,7 @@ const Navbar = () => {
   <div className={Nav.noticontent}>
 <h4>Enquiry : <span className={Nav.blue}>Aluminium Scrap</span>
   <p className={Nav.notitext}>Your enquiry of Aluminium Scrap is successfull.<br/>
-  <p className={Nav.notitext}>The price per ton of Aluminium Scrap is <b>₹1,35,000 </b></p>
+  <p className={Nav.notitext}>The price per ton of Aluminium Scrap is <b> ₹1,35,000 </b></p>
      </p>
      </h4>
      </div>
