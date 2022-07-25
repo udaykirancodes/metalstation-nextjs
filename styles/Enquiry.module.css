@@ -1,0 +1,268 @@
+.header{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  
+}
+.header a{
+  margin-left: 2rem;
+}
+.header .enqui{
+  border-bottom: 5px solid #24A1FD;
+  border-radius: 2px;
+}
+.display{
+  display: flex;
+  width: max-content;
+  margin-top: -1rem
+}
+.btnenqui{
+  background-color: white;
+  color: #24A1FD;
+  border: 2px solid #24A1FD;
+  padding: 2px 14px 2px 12px;
+  width: max-content;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+  height: fit-content;
+  border-radius: 3rem;
+}
+
+.btncart{
+  background-color: white;
+  color: #24A1FD;
+  border: 2px solid #24A1FD;
+  padding: 2px 12px 2px 12px;
+  width: max-content;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+  height: fit-content;
+  border-radius: 3rem;
+}
+.btnbuy{
+  background-color: #24A1FD;
+  color: white;
+  border: 2px solid #24A1FD;
+  padding: 2px 20px 2px 20px;
+  width: max-content;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  height: fit-content;
+  border-radius: 3rem;
+}
+.pageLink{
+  margin-top: 1rem;
+  color:  #08376B;
+}
+.confirmation{
+  display: flex;
+  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  height: 100%;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+.mobconfirmation{
+  display: flex;
+  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  height: 100%;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+.confirmationLeft{
+  width: 100%;
+  margin-right: 2%;
+}
+.delivaryEstimate{
+  display: flex;
+  width: 98%;
+  height: 25%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.estimateImg{
+  
+  width: 50%;
+  height: 90%;
+}
+.estimateDetails{
+  margin-left: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0.5rem;
+  width: 50%;
+}
+.priceDetails{
+  margin-left: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0.5rem;
+  width: 25%;
+}
+.estimatemobDetails{
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: auto;
+  margin-right: 0.5rem;
+  width: 40%;
+}
+.content {
+  width: 100%;
+	position: relative;
+	margin-left: 1rem;
+}
+.content1 {
+  width: 100%;
+	position: relative;
+	margin-right: 25rem;
+}
+.desktopbtn{
+  margin-right: 1rem;
+}
+.producttitle{
+	color: #24A1FD;
+}
+.bold{
+  font-weight: bolder;
+}
+.shipdot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  /* orange */
+  
+  background: #EFB728;
+}
+
+.deliverydot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  background: #18C749;
+}
+.price
+{
+  color: #18C749;
+}
+
+@media screen and (min-width:768px) {
+.tabDetails{
+  display: none;
+}
+
+}
+/* @media screen and (max-width: 550px) {
+  .delivaryEstimate{
+    height: 24%;
+    width: 95%;
+  }
+  .estimateDetails{
+    width: 55%;
+    font-size: 12px;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .confirmation{
+    display: flex;
+    flex-direction: column;
+}
+.confirmationLeft{
+    width: 100%;
+}
+.desktopbtn{
+  display: none;
+}
+.content h3 {
+  margin-bottom: 15px;
+}
+.content h4 {
+  margin-bottom: 20px;
+}
+.hidedetails{
+  display: none;
+}
+.btncart{
+  margin-left: 0rem;
+  padding: 2px 4px;
+}
+.btnbuy{
+  margin-bottom: 1rem;
+  margin-left: 0rem;
+  padding: 2px 12px;
+}
+.btnenqui{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 2px 4px;
+  margin-bottom: 1rem;
+}
+.tabDetails{
+  margin-top: -3rem;
+}
+}
+
+@media screen and (max-width: 1024px) {
+.estimateImg{
+  width: 70%;
+  height: 90%;
+}
+}
+
+@media screen and (min-width: 602px) {
+  .mobconfirmation{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .confirmation{
+display: none;
+  }
+  .delivaryEstimate{
+    width: 100%;
+  }
+  .btncart{
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .btnenqui{
+    margin-left: 0rem;
+    margin-bottom: 2rem;
+  }
+  .content h4{
+    margin-bottom: 0px;
+  }
+  .mobcon{
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .btncart,.btnbuy,.btnenqui{
+    font-size: 12px;
+  }
+  .content p{
+    margin-left: -1rem;
+  }
+  .mobcon{
+    margin-top: -1rem;
+  }
+ 
+}

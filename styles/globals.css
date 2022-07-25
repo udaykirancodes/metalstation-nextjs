@@ -15,13 +15,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+p{
+  margin: 0;
+  padding: 0;
+}
 a {
   color: inherit;
   text-decoration: none;
   
 }
-
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar{
+  display: none;
+}
 /* CSS Color variales */
 :root {
   --primary : #24A1FD; 
@@ -221,12 +231,16 @@ ul li .nav_link{
   width: 80%;
   }
 }
-
 .fa-car-side{
 color: white;
+}
 
-}
-.NotiHeader{
-  background-color: #74c5ff;
-  color: black;
-}
+
+
+
+
+
+
+
+
+

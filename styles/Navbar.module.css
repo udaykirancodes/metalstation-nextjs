@@ -1,7 +1,7 @@
 .main{
     margin: auto;
     z-index: 1;
-    height: 3rem;
+    height: 2rem;
 }
 .container{
 position: fixed;
@@ -102,6 +102,7 @@ border: none;
 .nav_right{
     list-style: none;
     display:flex;
+    margin-top: -2rem;
 }
 .nav_item{
     margin-right: 2rem;
@@ -131,6 +132,53 @@ border: none;
     margin-right: 2rem;
     margin-top: -3rem;
 }
+.usericon{
+    margin-top: -2.2rem;
+    font-size: 1.5rem;
+}
+.username{
+    margin-top: -0.5rem;
+}
+
+.NotiHeader{
+    background-color: #74c5ff;
+    color: black;
+  }
+
+  .nav_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .horizline{
+    margin-left: 1rem;
+    margin-top: 0rem;
+   }
+  
+  /* Dropdown Menu */
+  .dropbox{
+    display: block;
+    background-color: #24A1FD;
+    color: white;
+  }
+  .dropcontent{
+    padding: 1rem;
+  }
+  .dropdown {
+    position: absolute;
+    top: 5rem;
+    width: 300px;
+    transform: translateX(-45%);
+    background-color: white;
+    border: 1px solid #bec4c9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .menu {
+    width: 100%;
+  }  
+
 @media only screen and (max-width: 1145px) {
 .img{
     margin-right: 2rem;
