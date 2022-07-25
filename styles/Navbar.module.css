@@ -6,7 +6,7 @@
 .container{
 position: fixed;
 margin: 0 auto;
-width: 100vw;
+width: 100%;
 z-index: 1;
 background-color: white;
 box-shadow: var(--shadow);
@@ -107,6 +107,10 @@ border: none;
 .nav_item{
     margin-right: 2rem;
 }
+.nav_item a{
+    font-size: 12px;
+    font-weight: 400;
+}
 .login{
     color: white;
     background-color: #24A1FD;
@@ -115,6 +119,16 @@ border: none;
     border-radius: 20px;
     height: fit-content;
     margin-top: -0.5rem;
+}
+.buysbtn{
+    color: white;
+    background-color: #24A1FD;
+    border: none;
+    padding: 2px 12px 2px 12px;
+    border-radius: 18px;
+    height: fit-content;
+    width: max-content;
+    
 }
 
 .wrapper{
@@ -216,12 +230,15 @@ border: none;
     border-bottom: 60px solid white;
     border-left: 619px solid transparent;
 }
-@media only screen and (max-width: 1112px) {
+@media only screen and (max-width: 1145px) {
     .img{
-        margin-right:2.2rem;
+        margin-right:0.5rem;
     }
     .searchcontainer{
         margin-left: 1rem;
+    }
+    .container{
+        width: 110%;
     }
 }
 @media only screen and (max-width: 977px) {
