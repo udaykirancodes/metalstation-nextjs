@@ -1,8 +1,69 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 import fgCss from '../../styles/NewForgotpass.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import {EmailVerificationUrl} from '../../urls'
+import { useRouter } from 'next/router';
 const NewResetPass = () => {
+  const router = useRouter(); 
+  const [error , setError] = useState(''); 
+  const [password , setPassword] = useState('')
+  const [confirmPassword , setConfirmPassword] = useState('')
+  const [email , setEmail] = useState(''); 
+
+  useEffect(() => {
+    let email = localStorage.getItem('email'); 
+    if(!email){
+       router.push('/auth/forgotpassword'); 
+    }
+    setEmail(email); 
+  }, [])
+  
+  const handleSubmit = async ()=>{
+    // console.log(otp,password,confirmPassword);
+    // frontend validations 
+    if(password!==confirmPassword){
+       setError('Password Not Matched'); 
+       setTimeout(() => {
+          setError('')
+       }, 2000);
+       return ; 
+      } 
+    if(!otp || !password || !confirmPassword){
+      setError('All Fields are required'); 
+      setTimeout(() => {
+        setError('')
+      }, 2000);
+        return ; 
+    }
+
+    // backend api calls 
+    let otpN = parseInt(otp); 
+    const result = await fetch(EmailVerificationUrl , 
+        {
+          method:'POST',
+          headers :{
+            'content-Type' : 'application/json'
+          },
+          body : JSON.stringify({email:email,otp:otpN,password:password})
+        }
+    )
+    const data = await result.json(); 
+    console.log(data); 
+    if(data.success){
+        let authToken = data.authToken; 
+        localStorage.setItem('authToken',authToken); 
+        router.push('/'); 
+    }
+    else{
+      setError(data.msg);
+      setTimeout(() => {
+        setError('')
+      }, 2000); 
+    }
+
+  }
+
   return (
     <>
       <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -40,16 +101,16 @@ const NewResetPass = () => {
             <div className="forgotForm">
               <div className="password">
                 <label htmlFor="password"><b>New Password</b></label><br />
-                <input type="password" className={fgCss.InputField} placeholder='Atleast 8 character' />
+                <input type="password" value={password}onChange={(e)=>setPassword(e.target.value)} className={fgCss.InputField} placeholder='Atleast 8 character' />
               </div>
               <div className="cpassword">
                 <label htmlFor="cpassword"><b>Confirm Password</b></label><br />
-                <input type="email" className={fgCss.InputField} placeholder='Confirm Password' />
+                <input type="email" value={confirmPassword} onChange={(e)=>setPassword(e.target.value)} className={fgCss.InputField} placeholder='Confirm Password' />
               </div>
             </div>
             <div className="forgotBottom">
               <div className="forgotBtn">
-                <button className={fgCss.forgotbtn} data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button className={fgCss.forgotbtn} data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={handleSubmit}>
                   Submit
                 </button>
               </div>

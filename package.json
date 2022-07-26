@@ -11,7 +11,9 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@mui/utils": "^5.9.1",
     "axios": "^0.27.2",
+    "material-table-next": "^1.1.10",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
