@@ -222,3 +222,6 @@ ul li p{
   width: 80%;
   }
 }
+.carousel-status{
+  display: none;
+}
