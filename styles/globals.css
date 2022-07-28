@@ -235,12 +235,232 @@ ul li .nav_link{
 color: white;
 }
 
+/*--------------- CARD Global CSS ---------------------*/
+
+#main-slider-container{
+  width: 100%;
+  height: 22rem;
+  margin-top: 1rem;
+  background: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#cartmain-slider-container{
+  width: 100%;
+  height: 24rem;
+  margin-top: 4rem;
+  background: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#slider{
+  width: 100%;
+  height: 21rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+#slider::-webkit-scrollbar{
+  display: none;
+}
+#sslider{
+  width: 100%;
+  height: 21rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+#sslider::-webkit-scrollbar{
+  display: none;
+}
+#cartslider{
+  width: 100%;
+  height: 24rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+#cartslider::-webkit-scrollbar{
+  display: none;
+}
+#scartslider{
+  width: 100%;
+  height: 24rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+#scartslider::-webkit-scrollbar{
+  display: none;
+}
+.slider-icon.left,.slider-icon.right{
+background:#54b8ff;
+font-size: 1.5rem;
+border-radius: 100%;
+opacity: 0.7;
+margin-top: 0.5rem;
+position: absolute;
+box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+cursor: pointer;
+}
+.slider-icon.left{
+  left: 0;
+  margin-top: 1rem;
+}
+.slider-icon.right{
+  right: 0;
+}
+.slider-icon.left:hover,.slider-icon.right:hover{
+opacity: 1;
+}
+.slider-card{
+  width: 320px;
+  height: 325px;
+  background: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+}
+.cartslider-card{
+  width: 320px;
+  height: 358px;
+  background: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+}
 
 
 
+/*-------------------- Crousel Css -----------------*/
+.crousel{
+display: flex; 
+margin-top: 1rem; 
+margin-left: 1rem; 
+justify-content: center; 
+}
+.prevbtn{
+  background: #54b8ff;
+  font-size: 1rem;
+  border-radius: 99%;
+  opacity: 0.7;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+  cursor: pointer;
+  width: 1.5rem;
+  margin-top: 11rem;
+  height: 1.5rem; 
+}
+.btnnext{
+  background: #54b8ff;
+  font-size: 1rem;
+  border-radius: 99%;
+  opacity: 0.7;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+  cursor: pointer;
+  width: 1.5rem;
+  margin-top: 10rem;
+  height: 1.5rem; 
+}
+.mapscroll{
+  overflow-x: scroll;
+}    
+.divimg{
+  overflow: hidden; 
+position: relative; 
+width: 30rem; 
+height: 22rem; 
+z-index: -1;
+border-radius: 0.75rem; 
+border-width: 2px; 
+display: flex;
+}
+.mapimg{
+  display: flex; 
+padding: 1rem;  
+margin-left: 1rem; 
+justify-content: center; 
+width: 100%; 
+border-width: 4px; 
+}
+.smallimg{
+  margin-left: 0.5rem;
+}
+.ert{
+  padding-bottom: 1rem; 
+width: 5rem; 
+height: 5rem; 
+border-bottom-width: 8px; 
+}
+.bod{
+  border-color: #7F1D1D; 
+}
+.gf{
+  border-color: #FBBF24; 
+opacity: 0.7; 
+}
+.gh{
+  object-fit: contain; 
+position: absolute; 
+z-index: 20; 
+padding: 1rem; 
+width: 100%; 
+transform: scale(1.2);
+height: 100%; 
+}
+.jh{
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+transition-duration: 500ms; 
+transition-timing-function: linear; 
+--transform-translate-x: -100%; 
+}
+.kh{
+  object-fit: contain; 
+  position: absolute; 
+  z-index: 0; 
+  padding: 1rem; 
+  width: 100%; 
+  height: 100%; 
+}
+.mj{
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+transition-duration: 500ms; 
+transition-timing-function: linear; 
+--transform-translate-x: 100%; 
+}
+.crouselslider{
+  width: 320px;
+  height: 325px;
+  background: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+}
+.carouselitem {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+}
 
-
-
-
-
-
+@media (width > 600px) {
+  .carouselitem.active p {
+    opacity: 1;
+    transform: scale(1.1) translateY(-40px);
+  }
+  .caruoselitem p {
+    opacity: 0;
+  }
+}

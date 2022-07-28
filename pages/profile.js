@@ -110,6 +110,15 @@ const Profile = () => {
   <li>
     Mobile Number
   </li>
+  <li>
+   Address
+  </li>
+  <li>
+   Business Name
+  </li>
+  <li>
+    GSTIN
+  </li>
 </ul>
         </div>
         <div className={profilecss.detailleft}>
@@ -123,12 +132,19 @@ const Profile = () => {
   <li>
     9300002000
   </li>
+  <li>
+   House Name, Locality, District,State
+  </li>
+  <li>
+   Supreme Group
+  </li>
+  <li>
+   -not added-
+  </li>
 </ul>
           </div>
-
-          
       </div>
-      <button className={profilecss.btn}>Edit Details</button>
+      <button className={profilecss.btn}><Link href="/editdetails"><a>Edit Details</a></Link></button>
       </div>
       </div>
       </div>

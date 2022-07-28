@@ -278,7 +278,7 @@ const Navbar = () => {
             <li className={Nav.nav_item}><button className={Nav.buysbtn}><Link href="/Sell"><a>SELL</a></Link></button></li>
             <li className={Nav.nav_item}><Link href="/blogs/"><a>BLOG</a></Link></li>
             <li className={Nav.nav_item}><Link href="/about"><a>ABOUT US</a></Link></li>
-            <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li>
+            {/* <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li> */}
             <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
             {
                 state?

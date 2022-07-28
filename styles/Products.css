@@ -2,6 +2,9 @@
   --navbar-height : 4rem; 
   --category-height : 4rem;
 }
+/* .container{
+  margin-top: 3rem;
+  } */
 .category_bar_container{
   margin-top: 2rem;
   background-color: #fff;

@@ -344,10 +344,7 @@ const Order = () => {
                         
                       </div>
   </div>
-  {/* pagination */}
-  <div className="center" style={{ width: '100%' }}>
-            <Pagination pages={products.pages} current={currentPage} setcurrentPage={setcurrentPage} previous={products.previous} next={products.next} />
-          </div>
+  
   </div>
     </>
   )
