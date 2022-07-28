@@ -20,7 +20,7 @@ export default function Filters({ handleAllFilters}) {
               </label>
               <label className='filter_label'>
                 <input type="checkbox" onChange={(e)=>handleAllFilters(e)} className='checkboxA' min={10000} max={20000} name="radio"/>
-                <span className='input_text'>&#8377;  10,000 - 20,000</span>
+                <span className='input_text'>&#8377;  10,000-20,000</span>
               </label>
               <label className='filter_label'>
                 <input type="checkbox" onChange={(e)=>handleAllFilters(e)} className='checkboxA' min={20000} max={30000} name="radio"/>

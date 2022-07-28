@@ -56,7 +56,7 @@ const Forgotpass = () => {
                                       value={email} 
                                       onChange = {(e)=>setEmail(e.target.value)}
                                     />
-                                    <i class="fa-solid fa-envelope"></i>
+                                    <i className="fa-solid fa-envelope"></i>
                                 </div>
                             </div>
                         </div>

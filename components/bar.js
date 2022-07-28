@@ -1,31 +1,22 @@
 import React from 'react'
 import catcss from "../styles/CategoryBar.module.css"
-import Link from 'next/link'
-const wishlistbar = () => {
+
+const Bar = () => {
   return (
     <>
-    <div className={catcss.container}>
-    <div className={catcss.dropdown}>
-      <button className={catcss.dropbtn}>All Categories
-        <i className="fa fa-caret-down"></i>
-      </button>
-      <div className={catcss.dropdowncontent}>
-        <Link href="/AllCategory"><a>STEEL</a></Link>
-        <Link href="/AllCategory"><a>ALUMINIUM</a></Link>
-        <Link href="/AllCategory"><a>COPPER</a></Link>
-        <Link href="/AllCategory"><a>AUTOPARTS</a></Link>
-      </div>
-    </div>
-    <div className={catcss.list}>
-    <Link href="/AllCategory"><a>STEEL</a></Link>
-        <Link href="/AllCategory"><a>ALUMINIUM</a></Link>
-        <Link href="/AllCategory"><a>COPPER</a></Link>
-        <Link href="/AllCategory"><a>AUTOPARTS</a></Link>
-    </div>
-    </div>
+      <div className={catcss.dropdown}>
+        <button className={catcss.dropbtn}>All Categories
+          <i className="fa fa-caret-down"></i>
+        </button>
+        <div className={catcss.dropdowncontent}>
+          <a href="#">STEEL</a>
+          <a href="#">ALUMINIUM</a>
+          <a href="#">COPPER</a>
+          <a href="#">AUTOPARTS</a>
+        </div>
+      </div><a href="#">STEEL &emsp; |</a><a href="#">ALUMINIUM  &emsp; |</a><a href="#">COPPER &emsp; |</a><a href="#">AUTOPARTS </a>
     </>
-
   )
 }
 
-export default wishlistbar
+export default Bar

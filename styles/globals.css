@@ -15,13 +15,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+p{
+  margin: 0;
+  padding: 0;
+}
 a {
   color: inherit;
   text-decoration: none;
   
 }
-
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar{
+  display: none;
+}
 /* CSS Color variales */
 :root {
   --primary : #24A1FD; 
@@ -213,7 +223,7 @@ font-size: 1.3rem;
   border-radius: 2rem;
   border: 2px solid #08376B
 }
-ul li p{
+ul li .nav_link{
   display: block;
     margin: -35px 0px 0px 58px;
 }
@@ -225,3 +235,16 @@ ul li p{
 .carousel-status{
   display: none;
 }
+.fa-car-side{
+color: white;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,4 @@
+
 .order_container{
   width: 100%;
   height: fit-content;
@@ -114,4 +115,199 @@
   .left_lower{
     width: 100%;
   }
+
+.header{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  
+}
+.header a{
+  margin-left: 2rem;
+}
+.activeorder{
+  border-bottom: 5px solid #24A1FD;
+  border-radius: 2px;
+}
+.pageLink{
+  margin-top: 1rem;
+  color:  #08376B;
+}
+.confirmation{
+  display: flex;
+  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  height: 100%;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+.mobconfirmation{
+  display: flex;
+  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  height: 100%;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+.confirmationLeft{
+  width: 100%;
+  margin-right: 2%;
+}
+.delivaryEstimate{
+  display: flex;
+  width: 100%;
+  height: 25%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.estimateImg{
+  
+  width: 50%;
+  height: 90%;
+}
+.estimateDetails{
+  margin-left: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0.5rem;
+  width: 55%;
+}
+.content {
+  width: 100%;
+	position: relative;
+	margin-left: 1rem;
+}
+.producttitle{
+	color: #24A1FD;
+}
+.bold{
+  font-weight: bolder;
+}
+.removeSlecteditems{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: 1rem;
+}
+.updateSelectedAddBtn{
+  width: 76px;
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid #24A1FD;
+  background-color: white;
+  color: #24A1FD;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+
+}
+.shipdot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  /* orange */
+  
+  background: #EFB728;
+}
+.cancelldot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  background: #FF0000;
+}
+.deliverydot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  background: #18C749;
+}
+@media screen and (max-width: 480px) {
+  .delivaryEstimate{
+    width: 85%;
+  }
+  .content{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .delivaryEstimate{
+    height: 24%;
+    width: 95%;
+  }
+  .estimateDetails{
+    width: 55%;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .delivaryEstimate{
+    width: 110%;
+  }
+}
+@media screen and (min-width: 550px) {
+
+.mobconfirmation{
+  display: none;
+}
+}
+@media screen and (max-width: 768px) {
+  .confirmation{
+    display: flex;
+    flex-direction: column;
+}
+.confirmationLeft{
+    width: 100%;
+}
+.content h3 {
+  margin-bottom: 15px;
+}
+.content h4 {
+  margin-bottom: 20px;
+}
+.hideDetails{
+display: none;
+}
+.estimateImg {
+  width: 80%;
+}
+.estimateDetails{
+  width: 70%;
+}
+}
+@media screen and (max-width: 550px) {
+  .confirmation{
+display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+ .delivaryEstimate{
+  width: 100%;
+ }
+ .estimateDetails{
+  width: 70%;
+}
+
 }

@@ -1,15 +1,66 @@
 .main{
-    max-width: 1280px;
     margin: auto;
+    z-index: 1;
+    height: 2rem;
 }
-
-.democontainer{
-    height: 7vh;
-    width: 100%;
+.container{
+position: fixed;
+margin: 0 auto;
+width: 100vw;
+z-index: 1;
+background-color: white;
+box-shadow: var(--shadow);
+}
+.resp{
+max-width: fit-content;
+}
+.displaybtn{
     display: flex;
-    justify-content: space-between; 
-    background-color: #24A1FD;
 }
+.smalldisplay{
+    display: flex;
+    color: grey;
+    justify-content: space-between;
+}
+.noticard{
+    display: flex;
+}
+.noticar{
+    background-color: #24A1FD;
+    height: fit-content;
+    padding: 4px 4px;
+    border-radius: 12rem;
+    width: 2rem;
+    margin-right: 1rem;
+    
+}
+.Notibox{
+    width: 95%;
+    margin-left: 1rem;
+}
+.blue{
+    color: #24A1FD;
+}
+.notitext{
+    font-size: 1rem;
+}
+  .orderbtn,.enquibtn{
+  background-color: white;
+  border: 2px solid #24A1FD;
+  border-radius: 20px;
+  padding: 4px 4px 4px 4px;
+  width: 6rem;
+  margin-left: 1rem;
+  }
+  .Allbtn{
+    background-color:#24A1FD;
+    color: white;
+    border-radius: 20px;
+    width: 6rem;
+    border: 1px solid #24A1FD;
+  padding: 4px 4px 4px 4px;
+  margin-left: 1rem;
+  }
 .mobcontainer{
     width: 100%;
     display: flex;
@@ -18,7 +69,7 @@
     
 }
 .hidetitles{
-    width: 90%;
+    width: 70%;
     display: flex;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -27,8 +78,9 @@
 .searchcontainer{
     display: flex;
     justify-content: center;
-    margin-right: 3rem;
+    margin-right: 4rem;
     margin-top: -0.5rem;
+    margin-left: 0.3rem;
 }
 
 .search{
@@ -40,6 +92,7 @@
 .img{
     margin-right: 12rem;
     margin-top: 1rem;
+    margin-left: 1rem;
 }
 .btn{
 background-color: white;
@@ -49,6 +102,7 @@ border: none;
 .nav_right{
     list-style: none;
     display:flex;
+    margin-top: -2rem;
 }
 .nav_item{
     margin-right: 2rem;
@@ -71,12 +125,67 @@ border: none;
 }
 .hidetitles{
     display:flex;
-    margin-left: 2rem;
+    
 }
 .hideham{
     float: right;
     margin-right: 2rem;
     margin-top: -3rem;
+}
+.usericon{
+    margin-top: -2.2rem;
+    font-size: 1.5rem;
+}
+.username{
+    margin-top: -0.5rem;
+}
+
+.NotiHeader{
+    background-color: #74c5ff;
+    color: black;
+  }
+
+  .nav_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .horizline{
+    margin-left: 1rem;
+    margin-top: 0rem;
+   }
+  
+  /* Dropdown Menu */
+  .dropbox{
+    display: block;
+    background-color: #24A1FD;
+    color: white;
+  }
+  .dropcontent{
+    padding: 1rem;
+  }
+  .dropdown {
+    position: absolute;
+    top: 5rem;
+    width: 300px;
+    transform: translateX(-45%);
+    background-color: white;
+    border: 1px solid #bec4c9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .menu {
+    width: 100%;
+  }  
+
+@media only screen and (max-width: 1145px) {
+.img{
+    margin-right: 2rem;
+}
+.searchcontainer{
+    margin-right: 1rem;
+}
 }
 @media only screen and (min-width: 768px) {
     .hideham{
@@ -93,6 +202,11 @@ border: none;
 .hidetitles{
     display: none;
 }
+.container{
+    width: 100vw;
+    margin-left: 0rem;
+    /* margin-bottom: 3rem; */
+}
 }
 .Design{
     width: 100%;
@@ -102,9 +216,12 @@ border: none;
     border-bottom: 60px solid white;
     border-left: 619px solid transparent;
 }
-@media only screen and (max-width: 1065px) {
+@media only screen and (max-width: 1112px) {
     .img{
-        margin-right:5rem;
+        margin-right:2.2rem;
+    }
+    .searchcontainer{
+        margin-left: 1rem;
     }
 }
 @media only screen and (max-width: 977px) {
@@ -117,10 +234,6 @@ border: none;
 }
 
 @media only screen and (max-width: 840px) {
-    .searchcontainer{
-        margin-right: 0rem;
-       
-    }
     .btn{
         margin-left: -18%;
         }
@@ -130,4 +243,15 @@ border: none;
         .nav_item{
             margin-right: 0.8rem;
         } 
+}
+
+@media only screen and (max-width: 335px) {
+
+    .Allbtn{
+width: 2rem;
+    }
+    .orderbtn,.enquibtn{
+width: 5rem;
+font-size: 0.8rem;
+    }
 }
