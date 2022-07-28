@@ -5,7 +5,6 @@ import Link from 'next/link'
 import {UserLogin } from '../../urls'; 
 import { useRouter } from 'next/router';
 
-
 const Login = () => {
   const router = useRouter(); 
   const [error , setError] = useState('')
@@ -101,7 +100,7 @@ const Login = () => {
                             </button>
                         </div>
                         <div className="signup">
-                            <span>Don't have an account?</span>
+                            <span>Don&apos;t have an account?</span>
                             <Link href='/auth/register'><a>Sign Up</a></Link>
                         </div>
 

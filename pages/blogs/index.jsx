@@ -13,33 +13,30 @@ import { useRouter } from 'next/router'
 
 const postsPerPage = 3 ; 
 
-export const getStaticProps = async ()=> {
-        const {data} = await axios.get(AllBlgos+`?page=${1}&limit=${postsPerPage}`);
-        // in data we have {success : true , data : [ array of blogs ]}
-        if(data.success){
-                return {
-                        props : {
-                                blogs : data.data
-                        }
-                }
-        }
-        else{
-                return {
-                        props : {
-                                blogs : null  
-                        }
-                }
-        }
-}
+export default function Blogs() {
 
-export default function Blogs({blogs}) {
 
-        const [Data , setData] = useState(blogs); 
+
+        const [Data , setData] = useState({
+                results : [] // just not to get error 
+
+        }); 
+
 
         
         const router = useRouter(); 
         
+        const getBlogs = async ()=>{
+                const {data} = await axios.get(AllBlgos+`?page=${1}&limit=${postsPerPage}`);
+                if(data.success){
+                        setData(data.data); 
+                        console.log(data)
+                }
+        }
         const getCategories = async ()=>{
+                // blogs 
+                getBlogs()
+                // categories 
                 const {data} = await axios.get(BlogCategories);
                 if(data.success){
                         setCategories(data.data); 
@@ -47,6 +44,8 @@ export default function Blogs({blogs}) {
         }
         useEffect(() => {
                 document.title="Metal Station - Blogs"
+
+                
                 getCategories()
         }, [])
         
@@ -70,16 +69,19 @@ export default function Blogs({blogs}) {
         useEffect(() => {
                 getdata(); 
         }, [currentPage,active])
-       
+        useEffect(()=>{
+                setcurrentPage(1); 
+        },[active])
         return (
         <>
-        <section className="container">
+        <section className="container" style={{marginTop:'4rem'}}>
                         <div className="breadCrumbs">
                                 <p className="breadCrumbsText">
-                                        <Link href="/">
-                                                <>Home 
-                                                 <i className="uil uil-angle-right"></i>
-                                                </>
+                                        <Link href="/"> 
+                                                <span>
+                                                        <span >Home</span>
+                                                        <i className="uil uil-angle-right"></i>
+                                                </span>
                                         </Link>
                                         <b className="activeText">
                                                 Blogs and Articles
@@ -96,13 +98,14 @@ export default function Blogs({blogs}) {
                                 {
                                         categories && 
                                         categories.map((element,index)=>{
-                                                return <span key={index} onClick={()=>setActive(element)} className={active===`${element}`?'category active':'category'}>{element}</span>
+                                                return <span key={index} onClick={()=>{setActive(element)}} className={active===`${element}`?'category active':'category'}>{element}</span>
                                         })
                                 }
                         </div>
 
                         <div className="blogs_container">
                                 {
+                                        Data && 
                                         
                                         Data.results.map((blog)=>{
                                                 return <SingleBlog key={blog._id} blog={blog} />
