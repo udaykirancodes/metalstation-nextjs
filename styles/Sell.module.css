@@ -1,6 +1,6 @@
 .Howitwork{
   width: 100%;
-  background-color: var(--primary4);
+  /* background-color: var(--primary4); */
   margin-bottom: 3%;
   padding-top: 2%;
 
@@ -20,6 +20,7 @@
   width: calc(100%/3 - 20px);
   height: 28rem;
   justify-content: space-around;
+  box-shadow: var(--shadow);
 }
 .Sellheader{
   font-size: var(--h1-heading);
@@ -66,6 +67,7 @@
 border: 1px solid rgba(0, 0, 0, 0.5);
 box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 border-radius: 10px;
+padding: 2%;
 }
 .input_data{
   margin-bottom: 6%;

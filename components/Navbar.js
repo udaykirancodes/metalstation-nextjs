@@ -274,6 +274,7 @@ const Navbar = () => {
             <li className={Nav.nav_item}><Link href="/Sell"><a>Sell</a></Link></li>
             <li className={Nav.nav_item}><Link href="/blogs/"><a>Blog</a></Link></li>
             <li className={Nav.nav_item}><Link href="/about"><a>About us</a></Link></li>
+
             <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li>
             <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
             {

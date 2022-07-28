@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import Context from './Context'
 
+import { AllSellUrl } from '../urls';
+
+import { SellProductUrl } from '../urls';
+
 import { GetWishList } from '../urls';
 import { useEffect } from 'react';
 
@@ -51,6 +55,49 @@ export default function GlobalState({ children }) {
             setCart(data.products);
         }
     }
+
+
+
+
+
+    //Geting a Sell Product
+    const getSell = async () => {
+        //Calling Api to get a Sell Product
+        let authToken = localStorage.getItem('authToken');
+        const response = await fetch(`AllSellUrl`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authToken': authToken
+            }
+        });
+        const json = await response.json();
+        console.log(json);
+        setSellProdtuct(json)
+    }
+
+
+
+
+
+    //add a Sell Product
+    const addSell = async (title, description, tag) => {
+        //Calling Api to Add a Sell Product
+        let authToken = localStorage.getItem('authToken');
+        const response = await fetch(`SellProductUrl`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'authToken': authToken
+            },
+            body: JSON.stringify({ title, description, tag })
+        });
+        const sell = await response.json();
+        setSellProdtuct(sellProduct.concat(sell))
+    }
+
+
+
 
     const fetchUserData = async () => {
         fetchWishlist();

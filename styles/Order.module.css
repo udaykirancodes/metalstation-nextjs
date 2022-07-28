@@ -1,3 +1,121 @@
+
+.order_container{
+  width: 100%;
+  height: fit-content;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding-right: 5%;
+}
+.upper_section{
+  display: flex;
+  justify-content: space-between;
+}
+.lower_section{
+  display: flex;
+  justify-content: space-between;
+}
+.Img{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 20%;
+  width: 20rem;
+}
+.left_lower_container{
+  display: flex;
+  height: fit-content;
+}
+.pass{
+  display: flex;
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 41px;
+  height: 41px;
+  border-radius: 35px;
+  background-color: #18C749;
+  margin-right: 5%;
+}
+.tick{
+  color: white;
+  align-content: center;
+  font-size: 30px;
+  font-weight: bolder;
+  margin: auto;
+}
+.rightlower .tracking{
+  position: relative;
+}
+/* .rightlower .tracking::after{
+  content: ' ';
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 25px;
+  right:78px;
+  background-color: #18C749;
+  margin: auto;
+  z-index: -0.5;
+  transform: rotate(90deg);
+} */
+.left_lower{
+  /* display: flex; */
+  display: inline;
+}
+.order_Detail{
+  /* display: block; */
+  /* z-index: 10; */
+  margin-top: 200px;
+}
+
+.left_lower{
+  width: 50%;
+}
+.order_top{
+  display: flex;
+  height: 60%;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.order_image_container{
+  width: 60%;
+  height: 10rem;
+  position: relative;
+}
+.order_heading{
+  font-size: var(--h1-heading);
+  color: var(--primary);
+}
+.order_info{
+  font-size: var(--normal-font-size );
+}
+.order_price{
+  font-weight: bold;
+  font-size: var(--h3-heading);
+}
+.order_billing, .order_shipping{
+  font-size: var(--h4-heading);
+  color: #08376B;
+}
+@media screen  and (max-width:650px){
+  .upper_section, .lower_section{
+    flex-direction: column;
+  }
+  .rightlower .tracking::after{
+    z-index: -1;
+  }
+  .left_lower{
+    width: 100%;
+  }
+
 .header{
   margin-top: 2rem;
   margin-left: 2rem;
@@ -191,4 +309,5 @@ display: none;
  .estimateDetails{
   width: 70%;
 }
+
 }

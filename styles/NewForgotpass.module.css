@@ -1,0 +1,82 @@
+.forgotContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin-top: 5%;
+  flex-direction: row;
+}
+.forgotImg{
+  position: absolute;
+  width: 30%;
+  height: 20rem;
+  margin-top: 5%;
+}
+.forgotLeft{
+  float: right;
+  width: 48%;
+}
+.forgotRight{
+  width: 38%;
+}
+.forgothead{
+  color: var(--primary5);
+  font-size: var(--big-heading);
+}
+.InputField{  
+  background: #FFFFFF;
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  width: 100%;
+  height: 3rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-bottom: 3%;
+}
+.forgot{
+  display: flex;
+  justify-content: space-between;
+}
+.forgotPass{
+  color: var(--primary);
+}
+.forgotbtn{
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-radius: 4px;
+  padding: 1.5%;
+  font-size: var(--h4-heading);
+}
+.SwitchtoSignup{
+  text-align: center;
+  padding: 2%;
+  font-size: var(--h4-heading);
+}
+.successcontainer{
+  display: flex ;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.rightmark{
+  height: 145px;
+  width: 145px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  background-color: #24A1FD;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 100px;
+}
+.rightmarkspan{
+  color: white;
+  align-items: center;
+  margin: auto;
+  font-size: 100px;
+  font-weight: bolder;
+}

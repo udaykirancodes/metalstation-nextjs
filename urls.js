@@ -31,3 +31,4 @@ export const AddToWishlistUrl = backendurl + 'wishlist/add';
 export const AddToCartUrl = backendurl + 'cart/add';
 export const RemoveFromCartUrl = backendurl + 'cart/delete';
 export const GetUserCartUrl = backendurl + 'cart/getall';
+
