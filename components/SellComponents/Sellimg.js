@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import sCss from '../../styles/Sell.module.css'
-import MultipleImageUploadComponent from './MultipleImageUploadComponent';
+import ImagePreview from './ImagePreview';
 
 
-const Sellimg = () => {
+const Sellimg = ({onSubmission}) => {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
@@ -33,7 +33,8 @@ const Sellimg = () => {
             {/* <img className={sCss.previewImg} src={createObjectURL} />
             <h4>Select Image</h4>
             <input type="file" name="myImage" onChange={uploadToClient} multiple /> */}
-            <MultipleImageUploadComponent/>
+            {/* <MultipleImageUploadComponent onSubmission={onSubmission}/> */}
+            <ImagePreview onSubmission={onSubmission}/>
           </div>
         </div>
       </section>

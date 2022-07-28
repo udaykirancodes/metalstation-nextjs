@@ -1,0 +1,58 @@
+.loginContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin-top: 5%;
+  flex-direction: row;
+}
+.LoginImg{
+  position: absolute;
+  width: 30%;
+  height: 20rem;
+  margin-top: 5%;
+}
+.loginLeft{
+  float: right;
+  width: 48%;
+}
+.loginRight{
+  width: 38%;
+}
+.loginhead{
+  color: var(--primary5);
+  font-size: var(--big-heading);
+}
+.InputField{  
+  background: #FFFFFF;
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  width: 100%;
+  height: 3rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-bottom: 3%;
+}
+.forgot{
+  display: flex;
+  justify-content: space-between;
+}
+.forgotPass{
+  color: var(--primary);
+}
+.loginbtn{
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-radius: 4px;
+  padding: 1.5%;
+  font-size: var(--h4-heading);
+}
+.SwitchtoSignup{
+  text-align: center;
+  padding: 2%;
+  font-size: var(--h4-heading);
+}
