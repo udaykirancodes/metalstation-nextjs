@@ -7,7 +7,7 @@ export default function SingleProduct({product}) {
 
 
 
-  const {wishlist , addToWishlist} = useContext(Context); 
+  const {wishlist , addToWishlist, singleProductDetail} = useContext(Context); 
   const router = useRouter(); 
   
   const [liked , setLiked] = useState(false); 
@@ -24,10 +24,15 @@ export default function SingleProduct({product}) {
     setLiked(true); 
     addToWishlist(id  , product);
   }
+
+  const singleDetail=(id)=>{
+      singleProductDetail(id);
+      router.push('/ecommerce')
+  }
   
   return (
     <>
-        <div className="singleProduct">
+        <div onClick={()=>singleDetail(product._id)} className="singleProduct">
             <div className="productTop">
                 <Image src="/metal.png" layout='fill' alt='Image' />
             </div>

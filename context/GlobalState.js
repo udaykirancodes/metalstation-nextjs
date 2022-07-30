@@ -15,6 +15,8 @@ export default function GlobalState({ children }) {
         name: '',
         phone: ''
     });
+    //Single Product Detail
+    const [singleProductDetail, setSingleProductDetail] = useState([])
     // wishlist 
     const [wishlist, setWishlist] = useState([]);
     // cart 
@@ -210,8 +212,25 @@ export default function GlobalState({ children }) {
             setCart(newList);
         }
     }
+
+    // Fetching Single Product
+    const fetchSingleProductDetails = async (id) => {
+        const res = await fetch(GetfetchSingleProductDetails, {
+            method: 'GET',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                productid: id
+            })
+        })
+        const data = await res.json();
+        if(data.success){
+            setSingleProductDetail(data);
+        }
+    }
     return (
-        <Context.Provider value={{ user, setuser, wishlist, setWishlist, cart, setCart, fetchUserData, removeFromCart, addToCart, removeFromWishlist, addToWishlist }}>
+        <Context.Provider value={{ user, setuser, wishlist, setWishlist, cart, setCart, fetchUserData, removeFromCart, addToCart, removeFromWishlist, addToWishlist, singleProductDetail }}>
             {children}
         </Context.Provider>
     )

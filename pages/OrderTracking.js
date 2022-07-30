@@ -5,7 +5,7 @@ import odCss from '../styles/Order.module.css'
 import Link from 'next/link'
 
 
-const Order = () => {
+const OrderTracking = () => {
   const data = [
     { detail: "Item's Subtotal", ammount: 56000.00 },
     { detail: "Shipping", ammount: 0.00 },
@@ -94,4 +94,4 @@ const Order = () => {
   )
 }
 
-export default Order
+export default OrderTracking
