@@ -86,7 +86,7 @@ const Profile = () => {
                         <Link href="/">
                             <a>Home &gt;</a>
                         </Link>
-                        <Link href="/order">
+                        <Link href="/orderpage">
                             <a className={profilecss.bold}>Orders and Price Enquiries </a>
                         </Link>
                         

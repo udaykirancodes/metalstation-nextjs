@@ -2,8 +2,11 @@
   width: 100%;
   max-width: 500px;
   height: 100%;
+  transform: scale(1.1);
   display: flex;
   position: relative;
+  margin-bottom: 1.5rem;
+  margin-top:2rem;
 }
 
 .carousel {

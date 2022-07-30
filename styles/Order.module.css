@@ -115,7 +115,7 @@
   .left_lower{
     width: 100%;
   }
-
+}
 .header{
   margin-top: 2rem;
   margin-left: 2rem;
@@ -302,6 +302,7 @@ display: none;
 display: none;
   }
 }
+
 @media screen and (max-width: 480px) {
  .delivaryEstimate{
   width: 100%;
@@ -309,5 +310,4 @@ display: none;
  .estimateDetails{
   width: 70%;
 }
-
 }

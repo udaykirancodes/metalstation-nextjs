@@ -2,8 +2,10 @@ import React, { useState,useEffect ,useRef} from "react";
 import Modal from 'react-bootstrap/Modal';
 import Image from 'next/image'
 import Link from 'next/link'
+import Search from '../components/SearchBar'
 import Nav from '../styles/Navbar.module.css'
 import { makeStyles } from "@material-ui/core/styles";
+import BookData from "../pages/Data.json";
 const useStyles = makeStyles((theme) => ({
   hamburber: {
     width: "30px",
@@ -97,12 +99,12 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
     <li className={Nav.nav_item}>
-      <a href="#" onClick={() => setOpen(!open)}>
-        <div >
+      <Link href="#" >
+        <a onClick={() => setOpen(!open)}>
       <Image src='/user.png' alt='' height={30} width={30}/>
       <p className={Nav.username}>Anjal</p>
-      </div>
       </a>
+      </Link>
       {open && props.children}
     </li>
   );
@@ -113,11 +115,11 @@ function DropdownMenu() {
   const dropdownRef = useRef(null);
   function DropdownItem(props) {
     return (
-      <a href="#"  onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+      <Link href="#"  onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         
         {props.children}
         
-      </a>
+      </Link>
     );
   }
   return (
@@ -140,7 +142,7 @@ function DropdownMenu() {
             <hr className={Nav.horizline}/>
           <DropdownItem>
           <div className={Nav.dropcontent}>
-          <Link href="/order"><a> Orders and Price enquiries</a></Link>
+          <Link href="/orderpage"><a> Orders and Price enquiries</a></Link>
             
             </div>
             </DropdownItem>
@@ -148,7 +150,6 @@ function DropdownMenu() {
           <DropdownItem>
           <div className={Nav.dropcontent}>
           <Link href="/Wishlist"><a> Wishlist </a></Link>
-            
             </div>
             </DropdownItem>
             <hr className={Nav.horizline}/>
@@ -167,8 +168,6 @@ function DropdownMenu() {
         </div>
   );
 }
-
-
 const Navbar = () => {
   const [state, setState] = useState(false);
   useEffect(() => {
@@ -178,9 +177,7 @@ const Navbar = () => {
       setState(true);
     }
   }, [])
-
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const classes = useStyles();
@@ -251,11 +248,8 @@ const Navbar = () => {
        
       </Modal>
 
-
-
     <div className={Nav.main}>
       <div className={Nav.container}>
-       
       <div className={Nav.img}>
           <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
             width={150}
@@ -263,12 +257,9 @@ const Navbar = () => {
           /></a></Link>
         </div>
         <div className={Nav.hidetitles}>
-          <div className={Nav.searchcontainer}>
-            <form action=" ">
-              <input type="text" placeholder="Search" name="search" className={"search"} />
-              <button type="submit" className={Nav.btn}><i className="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-          </div>
+          
+          <Search placeholder="Search..." data={BookData} />
+          
           <div className={Nav.nav_right}>
           <li className={Nav.nav_item}><Link href="/"><a>HOME</a></Link></li>
             <li className={Nav.nav_item}>

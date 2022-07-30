@@ -6,6 +6,9 @@ body {
   font-family: sans-serif;
 }
 
+input:focus {
+  outline: none;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 
@@ -29,9 +32,7 @@ ul {
   margin: 0;
   padding: 0;
 }
-::-webkit-scrollbar{
-  display: none;
-}
+
 /* CSS Color variales */
 :root {
   --primary : #24A1FD; 
@@ -347,6 +348,7 @@ opacity: 1;
 .crousel{
 display: flex; 
 margin-top: 1rem; 
+max-width: 535px;
 margin-left: 1rem; 
 justify-content: center; 
 }
@@ -357,28 +359,31 @@ justify-content: center;
   opacity: 0.7;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
   cursor: pointer;
-  width: 1.5rem;
+  width: 2rem;
   margin-top: 11rem;
-  height: 1.5rem; 
+  height: 1.3rem;
 }
 .btnnext{
-  background: #54b8ff;
-  font-size: 1rem;
-  border-radius: 99%;
-  opacity: 0.7;
-  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
-  cursor: pointer;
-  width: 1.5rem;
-  margin-top: 10rem;
-  height: 1.5rem; 
+      background: #54b8ff;
+    font-size: 1rem;
+    border-radius: 99%;
+    opacity: 0.7;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+    cursor: pointer;
+    width: 2rem;
+    margin-top: 10rem;
+    height: 1.3rem; 
 }
 .mapscroll{
   overflow-x: scroll;
-}    
+}  
+.mapscroll::-webkit-scrollbar{
+  display: none;
+}  
 .divimg{
   overflow: hidden; 
 position: relative; 
-width: 30rem; 
+width: 70vw; 
 height: 22rem; 
 z-index: -1;
 border-radius: 0.75rem; 
@@ -465,3 +470,9 @@ transition-timing-function: linear;
     opacity: 0;
   }
 }
+.dropdown{
+  position: absolute;
+  background-color: white;
+  margin-left: 0.4rem;
+  padding: 15px;
+  }

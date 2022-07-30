@@ -105,7 +105,7 @@ const Product = () => {
 
 <div className={productCss.container}>
 <div className={productCss.confirmation}>
-    <div className={productCss.crouselconfirmationLeft}>
+    <div className={productCss.confirmationLeft}>
    <Crousel/>
     </div>
     <div className={productCss.mobcrouselconfirmationLeft}>
@@ -116,7 +116,7 @@ const Product = () => {
             <div className={productCss.card}>
               <div className={productCss.card_content}>
                 <div className={productCss.display}>
-                  <h2 className={productCss.card_title}>Aluminium Scrap</h2>
+                  <h1 className={productCss.card_title}>Aluminium Scrap</h1>
                   <i className="fa-solid fa-heart redcolor"></i>
                 </div>
                 <p className={productCss.card_text}>Recycled Aluminium scrap from blast <br /> furnace.</p>

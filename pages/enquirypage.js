@@ -89,14 +89,14 @@ const Enquiry = () => {
                         <Link href="/">
                             <a>Home &gt;</a>
                         </Link>
-                        <Link href="/order">
+                        <Link href="/orderpage">
                         <a className={enquiryCss.bold}>Orders and Price Enquiries </a>
                         </Link>
                         
                     </div>
     <div className={enquiryCss.header}>
-      <Link href="/order" ><a>Order</a></Link>
-      <Link href="/enquiry"><a className={enquiryCss.enqui}>Price Enquiries</a></Link>
+      <Link href="/orderpage" ><a>Order</a></Link>
+      <Link href="/enquirypage"><a className={enquiryCss.enqui}>Price Enquiries</a></Link>
     </div>
     <div className={enquiryCss.confirmation}>
                     <div className={enquiryCss.confirmationLeft}>

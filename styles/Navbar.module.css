@@ -77,10 +77,8 @@ max-width: fit-content;
 }
 .searchcontainer{
     display: flex;
-    justify-content: center;
-    margin-right: 4rem;
-    margin-top: -0.5rem;
-    margin-left: 0.3rem;
+    flex-direction: column;
+    
 }
 
 .search{
@@ -177,7 +175,8 @@ border: none;
     color: white;
   }
   .dropcontent{
-    padding: 1rem;
+    padding: 0.8rem;
+    font-size: 15px;
   }
   .dropdown {
     position: absolute;
@@ -272,3 +271,28 @@ width: 5rem;
 font-size: 0.8rem;
     }
 }
+
+
+.adropdown {
+   
+    position: absolute;
+    top: 3.5rem;
+    width: 15rem;
+    margin-left: 6.5rem;
+    transform: translateX(-45%);
+    background-color: white;
+    border: 1px solid #bec4c9;
+    border-radius: 8px;
+    overflow: hidden;
+      
+}
+  
+  .adropdown:empty {
+    border: none;
+  }
+  
+  .adropdownrow {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+  }
