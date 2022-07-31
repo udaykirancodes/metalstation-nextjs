@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import data from "../components/data";
+import data from "../components/crouseldata";
 import Card from "../components/ProductCard"
 import productCss from '../styles/Product.module.css'
 import Link from 'next/link'
@@ -155,7 +155,7 @@ const Product = () => {
 <div className={productCss.container}>
 <div className={productCss.confirmation}>
     <div className={productCss.tableconfirmationLeft}>
-            <h2>Project Overview</h2>
+            <h2 className={productCss.underline}>Product  Overview</h2>
             <table className={productCss.table}>
               <tbody>
                 <tr>
@@ -190,7 +190,7 @@ const Product = () => {
     </div>
     <div className={productCss.confirmationRight}>
     <div className={productCss.description}>
-            <h2>Project Description</h2>
+            <h2 className={productCss.underline}>Product Description</h2>
             <ul>
               <li>Large Retina OLED display</li>
               <li>attend calls and reply to messages using the GPS model</li>

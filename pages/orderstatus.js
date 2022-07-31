@@ -1,6 +1,9 @@
 import React from 'react'
 import ordercss from '../styles/Orderstatus.module.css'
 import Crousel from '../components/crousel'
+import productCss from '../styles/Product.module.css'
+import data from "../components/crouseldata";
+import MobCrousel from '../components/MobCarousel'
 const orderstatus = () => {
   return (
     <div>
@@ -8,6 +11,9 @@ const orderstatus = () => {
 <div className={ordercss.confirmation}>
     <div className={ordercss.confirmationLeft}>
        <Crousel/>
+    </div>
+    <div className={productCss.mobcrouselconfirmationLeft}>
+    <MobCrousel images={data} />
     </div>
     <div className={ordercss.confirmationRight}>
     <div className={ordercss.detailbox}>

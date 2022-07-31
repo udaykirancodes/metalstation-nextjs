@@ -397,6 +397,7 @@ margin-left: 1rem;
 justify-content: center; 
 width: 100%; 
 border-width: 4px; 
+margin-top: -1rem;
 }
 .smallimg{
   margin-left: 0.5rem;

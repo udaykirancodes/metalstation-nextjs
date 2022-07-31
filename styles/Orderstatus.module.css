@@ -93,18 +93,18 @@
     }
 
     @media screen and (max-width: 768px) {
-      .confirmation{
-          display: flex;
-          flex-direction: column;
-      }
-      .confirmationLeft, .confirmationRight{
-          width: 100%;
-      }
-      .detailright{
-        margin-right: 2rem;
+      .confirmationLeft{
+         display: none;
+      } 
+      .detailbox{
+        width: 80vw;
       }
     }
-    
+    @media screen and (min-width: 767px) {
+      .mobcrouselconfirmationLeft{
+        display: none;
+      }
+    }
 /* crousel */
     .divimg{
       overflow: hidden; 

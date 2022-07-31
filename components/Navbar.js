@@ -300,6 +300,7 @@ const Navbar = () => {
             </div>
             <div className={Nav.Design}>
             </div>
+            <div className={Nav.mobnavdesign}>
             <ul className={classes.ul}>
               <li><i className="fa-solid fa-house-chimney"></i><Link href="/"><a> Home</a></Link></li>
               <li> <Image src="/buy.png" alt="" className="img"
@@ -323,6 +324,7 @@ const Navbar = () => {
                 width={30}
               /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
             </ul>
+            </div>
           </div>
         </div>
         

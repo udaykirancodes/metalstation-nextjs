@@ -86,10 +86,23 @@ justify-content: space-between;
 display: flex;
 padding: 1rem;
 
+
 }
 .enquire{
 color: #24A1FD;
 font-size: large;
+}
+.underline{
+  position: relative;
+}
+
+.underline::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 2px;
+  border-bottom:4px solid  #24A1FD;
+  width: 11%;
 }
 .middlesection{
 display: flex;
@@ -120,7 +133,6 @@ margin-bottom: 4rem;
 }
 .card_title {
   color: #24A1FD;
-  font-size: 44px;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -278,7 +290,7 @@ transform: scale(1.5);
 display: none;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .confirmation{
       display: flex;
       flex-direction: column;
@@ -300,6 +312,6 @@ display: none;
 @media screen and (max-width: 768px) and  (min-width: 530px){
 .mobcrouselconfirmationLeft{
   transform: scale(1);
-  margin-left: 6vw;
+  margin-left: 3vw;
 }
 }

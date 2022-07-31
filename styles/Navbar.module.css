@@ -191,7 +191,9 @@ border: none;
   .menu {
     width: 100%;
   }  
-
+  .mobnavdesign{
+    margin-left: 1.5rem;
+  }
 @media only screen and (max-width: 1145px) {
 .img{
     margin-right: 2rem;
