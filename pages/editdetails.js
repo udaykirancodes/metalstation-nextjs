@@ -42,6 +42,13 @@ const Detail = () => {
                   <input type="text" className={editcss.inputflex}/>
                 </div>
 
+                
+              </div>
+
+              <div className={editcss.button}>
+                
+               <button className={editcss.cancel}>Cancel</button>
+               <button className={editcss.save}>Save Changes</button>
               </div>
             </form>
           </div>
