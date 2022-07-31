@@ -55,8 +55,7 @@ const Confirmation = () => {
                     <a href="#">Go Back</a>
                 </div>
             </div>
-            <div className={conCss.container}>
-
+            <div className={`"container" ${conCss.container}`}>
                 <div className={conCss.confirmation}>
                     <div className={conCss.confirmationLeft}>
                         <div className={conCss.delivaryAddress}>
@@ -118,6 +117,19 @@ const Confirmation = () => {
                                 </p>
                             </div>
                         </div>
+                        <div className={conCss.delivaryEstimate}>
+                            <div className={conCss.estimateImg}>
+                                <Image layout='fill' src="/metal.png" alt="" />
+                            </div>
+                            <div className={conCss.estimateDetails}>
+                                <h3 className={conCss.productName}>
+                                    Aluminium Scrap
+                                </h3>
+                                <p className={conCss.productDetail}>
+                                    Esptimate Delivery by <b>18 of June 2022</b>
+                                </p>
+                            </div>
+                        </div>
                         <div className={conCss.confirmationBill}>
                             <div className={conCss.Detail}>
 
@@ -131,7 +143,7 @@ const Confirmation = () => {
                             </div>
                             <div className={conCss.paymentBtn}>
                                 <button className={conCss.continuePaymentBtn}>
-                                    Continue to payment
+                                    Place Order
                                 </button>
 
                             </div>

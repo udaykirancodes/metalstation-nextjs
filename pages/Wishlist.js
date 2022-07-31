@@ -20,7 +20,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <div className="container" style={{ marginTop: '4rem' }}>
+      <div className="container" style={{ marginTop: '2rem' }}>
         {/* <div className={catcss.categorybar}>
           <Bar />
           <div className={cardCss.icons}>
@@ -103,7 +103,9 @@ const Wishlist = () => {
           <div className="category_bar_right">
             <Link href={"/Wishlist"}>
               <div className="bar_icon_container">
-                <i className="uil uil-heart"></i>
+                <i className="uil uil-heart" style={{ color: 'red' }}></i>
+                {/* <i className="fa-solid fa-heart redcolor "></i> */}
+                {/* <i class="fa-solid fa-heart"></i> */}
                 <p className="text_center mobile_none">Wishlist</p>
               </div>
             </Link>
@@ -115,6 +117,7 @@ const Wishlist = () => {
             </Link>
           </div>
         </div>
+        <Link href="/ecommerce" ><a><p>Go Back</p></a></Link>
         <section className={wlCss.wishlist}>
 
           {

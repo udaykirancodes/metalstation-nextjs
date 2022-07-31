@@ -38,7 +38,7 @@ export default function Home({wishlist, addToWishlist}) {
     <>
       {/* <Navbar/> */}
       {/* <HomeComponent/> */}
-      {/* <NewHomeComponent/>
+      <NewHomeComponent/>
       <HomeCards/>
       <WhyChooseUs />
       <HowItWorks />
@@ -46,8 +46,8 @@ export default function Home({wishlist, addToWishlist}) {
       <FeaturedProducts />
       <Category />     
       <Testimonials/>
-      <Contact wishlist={wishlist} addToWishlist={addToWishlist} />  */}
-      <Order/>
+      <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
+      {/* <Order/> */}
       {/* <Footer /> */}
       {/* <Wishlist wishlist={wishlist}/> */}
       {/* <Sell/> */}
@@ -55,3 +55,4 @@ export default function Home({wishlist, addToWishlist}) {
     </>
   )
 }
+// 

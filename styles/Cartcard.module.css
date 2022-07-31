@@ -10,7 +10,7 @@
   .card {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: fit-content;
-    width: 20rem;
+    width: calc(100%4 - 20px);
     background-color: white;
   }
   .Product{
@@ -51,7 +51,9 @@
     padding: 2px;
     list-style: none;
   }
-  
+  .Product_detail{
+    padding: 5%;
+  }
   .Product_Title{
       color: #24A1FD;
       display: flex;
@@ -74,7 +76,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      /* box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   }
   .wishlist:hover{
   color: red;

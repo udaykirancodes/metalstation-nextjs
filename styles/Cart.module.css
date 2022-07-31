@@ -66,6 +66,8 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-right: auto;
 }
 .cartLeft{
+  border-right: 1px solid black;
+  padding-right: 5px;
   width: 49%;
   margin-right: 2%;
 }

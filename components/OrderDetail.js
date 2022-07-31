@@ -15,9 +15,9 @@ const OrderDetail = () => {
         <div className={odCss.order_title_container}>
           {/* <Link href="/"><a><h3 className="order_title">Buy Scrap</h3></a></Link> */}
           <h3 className={odCss.order_heading}>Aluminum Scrap</h3>
-                <p className={odCss.order_info}>Sold by: Metal Station
-                  <br /> Replacement may be possible before 25th August</p>
-                  <p className={odCss.order_price}>$ 1,39,999</p>
+          <p className={odCss.order_info}>Sold by: Metal Station
+            <br /> Replacement may be possible before 25th August</p>
+          <p className={odCss.order_price}>$ 1,39,999</p>
         </div>
       </div>
     </>

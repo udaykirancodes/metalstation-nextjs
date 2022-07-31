@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import profilecss from '../styles/Profile.module.css'
 const Profile = () => {
@@ -6,7 +6,7 @@ const Profile = () => {
   const [arrowUp, setArrowUp] = useState(false);
   return (
     <>
-    <div className="category_bar_container">
+      <div className="category_bar_container">
         <div className="category_bar container">
           <div className="go_back desktop_none">
             <Link href="/">
@@ -81,58 +81,58 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    <div className='container'>
-      <div className={profilecss.pageLink}>
-                        <Link href="/">
-                            <a>Home &gt;</a>
-                        </Link>
-                        <Link href="/order">
-                            <a className={profilecss.bold}>Orders and Price Enquiries </a>
-                        </Link>
-                        
-                    </div>
-                    
-      <div className={profilecss.box}>
-        <div className={profilecss.display}> 
-      <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
-      <button className={profilecss.logoutbtn}>Log Out</button>
-      </div>
-      <div className={profilecss.contain}>
-      <div className={profilecss.detailbox}>
-        <div className={profilecss.detailright}>
-<ul>
-  <li>
-    Full Name
-  </li>
-  <li>
-    Email ID
-  </li>
-  <li>
-    Mobile Number
-  </li>
-</ul>
-        </div>
-        <div className={profilecss.detailleft}>
-        <ul>
-  <li>
-    Anjal Singh
-  </li>
-  <li>
-    asdf1234@gmail.com
-  </li>
-  <li>
-    9300002000
-  </li>
-</ul>
-          </div>
+      <div className='container'>
+        <div className={profilecss.pageLink}>
+          <Link href="/">
+            <a>Home &gt;</a>
+          </Link>
+          <Link href="/order">
+            <a className={profilecss.bold}>Orders and Price Enquiries </a>
+          </Link>
 
-          
+        </div>
+
+        <div className={profilecss.box}>
+          <div className={profilecss.display}>
+            <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
+            <button className={profilecss.logoutbtn}>Log Out</button>
+          </div>
+          <div className={profilecss.contain}>
+            <div className={profilecss.detailbox}>
+              <div className={profilecss.detailright}>
+                <ul>
+                  <li>
+                    Full Name
+                  </li>
+                  <li>
+                    Email ID
+                  </li>
+                  <li>
+                    Mobile Number
+                  </li>
+                </ul>
+              </div>
+              <div className={profilecss.detailleft}>
+                <ul>
+                  <li>
+                    Anjal Singh
+                  </li>
+                  <li>
+                    asdf1234@gmail.com
+                  </li>
+                  <li>
+                    9300002000
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+            <button className={profilecss.btn}>Edit Details</button>
+          </div>
+        </div>
       </div>
-      <button className={profilecss.btn}>Edit Details</button>
-      </div>
-      </div>
-      </div>
-      </>
+    </>
   )
 }
 
