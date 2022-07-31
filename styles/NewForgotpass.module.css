@@ -5,6 +5,7 @@
   /* align-items: center; */
   margin-top: 5%;
   flex-direction: row;
+  height: 80vh;
 }
 .forgotImg{
   position: absolute;
