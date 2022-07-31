@@ -100,7 +100,7 @@ const NewRegister = () => {
               <div className={rgCss.forgot}>
                 <div className="Rememberme">
                   <input type="checkbox" id="rememberme" name="rememberme" value="rememberme" />
-                  <label for="rememberme"> Remember Me</label><br />
+                  <label htmlFor="rememberme"> Remember Me</label><br />
                 </div>
                 <p className={rgCss.aggrement}>By continuing, you agree to <a className={rgCss.terms}>the Terms of Use & Privacy Policy</a>  </p>
               </div>
@@ -112,7 +112,7 @@ const NewRegister = () => {
                 </button>
               </div>
               <div className={rgCss.SwitchtoSignup}>
-                <p>Already Have an Account? <Link href="/Authenticate/NewLogin"><a ><b>Login <i class="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
+                <p>Already Have an Account? <Link href="/Authenticate/NewLogin"><a ><b>Login <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
               </div>
             </div>
           </div>

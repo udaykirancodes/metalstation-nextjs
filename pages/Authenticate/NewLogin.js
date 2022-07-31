@@ -67,7 +67,7 @@ const NewLogin = () => {
               <h1 className={nlCss.loginhead}>Log In</h1>
               {/* <p>Hi <span class="wave">👋</span>, Welcome Back</p> */}
               {
-                error ? <p className='text_red'>{error}</p> : <p>Hi <span class="wave">👋</span>, Welcome Back</p>
+                error ? <p className='text_red'>{error}</p> : <p>Hi <span className="wave">👋</span>, Welcome Back</p>
               }
             </div>
             <div className="loginForm">
@@ -82,7 +82,7 @@ const NewLogin = () => {
               <div className={nlCss.forgot}>
                 <div className="Rememberme">
                   <input type="checkbox" id="rememberme" name="rememberme" value="rememberme" />
-                  <label for="rememberme"> Remember Me</label><br />
+                  <label htmlFor="rememberme"> Remember Me</label><br />
                 </div>
                 <p className={nlCss.forgotPass}><Link href="/Authenticate/NewForgotpass"><a ><b>Forgot Password?</b></a></Link></p>
               </div>
@@ -94,7 +94,7 @@ const NewLogin = () => {
                 </button></a></Link>
               </div>
               <div className={nlCss.SwitchtoSignup}>
-                <p>New to Metal Station? <Link href="/Authenticate/NewRegister"><a ><b>Create Account <i class="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
+                <p>New to Metal Station? <Link href="/Authenticate/NewRegister"><a ><b>Create Account <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
               </div>
             </div>
           </div>

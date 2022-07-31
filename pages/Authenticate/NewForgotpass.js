@@ -60,7 +60,7 @@ const NewForgotpass = () => {
                 </button></a></Link>
               </div>
               <div className={fgCss.SwitchtoSignup}>
-                <p>New to Metal Station? <Link href="/Authenticate/NewRegister"><a ><b>Create Account <i class="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
+                <p>New to Metal Station? <Link href="/Authenticate/NewRegister"><a ><b>Create Account <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
 
               </div>
             </div>

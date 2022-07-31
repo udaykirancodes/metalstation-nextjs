@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import WhyChooseUs from "../components/HomeComponents/WhyChooseUs";
 import HowItWorks from "../components/HomeComponents/HowItWorks";
 import AboutUs from "../components/HomeComponents/AboutUs";

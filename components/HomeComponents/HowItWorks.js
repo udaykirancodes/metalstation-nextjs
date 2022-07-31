@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 export default function HowItWorks() {
   return (
     <>
@@ -10,7 +11,10 @@ export default function HowItWorks() {
                         <div className="card_container">
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                        height={300}
+                                        width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -21,7 +25,10 @@ export default function HowItWorks() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                         height={300}
+                                         width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -32,7 +39,10 @@ export default function HowItWorks() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                         height={300}
+                                         width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">

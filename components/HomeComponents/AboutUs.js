@@ -11,7 +11,10 @@ export default function AboutUs() {
                         <div className="card_container vertical_container">
                             <div className="single_card">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage" 
+                                        height={300}
+                                        width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -22,7 +25,10 @@ export default function AboutUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                         height={300}
+                                         width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
@@ -33,7 +39,10 @@ export default function AboutUs() {
                             </div>      
                             <div className="single_card howitworks">
                                 <div className="blogTop">
-                                        <img src="/metal.png" alt="Blog_Image" className="blogImage" />
+                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                         height={300}
+                                         width={400}
+                                        />
                                 </div>
                                 <div className="blogBottom">
                                         <div className="details">
