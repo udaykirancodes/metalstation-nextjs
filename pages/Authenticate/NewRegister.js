@@ -107,9 +107,9 @@ const NewRegister = () => {
             </div>
             <div className="registerBottom">
               <div className="registerBtn">
-                <button onClick={handleSubmit} className={rgCss.registerbtn}>
+                <Link href="/Authenticate/NewLogin"><a ><button onClick={handleSubmit} className={rgCss.registerbtn}>
                   Create Account
-                </button>
+                </button></a></Link>
               </div>
               <div className={rgCss.SwitchtoSignup}>
                 <p>Already Have an Account? <Link href="/Authenticate/NewLogin"><a ><b>Login <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import catcss from '../styles/CategoryBar.module.css'
 import cardCss from '../styles/Card.module.css'
 import Bar from '../components/Bar'
+import cartCss from '../styles/Cart.module.css'
 import Link from 'next/link'
 import { useContext } from 'react'
 import Context from '../context/Context'
@@ -20,7 +21,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <div className="container" style={{ marginTop: '4rem' }}>
+      <div className="container" style={{ marginTop: '2rem' }}>
         {/* <div className={catcss.categorybar}>
           <Bar />
           <div className={cardCss.icons}>
@@ -103,7 +104,9 @@ const Wishlist = () => {
           <div className="category_bar_right">
             <Link href={"/Wishlist"}>
               <div className="bar_icon_container">
-                <i className="uil uil-heart"></i>
+                <i className="uil uil-heart" style={{ color: 'red' }}></i>
+                {/* <i className="fa-solid fa-heart redcolor "></i> */}
+                {/* <i class="fa-solid fa-heart"></i> */}
                 <p className="text_center mobile_none">Wishlist</p>
               </div>
             </Link>
@@ -115,6 +118,10 @@ const Wishlist = () => {
             </Link>
           </div>
         </div>
+        {/* <div className={cartCss.mobgoback}> */}
+          <Link href="/ecommerce" >
+            <a style={{marginLeft:'0.5rem', color:'#24A1FD'}}><i className="fa-solid fa-arrow-left-long goback"></i>Go back</a></Link>
+        {/* </div> */}
         <section className={wlCss.wishlist}>
 
           {

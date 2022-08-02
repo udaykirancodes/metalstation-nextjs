@@ -121,7 +121,7 @@ const Cart = () => {
 
                 </div>
             </div>
-            <div className="container">
+            <div className="container ">
                 <div className={cartCss.container}>
                     <div className={cartCss.cart}>
                         <div className={cartCss.cartLeft}>
@@ -136,7 +136,7 @@ const Cart = () => {
                             </div>
                             {
                                 cart.length == 0 &&
-                                <div style={{ height: '500px', width: '100vw', display: 'flex', marginLeft: 'auto', marginRight: 'auto', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                <div className='container' style={{ height: '100%', width: '100%', display: 'flex', margin: 'auto', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
                                     <p style={{ fontSize: '20px' }}>Your Cart is Empty</p>
                                     <p style={{ fontSize: '16px' }}>Add some products to your Cart</p>
                                     <Link href="/ecommerce">

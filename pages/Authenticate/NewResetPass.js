@@ -15,7 +15,7 @@ const NewResetPass = () => {
   useEffect(() => {
     let email = localStorage.getItem('email'); 
     if(!email){
-       router.push('/auth/forgotpassword'); 
+       router.push('/Authenticate/NewForgotpass'); 
     }
     setEmail(email); 
   }, [])
@@ -88,6 +88,10 @@ const NewResetPass = () => {
           </div>
         </div>
       </div>
+
+
+
+
       <div className="container">
         <div className={fgCss.forgotContainer}>
           <div className={fgCss.forgotLeft}>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import profilecss from '../styles/Profile.module.css'
 const Profile = () => {
@@ -6,7 +6,7 @@ const Profile = () => {
   const [arrowUp, setArrowUp] = useState(false);
   return (
     <>
-    <div className="category_bar_container">
+      <div className="category_bar_container">
         <div className="category_bar container">
           <div className="go_back desktop_none">
             <Link href="/">
@@ -148,7 +148,7 @@ const Profile = () => {
       </div>
       </div>
       </div>
-      </>
+    </>
   )
 }
 
