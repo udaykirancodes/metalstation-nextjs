@@ -26,7 +26,7 @@ const NewForgotpass = () => {
       // save the email in the local storage 
       localStorage.setItem('email', email);
       // navigate to other page for password reset 
-      router.push('/resetpassword');
+      router.push('/Autenticate/NewResetPass');
     } else {
       setError(data.msg);
       setTimeout(() => {
@@ -56,7 +56,7 @@ const NewForgotpass = () => {
             <div className="forgotBottom">
               <div className="forgotBtn">
                 <Link href="/Authenticate/NewVerification"><a><button onClick={RequestOtp} className={fgCss.forgotbtn}>
-                  Send OTP
+                  Submit
                 </button></a></Link>
               </div>
               <div className={fgCss.SwitchtoSignup}>

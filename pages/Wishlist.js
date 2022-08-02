@@ -4,6 +4,7 @@ import Image from 'next/image'
 import catcss from '../styles/CategoryBar.module.css'
 import cardCss from '../styles/Card.module.css'
 import Bar from '../components/Bar'
+import cartCss from '../styles/Cart.module.css'
 import Link from 'next/link'
 import { useContext } from 'react'
 import Context from '../context/Context'
@@ -117,7 +118,10 @@ const Wishlist = () => {
             </Link>
           </div>
         </div>
-        <Link href="/ecommerce" ><a><p>Go Back</p></a></Link>
+        {/* <div className={cartCss.mobgoback}> */}
+          <Link href="/ecommerce" >
+            <a style={{marginLeft:'0.5rem', color:'#24A1FD'}}><i className="fa-solid fa-arrow-left-long goback"></i>Go back</a></Link>
+        {/* </div> */}
         <section className={wlCss.wishlist}>
 
           {

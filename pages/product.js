@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Bar from "../components/bar"
 import Pic from "../components/Image"
 import Card from "../components/ProductCard"
@@ -9,7 +9,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Context from '../context/Context'
 const product = () => {
+
     const { singleProductDetail, addToCart, addToWishlist } = useContext(Context);
+    const [desc, setDesc] = useState();
+    setDesc(singleProductDetail.description);
+    // let str = "desc1. desc2. desc3. desc3"
+    // console.log(desc.split('.'));
+    // [ 'desc1', ' desc2', ' desc3', ' desc3' ]
+
+    let arr = desc.split('.'); // split into array 
+
+    const [img, setImg] = useState([])
+    setImg(singleProductDetail.img)
+
+
+
+    // output :-
+    // desc1
+    // desc2
+    // desc3
+    // desc3
     return (
         <>
             <div className={productCss.wrapcontainer}>
@@ -80,6 +99,17 @@ const product = () => {
 
                                                 </div>
                                                 <div className={productCss.piccontainer}>
+                                                    {
+                                                        setImg.forEach((element) => {
+
+                                                            <div className="prodimg">
+                                                                <Image src={element} alt="steel" className='prodimg'
+                                                                    width={50}
+                                                                    height={50} />
+                                                            </div>
+                                                        })
+                                                    }
+                                                    {/* <Pic />
                                                     <Pic />
                                                     <Pic />
                                                     <Pic />
@@ -87,9 +117,7 @@ const product = () => {
                                                     <Pic />
                                                     <Pic />
                                                     <Pic />
-                                                    <Pic />
-                                                    <Pic />
-                                                    <Pic />
+                                                    <Pic /> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -121,14 +149,14 @@ const product = () => {
                                                     <h2 className={productCss.card_title}>{item.product.name}</h2>
                                                     <i role='button' onClick={() => addToWishlist(item._id, item)} className="fa-solid fa-heart redcolor"></i>
                                                 </div>
-                                                <p className={productCss.card_text}>Recycled Aluminium scrap from blast <br /> furnace.</p>
+                                                <p className={productCss.card_text}>{item.product.shortDescription}</p>
                                                 <h4 className={productCss.ton}><b>1 Ton</b> (Min. Order)</h4>
                                                 <p>Measurement <br />
                                                     &emsp;&emsp;
-                                                    Length:10 meters
+                                                    Length:{singleProductDetail.details.length}
                                                     <br />
                                                     &emsp;&emsp;
-                                                    Diameters:10 meters
+                                                    Diameters:{singleProductDetail.details.diameters}
                                                 </p>
                                                 <p><i className="fa-solid fa-check location"></i>
                                                     Deliverrable to your location </p>
@@ -161,31 +189,31 @@ const product = () => {
                                             <tbody>
                                                 <tr>
                                                     <th>Product Name:</th>
-                                                    <td>{item.product.name}</td>
+                                                    <td>{item.data.name}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Place of  Origin :</th>
-                                                    <td>{item.origin}</td>
+                                                    <td>{item.data.origin}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Model Number :</th>
-                                                    <td>{item.series} series</td>
+                                                    <td>{item.data.series} series</td>
                                                 </tr>
-                                                <tr>
+                                                {/* <tr>
                                                     <th>Al Content :</th>
-                                                    <td>{item.grade}
+                                                    <td>{item.details.grade}
                                                     </td>
-                                                </tr>
+                                                </tr> */}
                                                 <tr>
                                                     <th>Color  :</th>
-                                                    <td>{item.color}
+                                                    <td>{item.details.color}
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                {/* <tr>
                                                     <th>Product Grade :</th>
                                                     <td>{item.grade}
                                                     </td>
-                                                </tr>
+                                                </tr> */}
                                             </tbody>
                                         </table>
                                     </div>
@@ -203,7 +231,12 @@ const product = () => {
                                             <li>Touchscreen</li>
                                             <li> Fitness & Outdoor</li>
                                             <li>Battery Runtime: Upto 18 hrs</li> */}
-                                            <li>{item.description}</li>
+                                            {/* <li>{item.description}</li> */}
+                                            {
+                                                arr.forEach((element) => {
+                                                    <li>{element}</li> // removing the white spaces 
+                                                })
+                                            }
                                         </ul>
                                     </div>
                                 </div>
