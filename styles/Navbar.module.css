@@ -168,8 +168,11 @@ border: none;
     display: flex;
     align-items: center;
     justify-content: center;
+   
   }
-  
+  .pnavitem{
+    width: 10vw;
+  }
   .horizline{
     margin-left: 1rem;
     margin-top: 0rem;

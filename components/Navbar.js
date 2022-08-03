@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
 function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
-    <li className={Nav.nav_item}>
+    <li className={`${Nav.nav_item} ${Nav.pnavitem}  `}>
       <Link href="#" >
         <a onClick={() => setOpen(!open)}>
       <Image src='/user.png' alt='' height={30} width={30}/>
@@ -283,7 +283,7 @@ const Navbar = () => {
             {
                 state?
                 <> 
-                       <NavItem >           
+                       <NavItem className={Nav.pnavitem}>           
                        <DropdownMenu></DropdownMenu>
                        </NavItem>
  
