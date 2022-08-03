@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React,{useState ,useEffect} from 'react'
-import {AiOutlineLeft} from 'react-icons/ai'
-import {AiOutlineRight} from 'react-icons/ai'
+import Croucss from '../styles/Carousel.module.css'
 import Image from 'next/image'
 import metal from '/public/metal.png'
 import metal1 from '/public/metal1.jpeg'
@@ -84,20 +83,24 @@ useEffect(() => {
     <>
     {images.length > 0  ?   
       <>
-        <div className="crousel">
-             <AiOutlineLeft className="prevbtn" onClick={handlePrev}/>
+       <div className={Croucss.deskcarouselcontainer}>
+        <div
+        className={`${Croucss.carouselbtn } ${Croucss.leftbtn}`}
+        onClick={handlePrev}
+      />
+     
               <div className="divimg">
-                
-                  <Image className={`gh
-                   ${ trans ? 'jh'
-                   : (transR ? ' ' : "" )}`} 
+                  <Image 
                   src={images[index].name} alt=""
                   height={300}
-                  width={500}
+                  width={600}
                   />
-                   
+       
               </div>
-              <AiOutlineRight className="btnnext" onClick={handleNext}/>
+              <div
+        className={`${Croucss.carouselbtn } ${Croucss.rightbtn}`}
+        onClick={handleNext}
+      />
         </div>
         <div className='mapscroll'>
         <div className="mapimg" >

@@ -51,6 +51,7 @@
 .detailbox{
   margin-top: 5rem;
   display: flex;
+  margin-left: 3rem;
   width: fit-content;
       justify-content: space-between;
   }

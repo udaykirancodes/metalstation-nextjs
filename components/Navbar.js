@@ -85,6 +85,8 @@ const useStyles = makeStyles((theme) => ({
   },
   ul: {
     listStyleType: "none",
+      margin: "1.5rem",
+  
     "& li": {
       padding: "20px 0",
     },
@@ -131,13 +133,6 @@ function DropdownMenu() {
             <p>asdf1234@gmail.com</p>
           </div>
         </div>
-      </DropdownItem>
-      <DropdownItem>
-        <div className={Nav.dropcontent}>
-          <Link href="/profile"><a>My Profile</a></Link>
-
-        </div>
-
       </DropdownItem>
           <DropdownItem>
           <div className={Nav.dropcontent}>
@@ -288,8 +283,7 @@ const Navbar = () => {
             {
                 state?
                 <> 
-                <NavItem >
-                       
+                       <NavItem >           
                        <DropdownMenu></DropdownMenu>
                        </NavItem>
  
@@ -338,31 +332,7 @@ const Navbar = () => {
                 /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
               </ul>
             </div>
-            <div className={Nav.mobnavdesign}>
-            <ul className={classes.ul}>
-              <li><i className="fa-solid fa-house-chimney"></i><Link href="/"><a> Home</a></Link></li>
-              <li> <Image src="/buy.png" alt="" className="img"
-                height={30}
-                width={30}
-              /><p className="nav_link"><Link href="/buy"><a>Buy Scrap </a></Link></p></li>
-              <li> <Image src="/sell.png" alt="" className="img"
-                height={30}
-                width={30}
-              /><p className="nav_link"><Link href="/sellscrap"><a> Sell Scrap </a></Link></p></li>
-              <li><Image src="/blog.png" alt="" className="img"
-                height={30}
-                width={30}
-              /> <p className="nav_link"><Link href="/blogs"><a> Blog </a></Link></p></li>
-              <li><Image src="/info.png" alt="" className="img"
-                height={30}
-                width={30}
-              /><p className="nav_link"><Link href="/about"><a> About us </a></Link></p> </li>
-              <li> <Image src="/information.png" alt="" className="img"
-                height={30}
-                width={30}
-              /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
-            </ul>
-            </div>
+          
           </div>
 
         </div>

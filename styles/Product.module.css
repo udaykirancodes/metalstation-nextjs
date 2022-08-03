@@ -13,16 +13,30 @@ padding: 2px;
   font-size: 1rem;
 }
 .doubtbtn{
-  background-color: #24A1FD;
-  color: white;
+  background-color: #ffffff;
+  color: #24A1FD;
   padding: 4px 6px;
   font-size: 0.7rem;
   border-radius: 30px;
+  border: 2px solid #24A1FD;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  border: none;
+}
+.btn{
+  margin-top: 2rem;
+}
+.heart{
+  font-size: 2rem;
+}
+.quantbtn{
+	color: rgb(9, 8, 8);
+	text-align: center;
+    text-decoration: none;
+	cursor: pointer;
+	border: none;
+	background-color: #fff;
 }
 .button {
   border: none;
@@ -33,16 +47,28 @@ padding: 2px;
   display: inline-block;
   margin: 2px 2px;
   cursor: pointer;
+  width: 15vw;
   background-color: #24A1FD;
-  border-radius: 30px;
+  border-radius: 40px;
   font-size: 1rem;
 }
-
-.pricep{
-  color: #00ab30;
-  font-size: 1.9rem;
-  list-style: none;
+.buybutton {
+  border: 2px solid #24A1FD;;
+  color: #24A1FD;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 2px;
+  width: 15vw;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 40px;
+  font-size: 1rem;
+}
+.price{
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .Title{
@@ -285,12 +311,12 @@ transform: scale(1.5);
 .confirmationRight{
   width: 49%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .mobcrouselconfirmationLeft{
 display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .confirmation{
       display: flex;
       flex-direction: column;

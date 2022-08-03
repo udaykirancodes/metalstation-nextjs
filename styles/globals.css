@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 input:focus {
@@ -351,7 +352,7 @@ opacity: 1;
 .crousel{
 display: flex; 
 margin-top: 1rem; 
-max-width: 535px;
+width: 100%;
 margin-left: 1rem; 
 justify-content: center; 
 }
@@ -359,6 +360,8 @@ justify-content: center;
   background: #54b8ff;
   font-size: 1rem;
   border-radius: 99%;
+  left: 3rem;
+  position:absolute;
   opacity: 0.7;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
   cursor: pointer;
@@ -369,6 +372,8 @@ justify-content: center;
 .btnnext{
       background: #54b8ff;
     font-size: 1rem;
+    position:absolute;
+    right: 2rem;
     border-radius: 99%;
     opacity: 0.7;
     box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
@@ -379,6 +384,7 @@ justify-content: center;
 }
 .mapscroll{
   overflow-x: scroll;
+  margin-left: -2rem;
 }  
 .mapscroll::-webkit-scrollbar{
   display: none;
@@ -396,9 +402,8 @@ display: flex;
 .mapimg{
   display: flex; 
 padding: 1rem;  
-margin-left: 1rem; 
 justify-content: center; 
-width: 100%; 
+width:100%; 
 border-width: 4px; 
 margin-top: -1rem;
 }

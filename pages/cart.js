@@ -159,6 +159,9 @@ const Cart = () => {
                                                             <button onClick={() => setCount(count - 1)} className={cartCss.btn}>  <i className="fa-solid fa-minus"></i></button>
                                                             <span>{count}</span>
                                                             <button onClick={() => setCount(count + 1)} className={cartCss.btn}>  <i className="fa-solid fa-plus"></i></button>
+                                                            
+                                                            
+                                                            
                                                             <small className={cartCss.ton}>Tons</small></p>
                                                         <h4 className={cartCss.price}>&#8377;{' ' + item.price}</h4>
                                                         <p>Delivered by &nbsp;<span className={cartCss.bold}> XX june 20XX </span></p>

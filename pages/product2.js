@@ -5,7 +5,7 @@ import productCss from '../styles/Product.module.css'
 import Link from 'next/link'
 import MobCrousel from '../components/MobCarousel'
 import Crousel from '../components/crousel'
-const Product = () => {
+const Product2 = () => {
   //Quantity
   const initialCount = 1
   const [count, setCount] = useState(initialCount);
@@ -122,7 +122,7 @@ const Product = () => {
                     <h1 className={productCss.card_title}>Aluminium Scrap</h1>
                     <div className={productCss.heart}>
                       <Link href="/product2">
-                      <a><i className="uil uil-heart"></i></a>
+                      <a>  <i className="fa-solid fa-heart redcolor"></i></a>
                       </Link>
                     </div>
                   </div>
@@ -150,18 +150,18 @@ const Product = () => {
 
                   <div className={productCss.btn}>
                     <button className={productCss.button}>
-                      <i className="uil  uil-shopping-cart-alt"></i>
-                      <Link href='/cart'>
+                      
+                      <Link href='/enquirypage'>
                         <a>
-                      Add to Cart
+                     Enquire Price
                       </a>
                       </Link>
                       </button>
                     &emsp;
                     <button className={productCss.buybutton}>
-                    <Link href='/ecommerce'>
+                    <Link href='/Wishlist'>
                         <a>
-                      Buy Now
+                      Add to Wishlist
                       </a>
                       </Link>
                       </button>
@@ -237,4 +237,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Product2
