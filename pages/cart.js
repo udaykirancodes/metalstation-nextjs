@@ -159,6 +159,9 @@ const Cart = () => {
                                                             <button onClick={() => setCount(count - 1)} className={cartCss.btn}>  <i className="fa-solid fa-minus"></i></button>
                                                             <span>{count}</span>
                                                             <button onClick={() => setCount(count + 1)} className={cartCss.btn}>  <i className="fa-solid fa-plus"></i></button>
+                                                            
+                                                            
+                                                            
                                                             <small className={cartCss.ton}>Tons</small></p>
                                                         <h4 className={cartCss.price}>&#8377;{' ' + item.price}</h4>
                                                         <p>Delivered by &nbsp;<span className={cartCss.bold}> XX june 20XX </span></p>
@@ -202,17 +205,15 @@ const Cart = () => {
                         }
 
                         <div className={cartCss.bottomsection}>
-                            <h2 className={cartCss.Title}>  Would you like to add any of these :</h2>
-                            <div className={cartCss.Card}>
-                                <Card />
-                                <Card />
+                            <Card/>
+                            
                             </div>
                             <div className={cartCss.footersec}>
                                 <footer className={cartCss.footer}>
                                     &copy; All Right Reserved @bismillaenterprises. Privacy, Terms of use, Security Overview.
                                 </footer>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
 

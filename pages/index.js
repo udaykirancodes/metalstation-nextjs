@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import WhyChooseUs from "../components/HomeComponents/WhyChooseUs";
 import HowItWorks from "../components/HomeComponents/HowItWorks";
 import AboutUs from "../components/HomeComponents/AboutUs";
@@ -48,7 +49,7 @@ export default function Home({wishlist, addToWishlist}) {
       <Testimonials/>
       <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
       {/* <Order/> */}
-      {/* <Footer /> */}
+      <Footer />
       {/* <Wishlist wishlist={wishlist}/> */}
       {/* <Sell/> */}
       {/* <Sell2/> */}

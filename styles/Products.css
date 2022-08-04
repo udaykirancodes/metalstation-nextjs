@@ -2,6 +2,9 @@
   --navbar-height : 4rem; 
   --category-height : 4rem;
 }
+/* .container{
+  margin-top: 3rem;
+  } */
 .category_bar_container{
   margin-top: 2rem;
   background-color: #fff;
@@ -148,6 +151,7 @@
 .filters_top{
   display: flex;
   width: 100%;
+  z-index: -1;
   align-items: center;
   justify-content: space-between;
   /* margin-bottom: 1.5rem; */
@@ -155,6 +159,7 @@
 .selected_top{
   display: flex;
   width: 100%;
+  z-index: -1;
   flex-direction: row;
   gap: 0 1rem ;
   /* margin-bottom: 1.5rem; */

@@ -81,56 +81,72 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className='container'>
-        <div className={profilecss.pageLink}>
-          <Link href="/">
-            <a>Home &gt;</a>
-          </Link>
-          <Link href="/order">
-            <a className={profilecss.bold}>Orders and Price Enquiries </a>
-          </Link>
-
+    <div className='container'>
+      <div className={profilecss.pageLink}>
+                        <Link href="/">
+                            <a>Home &gt;</a>
+                        </Link>
+                        <Link href="/orderpage">
+                            <a className={profilecss.bold}>Orders and Price Enquiries </a>
+                        </Link>
+                        
+                    </div>
+                    
+      <div className={profilecss.box}>
+        <div className={profilecss.display}> 
+      <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
+      <button className={profilecss.logoutbtn}>Log Out</button>
+      </div>
+      <div className={profilecss.contain}>
+      <div className={profilecss.detailbox}>
+        <div className={profilecss.detailright}>
+<ul>
+  <li>
+    Full Name
+  </li>
+  <li>
+    Email ID
+  </li>
+  <li>
+    Mobile Number
+  </li>
+  <li>
+   Address
+  </li>
+  <li>
+   Business Name
+  </li>
+  <li>
+    GSTIN
+  </li>
+</ul>
         </div>
-
-        <div className={profilecss.box}>
-          <div className={profilecss.display}>
-            <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
-            <button className={profilecss.logoutbtn}>Log Out</button>
+        <div className={profilecss.detailleft}>
+        <ul>
+  <li>
+    Anjal Singh
+  </li>
+  <li>
+    asdf1234@gmail.com
+  </li>
+  <li>
+    9300002000
+  </li>
+  <li>
+   House Name, Locality, District,State
+  </li>
+  <li>
+   Supreme Group
+  </li>
+  <li>
+   -not added-
+  </li>
+</ul>
           </div>
-          <div className={profilecss.contain}>
-            <div className={profilecss.detailbox}>
-              <div className={profilecss.detailright}>
-                <ul>
-                  <li>
-                    Full Name
-                  </li>
-                  <li>
-                    Email ID
-                  </li>
-                  <li>
-                    Mobile Number
-                  </li>
-                </ul>
-              </div>
-              <div className={profilecss.detailleft}>
-                <ul>
-                  <li>
-                    Anjal Singh
-                  </li>
-                  <li>
-                    asdf1234@gmail.com
-                  </li>
-                  <li>
-                    9300002000
-                  </li>
-                </ul>
-              </div>
-
-
-            </div>
-            <button className={profilecss.btn}>Edit Details</button>
-          </div>
-        </div>
+      </div>
+      <button className={profilecss.btn}><Link href="/editdetails"><a>Edit Details</a></Link></button>
+      </div>
+      </div>
       </div>
     </>
   )

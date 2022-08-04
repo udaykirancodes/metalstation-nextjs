@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import iPCss from '../../styles/ImagePreview.module.css'
 import sCss from '../../styles/Sell.module.css'
 
@@ -73,7 +74,11 @@ const ImagePreview = ({onSubmission}) => {
             selectedImages.map((image, index) => {
               return (
                 <div key={image} className={iPCss.image}>
-                  <img className={iPCss.preview} src={image} height="200" alt="upload" />
+                  <Image className={iPCss.preview} src={image} 
+                  
+                  height={200}
+                  width={300}
+                  alt="upload" />
                   <div className="ImgDelete">
 
                     <button className={iPCss.ImageDelete} onClick={() => deleteHandler(image)}>

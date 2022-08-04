@@ -36,7 +36,9 @@ export default function Contact({ addToWishlist }) {
                             <h4 className='text_red contact_filed contact_highlight text_center'>Want to sell a Scrap ?</h4>
                             <div className="contact_details_2">
                                 <div className="contact_image_container">
-                                    <img src="/metal.png" alt='hello' layout='fill' className='image' />
+                                    <Image src="/metal.png" alt='hello' layout='fill' className='image'
+                                   
+                                    />
                                 </div>
                                 <div className="contact_extra center">
                                     {/* <button onClick={() => { addToWishlist(100, 'Aluminum Scrap', 1, '1,39, 999', 'Recycled Aluminium scrap from blast furnace') }} className="button">Sell Scrap Vehicles</button> */}

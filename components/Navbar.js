@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Modal from 'react-bootstrap/Modal';
 import Image from 'next/image'
 import Link from 'next/link'
+import Search from '../components/SearchBar'
 import Nav from '../styles/Navbar.module.css'
 import { makeStyles } from "@material-ui/core/styles";
+import BookData from "../pages/Data.json";
 const useStyles = makeStyles((theme) => ({
   hamburber: {
     width: "30px",
@@ -83,6 +85,8 @@ const useStyles = makeStyles((theme) => ({
   },
   ul: {
     listStyleType: "none",
+      margin: "1.5rem",
+  
     "& li": {
       padding: "20px 0",
     },
@@ -96,13 +100,13 @@ const useStyles = makeStyles((theme) => ({
 function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
-    <li className={Nav.nav_item}>
-      <a href="#" onClick={() => setOpen(!open)}>
-        <div >
-          <Image src='/user.png' alt='' height={30} width={30} />
-          <p className={Nav.username}>Anjal</p>
-        </div>
+    <li className={`${Nav.nav_item} ${Nav.pnavitem}  `}>
+      <Link href="#" >
+        <a onClick={() => setOpen(!open)}>
+      <Image src='/user.png' alt='' height={30} width={30}/>
+      <p className={Nav.username}>Anjal</p>
       </a>
+      </Link>
       {open && props.children}
     </li>
   );
@@ -113,11 +117,11 @@ function DropdownMenu() {
   const dropdownRef = useRef(null);
   function DropdownItem(props) {
     return (
-      <a href="#" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-
+      <Link href="#"  onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+        
         {props.children}
-
-      </a>
+        
+      </Link>
     );
   }
   return (
@@ -130,30 +134,36 @@ function DropdownMenu() {
           </div>
         </div>
       </DropdownItem>
-      <DropdownItem>
-        <div className={Nav.dropcontent}>
-          <Link href="/profile"><a>My Profile</a></Link>
-
-        </div>
-
-      </DropdownItem>
-      <hr className={Nav.horizline} />
-      <DropdownItem>
-        <div className={Nav.dropcontent}>
-          <Link href="/order"><a> Orders and Price enquiries</a></Link>
-
-        </div>
-      </DropdownItem>
-      <hr className={Nav.horizline} />
-      <DropdownItem>
-        <div className={Nav.dropcontent}>
+          <DropdownItem>
+          <div className={Nav.dropcontent}>
+            <Link href="/profile"><a>My Profile</a></Link>
+           
+            </div>
+           
+            </DropdownItem>
+            <hr className={Nav.horizline}/>
+          <DropdownItem>
+          <div className={Nav.dropcontent}>
+          <Link href="/orderpage"><a> Orders and Price enquiries</a></Link>
+            
+            </div>
+            </DropdownItem>
+            <hr className={Nav.horizline}/>
+            <DropdownItem>
+          <div className={Nav.dropcontent}>
+          <Link href="/Sell"><a>Sell Orders</a></Link>
+            
+            </div>
+            </DropdownItem>
+            <hr className={Nav.horizline}/>
+          <DropdownItem>
+          <div className={Nav.dropcontent}>
           <Link href="/Wishlist"><a> Wishlist </a></Link>
-
-        </div>
-      </DropdownItem>
-      <hr className={Nav.horizline} />
-      <DropdownItem>
-        <div className={Nav.dropcontent}>
+            </div>
+            </DropdownItem>
+            <hr className={Nav.horizline}/>
+          <DropdownItem>
+          <div className={Nav.dropcontent}>
           <Link href="/cart"><a> Cart</a></Link>
 
         </div>
@@ -167,8 +177,6 @@ function DropdownMenu() {
     </div>
   );
 }
-
-
 const Navbar = () => {
   const [state, setState] = useState(false);
   useEffect(() => {
@@ -178,9 +186,7 @@ const Navbar = () => {
       setState(true);
     }
   }, [])
-
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const classes = useStyles();
@@ -251,44 +257,40 @@ const Navbar = () => {
 
       </Modal>
 
-
-
-      <div className={Nav.main}>
-        <div className={Nav.container}>
-
-          <div className={Nav.img}>
-            <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
-              width={150}
-              height={60}
-            /></a></Link>
-          </div>
-          <div className={Nav.hidetitles}>
-            <div className={Nav.searchcontainer}>
-              <form action=" ">
-                <input type="text" placeholder="Search" name="search" className={"search"} />
-                <button type="submit" className={Nav.btn}><i className="fa-solid fa-magnifying-glass"></i></button>
-              </form>
-            </div>
-            <div className={Nav.nav_right}>
-              <li className={Nav.nav_item}><Link href="/ecommerce"><a>Buy</a></Link></li>
-              <li className={Nav.nav_item}><Link href="/Sell"><a>Sell</a></Link></li>
-              <li className={Nav.nav_item}><Link href="/blogs/"><a>Blog</a></Link></li>
-              <li className={Nav.nav_item}><Link href="/about"><a>About us</a></Link></li>
-
-              <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li>
-              <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
-              {
-                state ?
-                  <>
-                    <NavItem >
-
-                      <DropdownMenu></DropdownMenu>
-                    </NavItem>
-
-                  </>
-
-                  :
-                  <button className={Nav.login}><Link href="/Authenticate/NewLogin"><a>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+    <div className={Nav.main}>
+      <div className={Nav.container}>
+      <div className={Nav.img}>
+          <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
+            width={150}
+            height={60}
+          /></a></Link>
+        </div>
+        <div className={Nav.hidetitles}>
+          
+          <Search placeholder="Search all Products" data={BookData} />
+          
+          <div className={Nav.nav_right}>
+          <li className={Nav.nav_item}><Link href="/"><a>HOME</a></Link></li>
+            <li className={Nav.nav_item}>
+            <button className={Nav.buysbtn}>
+           
+              <Link href="/ecommerce"><a className={Nav.textcol}>BUY</a></Link></button></li>
+            <li className={Nav.nav_item}><button className={Nav.buysbtn}><Link href="/Sell"><a className={Nav.textcol}>SELL</a></Link></button></li>
+            <li className={Nav.nav_item}><Link href="/blogs/"><a>BLOG</a></Link></li>
+            <li className={Nav.nav_item}><Link href="/about"><a>ABOUT US</a></Link></li>
+            {/* <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li> */}
+            <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
+            {
+                state?
+                <> 
+                       <NavItem className={Nav.pnavitem}>           
+                       <DropdownMenu></DropdownMenu>
+                       </NavItem>
+ 
+                    </>
+                
+                  :  
+                  <button className={Nav.login}><Link href="/auth/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
               }
             </div>
           </div>
@@ -330,6 +332,7 @@ const Navbar = () => {
                 /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
               </ul>
             </div>
+          
           </div>
 
         </div>

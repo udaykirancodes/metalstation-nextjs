@@ -1,0 +1,117 @@
+.container {
+  padding: 48px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.group {
+  padding: 8px 48px;
+  margin: 8px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checklabel {
+  position: relative;
+}
+
+.checklabel::before {
+  content: "";
+  background: url("/check-circle.svg");
+  background-position: center;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: -44px;
+  top: -3px;
+  transform: scale(0) rotateZ(180deg);
+  transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+.checkbox:checked + .checklabel::before {
+  transform: scale(1) rotateZ(0deg);
+}
+
+.checklabel::after {
+  content: "";
+  border: 2px solid #27ae60;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: -42px;
+  top: 0px;
+  border-radius: 50%;
+}
+
+
+.detailbox{
+  margin-top: 5rem;
+  display: flex;
+  margin-left: 3rem;
+  width: fit-content;
+      justify-content: space-between;
+  }
+
+  .detailright{
+   margin-right: 5rem;
+  }
+  .detailright ul li{
+    margin-bottom: 12px;
+  
+  }
+  .detailleft ul li{
+    margin-bottom: 12px;
+    color: #08376B;
+    font-weight: 600;
+  }
+    .crouselcontainer{
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5%;
+    }
+    .confirmation{
+      display: flex;
+      width: 1280px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      margin-bottom: 5%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .confirmationLeft{
+      width: 49%;
+      margin-right: 2%;
+    }
+
+    .confirmationRight{
+      width: 49%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .confirmationLeft{
+         display: none;
+      } 
+      .detailbox{
+        width: 80vw;
+      }
+    }
+    @media screen and (min-width: 767px) {
+      .mobcrouselconfirmationLeft{
+        display: none;
+      }
+    }
+/* crousel */
+    .divimg{
+      overflow: hidden; 
+    position: relative; 
+    width: 25rem; 
+    height: 11.7rem; 
+    border-radius: 0.75rem; 
+    border-width: 2px; 
+    }

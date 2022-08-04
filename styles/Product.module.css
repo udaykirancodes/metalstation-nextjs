@@ -13,36 +13,62 @@ padding: 2px;
   font-size: 1rem;
 }
 .doubtbtn{
-  background-color: #24A1FD;
-  color: white;
-  padding: 5px 15px;
-  font-size: 1.2rem;
+  background-color: #ffffff;
+  color: #24A1FD;
+  padding: 4px 6px;
+  font-size: 0.7rem;
   border-radius: 30px;
+  border: 2px solid #24A1FD;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  border: none;
+}
+.btn{
+  margin-top: 2rem;
+}
+.heart{
+  font-size: 2rem;
+}
+.quantbtn{
+	color: rgb(9, 8, 8);
+	text-align: center;
+    text-decoration: none;
+	cursor: pointer;
+	border: none;
+	background-color: #fff;
 }
 .button {
   border: none;
   color: white;
-  padding: 10px 30px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size:1.6rem;
-  margin: 4px 2px;
+  margin: 2px 2px;
   cursor: pointer;
+  width: 15vw;
   background-color: #24A1FD;
-  border-radius: 30px;
+  border-radius: 40px;
+  font-size: 1rem;
 }
-
-.pricep{
-  color: #00ab30;
-  font-size: 1.9rem;
-  list-style: none;
+.buybutton {
+  border: 2px solid #24A1FD;;
+  color: #24A1FD;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 2px;
+  width: 15vw;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 40px;
+  font-size: 1rem;
+}
+.price{
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .Title{
@@ -59,7 +85,7 @@ align-items: center;
 
 }
 .backcard {
-  
+
   background-color: white;
   border-radius: 0.25rem;
   display: flex;
@@ -85,12 +111,24 @@ justify-content: space-between;
 .cards_item {
 display: flex;
 padding: 1rem;
-font-size: 20px;
+
 
 }
 .enquire{
 color: #24A1FD;
 font-size: large;
+}
+.underline{
+  position: relative;
+}
+
+.underline::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 2px;
+  border-bottom:4px solid  #24A1FD;
+  width: 11%;
 }
 .middlesection{
 display: flex;
@@ -104,14 +142,14 @@ font-size: 1rem;
 .description{
 height: fit-content;
 display: block;
-width: 80%;
+width: 35vw;
 margin-right: 1rem;
 margin-top: 1.5rem;
 margin-left: 5rem;
 }
 .table{
 height: fit-content;
-width: 32rem;
+width: 40vw;
 margin-bottom: 4rem;
 
 }
@@ -121,7 +159,6 @@ margin-bottom: 4rem;
 }
 .card_title {
   color: #24A1FD;
-  font-size: 44px;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -171,14 +208,11 @@ margin-bottom: 4rem;
 }
 @media (min-width: 56rem) {
 .cards_item {
-  width:50%;
+  width:100%;
+  font-size: 1rem;
 }
 }
-@media (max-width: 900px) {
-.cards_item {
-  width: 50%;
-}
-}
+
 @media (min-width: 480px) {
   .display_item2{
     display: none;
@@ -202,10 +236,10 @@ margin-top: 2rem;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    
+
     }
     .table{
-      width:80rem;
+      width:90vw;
     }
     .piccontainer{
     display: none;
@@ -222,55 +256,8 @@ margin-top: 2rem;
 .crouselimg{
 transform: scale(1.5);
 }
-.cards_item {
-  width: 90%;
-  margin-left: 2rem;
-}
-.overview h2{
-  font-size: 5rem;
-}
-.description h2{
-  font-size: 65px;
-margin-bottom: 1.5rem;
 
-}
-.description{
-  width: 55rem;
-  margin-bottom: 2rem;
-  font-size: 2.3rem;
-}
-.card_text {
-  font-size: xx-large;
-}
-.ton{
-  font-size: 4rem;
-}
 
-.card_content {
-  font-size: 2.2rem;
-  line-height: revert;
-
-}
-.enquire{
-  font-size: 1.6rem;
-}
-.pricep{
-    font-size: 4rem;
-  font-weight: 600;
-}
-.card_title{
-  font-size: 4rem;
-}
-.Title{
-  font-size: 4rem;
-}
-.doubtbtn{
-  font-size: 2rem;
-}
-.button{
-  font-size: 2.3rem;
-  border-radius: 100px;
-}
 }
 
 @media (max-width: 300px) {
@@ -296,4 +283,61 @@ margin-bottom: 1.5rem;
   .carouselindicators{
     right: -58rem;
   }
+}
+
+.container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.confirmation{
+  display: flex;
+  width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.confirmationLeft{
+  width: 49%;
+  margin-right: 2%;
+}
+.mobcrouselconfirmationLeft{
+  width: 100%;
+  margin-right: auto;
+}
+.confirmationRight{
+  width: 49%;
+}
+@media screen and (min-width: 769px) {
+  .mobcrouselconfirmationLeft{
+display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .confirmation{
+      display: flex;
+      flex-direction: column;
+  }
+  .confirmationLeft, .confirmationRight{
+      width: 90vw;
+  }
+  .description{
+    width: 80vw;
+    margin-left: 1rem;
+  }
+  .table{
+    width: 90vw;
+  }
+  .confirmationLeft{
+display: none;
+  }
+}
+@media screen and (max-width: 768px) and  (min-width: 530px){
+.mobcrouselconfirmationLeft{
+  transform: scale(1);
+  margin-left: 3vw;
+}
 }

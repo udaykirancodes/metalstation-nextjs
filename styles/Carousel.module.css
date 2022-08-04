@@ -1,0 +1,89 @@
+.carouselcontainer {
+  width: 100%;
+  max-width: 500px;
+  transform: scale(1.1);
+  display: flex;
+  position: relative;
+  
+  margin-top:2rem;
+}
+.deskcarouselcontainer {
+  width: 96%;
+  max-width: 500px;
+  transform: scale(1.1);
+  display: flex;
+  position: relative;
+  margin-top:2rem;
+  margin-left: 1rem;
+}
+.carousel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carouselitem {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+}
+
+.carouselitem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carouselitem p {
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  bottom: 0;
+  inset: auto 0 0 0;
+  padding-block: 1rem;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.carouselbtn {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 2;
+  top: 50%;
+  cursor: pointer;
+  
+}
+
+@media (width > 600px) {
+  .carouselbtn {
+    display: inline-block;
+  }
+
+  .carouselitem.active p {
+    opacity: 1;
+    transform: scale(1.1) translateY(-40px);
+  }
+  .caruoselitem p {
+    opacity: 0;
+  }
+}
+
+.leftbtn {
+  border-bottom: 4px solid #24A1FD;
+  border-left: 4px solid #24A1FD;
+  left: 20px;
+}
+
+.rightbtn {
+  border-right: 4px solid #24A1FD;
+  border-top: 4px solid #24A1FD;
+  right: 20px;
+}
+

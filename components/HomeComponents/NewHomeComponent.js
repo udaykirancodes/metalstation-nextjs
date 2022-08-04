@@ -23,7 +23,7 @@ const NewHomeComponent = () => {
             </div>
             <div className={nhcCss.homeRight}>
               <div className="right_container">
-                <div className="home_button center"><Link href="/AllCategory"><a>Buy Scrap</a></Link></div>
+                <div className="home_button center"><Link href="/ecommerce"><a>Buy Scrap</a></Link></div>
                 <div className="or_box center">
                   <span className='line'></span>
                   <div className="center or">or</div>
