@@ -282,15 +282,17 @@ const Navbar = () => {
             <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
             {
                 state?
-                <> 
+                
+                <button className={Nav.login}><Link href="/auth/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+                  :  
+                  
+                  <> 
                        <NavItem className={Nav.pnavitem}>           
                        <DropdownMenu></DropdownMenu>
                        </NavItem>
  
                     </>
-                
-                  :  
-                  <button className={Nav.login}><Link href="/auth/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+                  
               }
             </div>
           </div>
