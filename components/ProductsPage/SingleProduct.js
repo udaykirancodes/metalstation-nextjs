@@ -25,12 +25,10 @@ export default function SingleProduct({product}) {
     setLiked(true); 
     addToWishlist(id  , product);
   }
-
   const singleDetail=(id)=>{
       singleProductDetail(id);
       router.push('/ecommerce')
   }
-  
   return (
     <>
         <div onClick={()=>singleDetail(product._id)} className="singleProduct">

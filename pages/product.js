@@ -121,7 +121,7 @@ const Product = () => {
                   <div className={productCss.display}>
                     <h1 className={productCss.card_title}>Aluminium Scrap</h1>
                     <div className={productCss.heart}>
-                      <Link href="/product2">
+                      <Link href="/cart">
                       <a><i className="uil uil-heart"></i></a>
                       </Link>
                     </div>
