@@ -283,7 +283,7 @@ const Navbar = () => {
             {
                 state?
                 
-                <button className={Nav.login}><Link href="/auth/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
+                <button className={Nav.login}><Link href="/Authenticare/NewLogin"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
                   :  
                   
                   <> 

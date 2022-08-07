@@ -57,3 +57,13 @@
   padding: 2%;
   font-size: var(--h4-heading);
 }
+
+@media screen  and (max-width:768px){
+  .loginLeft{
+    display: none;
+  }
+  .loginRight{
+    width: 100%;
+    padding: 2%;
+  }
+}

@@ -63,3 +63,12 @@
   padding: 2%;
   font-size: var(--h4-heading);
 }
+@media screen  and (max-width:768px){
+  .registerLeft{
+    display: none;
+  }
+  .registerRight{
+    width: 100%;
+    padding: 2%;
+  }
+}

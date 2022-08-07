@@ -49,7 +49,7 @@ export default function Home({wishlist, addToWishlist}) {
       <Testimonials/>
       <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
       {/* <Order/> */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <Wishlist wishlist={wishlist}/> */}
       {/* <Sell/> */}
       {/* <Sell2/> */}
