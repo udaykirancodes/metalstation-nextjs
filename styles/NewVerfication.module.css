@@ -57,3 +57,12 @@
   padding: 2%;
   font-size: var(--h4-heading);
 }
+@media screen  and (max-width:768px){
+  .verifyLeft{
+    display: none;
+  }
+  .verifyRight{
+    width: 100%;
+    padding: 2%;
+  }
+}

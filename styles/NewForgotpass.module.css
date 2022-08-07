@@ -81,3 +81,12 @@
   font-size: 100px;
   font-weight: bolder;
 }
+@media screen  and (max-width:768px){
+  .forgotLeft{
+    display: none;
+  }
+  .forgotRight{
+    width: 100%;
+    padding: 2%;
+  }
+}

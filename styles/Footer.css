@@ -1,5 +1,5 @@
 .footer{
-    background-color: var(--primary2);
+    background-color: var(--primary);
     width: 100vw;
     padding:2rem  1rem;
 
@@ -18,14 +18,22 @@
 .footer_options{
     margin:1rem 0 2rem 0;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 6px;
 }
 .footer_tags{
-    width: 300px;
+    width: 100%;
 }
-
+.follow_Icon{
+    font-size: 24px;
+    margin-right: 24px;
+}
 .footer_text{
+    font-family: sans-serif;
     margin-bottom: 10px;
     font-weight: 300;
 }
@@ -35,13 +43,18 @@
 .footer .headtag{
     margin : 1.5rem 0 ;
 }
+.headtag{
+    font-weight: bold;
+}
 li{
     list-style: none;
 }
 .footer_icon{
     margin-right: 1rem;
 }
-
+/* .footer_options div{
+    width: calc(100%/6 - 10px);
+} */
 
 /* Navbar CSS */
 .navbar{
@@ -98,3 +111,18 @@ li{
     font-size: 24px;
     right: 1rem;
 }
+
+@media screen  and (max-width:1080px){
+    .footer_options{
+        flex-wrap: wrap;
+    }
+    
+  }
+@media screen  and (max-width:600px){
+    .footer_options{
+        flex-wrap: wrap;
+    }
+    .footer_options div{
+        width: 300px;
+    }
+  }

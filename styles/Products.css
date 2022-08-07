@@ -8,7 +8,7 @@
 .category_bar_container{
   margin-top: 2rem;
   background-color: #fff;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   width: 100vw;
   /* position: sticky; */
   /* top: 0; */
