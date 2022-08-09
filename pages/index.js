@@ -8,7 +8,7 @@ import FeaturedProducts from "../components/HomeComponents/FeaturedProducts";
 import Category from "../components/HomeComponents/Category";
 import Footer from "../components/Footer";
 import Testimonials from "../components/HomeComponents/Testimonials";
-import { useEffect , useContext} from "react";
+import { useEffect, useContext } from "react";
 import Contact from "../components/HomeComponents/Contact";
 import Navbar from "../components/Navbar";
 // import Login from "./Authenticate/Login";
@@ -20,36 +20,36 @@ import Context from "../context/Context";
 import NewHomeComponent from "../components/HomeComponents/NewHomeComponent";
 import Order from "./Order";
 
-export default function Home({wishlist, addToWishlist}) {
+export default function Home({ wishlist, addToWishlist }) {
   // console.log(wishlist, addToWishlist);
-  const {fetchUserData} = useContext(Context); 
+  const { fetchUserData } = useContext(Context);
 
   const getData = () => {
     // this function get all the data like wishlist,cart if the user is logged in 
     let authToken = localStorage.getItem('authToken');
-    if(authToken){
+    if (authToken) {
       fetchUserData(authToken); // function is in context 
     }
   }
-  useEffect(()=>{
-    document.title = 'Metal Station'; 
+  useEffect(() => {
+    document.title = 'Metal Station';
     getData(); // this function get all the data like wishlist,cart if the user is logged in 
-  },[])
+  }, [])
   return (
     <>
       {/* <Navbar/> */}
       {/* <HomeComponent/> */}
-      <NewHomeComponent/>
-      <HomeCards/>
+      <NewHomeComponent />
+      <HomeCards />
       <WhyChooseUs />
       <HowItWorks />
       <AboutUs />
       <FeaturedProducts />
-      <Category />     
-      <Testimonials/>
-      <Contact wishlist={wishlist} addToWishlist={addToWishlist} /> 
+      <Category />
+      <Testimonials />
+      <Contact wishlist={wishlist} addToWishlist={addToWishlist} />
       {/* <Order/> */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <Wishlist wishlist={wishlist}/> */}
       {/* <Sell/> */}
       {/* <Sell2/> */}

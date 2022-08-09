@@ -1,9 +1,67 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link';
 import profilecss from '../styles/Profile.module.css'
+import Context from '../context/Context';
+
+import { UserDetailsEditUrl } from "../urls";
+import { useRouter } from 'next/router';
+
 const Profile = () => {
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const { user } = useContext(Context);
   // category bar arrow 
   const [arrowUp, setArrowUp] = useState(false);
+
+  const [name, setName] = useState(user.name);
+  const [phone, setPhone] = useState(user.phone);
+
+  const [address, setAddress] = useState({
+    pincode: user.address.pincode || '',
+    city: user.address.city || '',
+    town: user.address.town || '',
+    state: user.address.state || '',
+    location: user.address.location || '',
+  });
+  useEffect(() => {
+    setLoading(false);
+  }, [])
+
+  const handleChange = (e) => {
+    setAddress({ ...address, [e.target.name]: e.target.value })
+    console.log(address);
+  }
+
+  const updateUserInfo = async () => {
+
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      router.push('/authenticate/login');
+    }
+    let res = await fetch(UserDetailsEditUrl, {
+      method: 'PUT',
+      headers: {
+        'content-Type': 'application/json',
+        'authToken': authToken
+      },
+      body: JSON.stringify({ name: name, phone: phone, address: address })
+    })
+    let data = await res.json();
+    if (data.success) {
+      router.push('/')
+    }
+    else {
+      router.push('/')
+    }
+  }
+
+  if (loading) {
+    return <>
+
+    </>
+  }
+
   return (
     <>
       <div className="category_bar_container">
@@ -81,72 +139,140 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    <div className='container'>
-      <div className={profilecss.pageLink}>
-                        <Link href="/">
-                            <a>Home &gt;</a>
-                        </Link>
-                        <Link href="/orderpage">
-                            <a className={profilecss.bold}>Orders and Price Enquiries </a>
-                        </Link>
-                        
-                    </div>
-                    
-      <div className={profilecss.box}>
-        <div className={profilecss.display}> 
-      <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
-      <button className={profilecss.logoutbtn}>Log Out</button>
-      </div>
-      <div className={profilecss.contain}>
-      <div className={profilecss.detailbox}>
-        <div className={profilecss.detailright}>
-<ul>
-  <li>
-    Full Name
-  </li>
-  <li>
-    Email ID
-  </li>
-  <li>
-    Mobile Number
-  </li>
-  <li>
-   Address
-  </li>
-  <li>
-   Business Name
-  </li>
-  <li>
-    GSTIN
-  </li>
-</ul>
+      <div className='container'>
+        <div className={profilecss.pageLink}>
+          <Link href="/">
+            <a>Home &gt;</a>
+          </Link>
+          <Link href="/orderpage">
+            <a className={profilecss.bold}>Orders and Price Enquiries </a>
+          </Link>
+
         </div>
-        <div className={profilecss.detailleft}>
-        <ul>
-  <li>
-    Anjal Singh
-  </li>
-  <li>
-    asdf1234@gmail.com
-  </li>
-  <li>
-    9300002000
-  </li>
-  <li>
-   House Name, Locality, District,State
-  </li>
-  <li>
-   Supreme Group
-  </li>
-  <li>
-   -not added-
-  </li>
-</ul>
+
+
+
+
+        <div className={profilecss.box}>
+          <div className={profilecss.display}>
+            <h4 className={profilecss.prodetail}><b>Profile Details</b></h4>
+            <button data-bs-toggle="modal" data-bs-target="#staticBackdropProfile" className={profilecss.logoutbtn}>Edit Info</button>
           </div>
+          <div className={profilecss.contain}>
+            <div className={profilecss.detailbox}>
+              <div className={profilecss.detailright}>
+                <ul>
+                  <li>
+                    Full Name
+                  </li>
+                  <li>
+                    Email ID
+                  </li>
+                  <li>
+                    Mobile Number
+                  </li>
+                  <li>
+                    Location
+                  </li>
+                  <li>
+                    Pincode
+                  </li>
+                  <li>
+                    Town/Locality
+                  </li>
+                  <li>
+                    City/District
+                  </li>
+                  <li>
+                    State
+                  </li>
+                  <li>
+                    Business Name
+                  </li>
+                  <li>
+                    GSTIN
+                  </li>
+                </ul>
+              </div>
+              <div className={profilecss.detailleft}>
+                <ul>
+                  <li>
+                    {user.name ? user.name : ' - '}
+                  </li>
+                  <li>
+                    {user.email ? user.email : ' - '}
+                  </li>
+                  <li>
+                    {user.phone ? user.phone : ' - '}
+                  </li>
+                  <li>
+                    {user.address.location ? user.address.location : ' - '}
+                  </li>
+                  <li>
+                    {user.address.pincode ? user.address.pincode : ' - '}
+                  </li>
+                  <li>
+                    {user.address.town ? user.address.town : ' - '}
+                  </li>
+                  <li>
+                    {user.address.city ? user.address.city : ' - '}
+                  </li>
+                  <li>
+                    {user.address.state ? user.address.state : ' - '}
+                  </li>
+                  <li>
+                    -not added-
+                  </li>
+                  <li>
+                    -not added-
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* <button className={profilecss.btn}><Link href="/editdetails"><a>Edit Details</a></Link></button> */}
+            <button className={profilecss.btn} style={{ marginTop: '2rem', height: '2.5rem' }} data-bs-toggle="modal" data-bs-target="#staticBackdropProfile">Edit Details</button>
+          </div>
+        </div>
       </div>
-      <button className={profilecss.btn}><Link href="/editdetails"><a>Edit Details</a></Link></button>
-      </div>
-      </div>
+
+
+
+
+      {/* Modal */}
+      <div className="modal fade" id="staticBackdropProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title" id="staticBackdropLabel">Edit Details :- </h4>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              <form className="row g-3">
+                <div className="col-md-12">
+                  <label htmlFor="name" className="form-label">Contact Details</label>
+                  <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder='Name*' /> <br />
+                  <input type="tel" className="form-control" id="number" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Mobile Number*' />
+                </div>
+
+                <div className="col-md-12">
+                  <label htmlFor="subCategory" className="form-label">Address</label>
+                  <input type="number" className="form-control" id="pincode" value={address.pincode} name="pincode" onChange={(e) => handleChange(e)} placeholder='Pincode*' /> <br />
+                  <input type="text" className="form-control" id="address" value={address.location} name="location" onChange={(e) => handleChange(e)} placeholder='Address(House No, Building Street, Area)*' /> <br />
+                  <input type="text" className="form-control" id="locality" value={address.town} placeholder='Locality/Town*' name='town' onChange={(e) => handleChange(e)} />
+                </div>
+                <div className="col-md-6">
+                  <input type="text" className="form-control" value={address.city} id="city" placeholder='City/District*' name='city' onChange={(e) => handleChange(e)} />
+                </div>
+                <div className="col-md-6">
+                  <input type="text" className="form-control" value={address.state} id="state" placeholder='State*' name='state' onChange={(e) => handleChange(e)} />
+                </div>
+              </form>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={updateUserInfo}>Save Details</button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

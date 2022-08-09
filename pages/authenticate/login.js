@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
 import nlCss from '../../styles/NewLogin.module.css'
 import Link from 'next/link'
 import { UserLogin } from '../../urls';
 import { useRouter } from 'next/router';
+import Context from '../../context/Context';
 
 const NewLogin = () => {
   const router = useRouter();
   const [error, setError] = useState('')
+
+  const { setuser } = useContext(Context);
+
   useEffect(() => {
     document.title = 'Metal Station - Login'
   }, [])
@@ -21,6 +25,7 @@ const NewLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(input);
     if (input.email === '' || input.password === '') {
       setError('Email and Password Required');
       setTimeout(() => {
@@ -39,6 +44,7 @@ const NewLogin = () => {
     const data = await res.json();
     if (data.success) {
       let authToken = data.authToken;
+      setuser(data.user);
       localStorage.setItem('authToken', authToken);
       router.push('/');
     }
@@ -84,17 +90,17 @@ const NewLogin = () => {
                   <input type="checkbox" id="rememberme" name="rememberme" value="rememberme" />
                   <label htmlFor="rememberme"> Remember Me</label><br />
                 </div>
-                <p className={nlCss.forgotPass}><Link href="/Authenticate/NewForgotpass"><a ><b>Forgot Password?</b></a></Link></p>
+                <p className={nlCss.forgotPass}><Link href="/authenticate/forgotpassword"><a ><b>Forgot Password?</b></a></Link></p>
               </div>
             </div>
             <div className="loginBottom">
               <div className="LoginBtn">
-                <Link href="/"><a><button type='submit' onChange={(e) => handleSubmit(e)} className={nlCss.loginbtn}>
+                <button type='button' onClick={(e) => handleSubmit(e)} className={nlCss.loginbtn}>
                   Continue
-                </button></a></Link>
+                </button>
               </div>
               <div className={nlCss.SwitchtoSignup}>
-                <p>New to Metal Station? <Link href="/Authenticate/NewRegister"><a ><b>Create Account <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
+                <p>New to Metal Station? <Link href="/authenticate/register"><a ><b>Create Account <i className="fa-solid fa-arrow-right-to-bracket"></i> </b></a></Link></p>
               </div>
             </div>
           </div>

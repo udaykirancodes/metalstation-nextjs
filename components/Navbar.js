@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Modal from 'react-bootstrap/Modal';
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,6 +6,9 @@ import Search from '../components/SearchBar'
 import Nav from '../styles/Navbar.module.css'
 import { makeStyles } from "@material-ui/core/styles";
 import BookData from "../pages/Data.json";
+import Context from "../context/Context";
+import { useRouter } from "next/router";
+
 const useStyles = makeStyles((theme) => ({
   hamburber: {
     width: "30px",
@@ -85,8 +88,8 @@ const useStyles = makeStyles((theme) => ({
   },
   ul: {
     listStyleType: "none",
-      margin: "1.5rem",
-  
+    margin: "1.5rem",
+
     "& li": {
       padding: "20px 0",
     },
@@ -97,16 +100,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function NavItem(props) {
+
   const [open, setOpen] = useState(false);
+  const { user } = useContext(Context);
+
+
   return (
     <li className={`${Nav.nav_item} ${Nav.pnavitem}  `}>
-      <Link href="#" >
-        <a onClick={() => setOpen(!open)}>
-      <Image src='/user.png' alt='' height={30} width={30}/>
-      <p className={Nav.username}>Anjal</p>
-      </a>
-      </Link>
+      {/* <Link href="#" > */}
+      <div onClick={() => setOpen(!open)}>
+        <Image src='/user.png' alt='' height={30} width={30} />
+        <p className={Nav.username} style={{ textAlign: 'center' }}>{user ? user.name : ' - '}</p>
+      </div>
+      {/* </Link> */}
       {open && props.children}
     </li>
   );
@@ -114,85 +123,107 @@ function NavItem(props) {
 
 function DropdownMenu() {
   const [activeMenu, setActiveMenu] = useState('main');
+
+  const { user } = useContext(Context)
+
   const dropdownRef = useRef(null);
+
   function DropdownItem(props) {
     return (
-      <Link href="#"  onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-        
+      <Link href="#" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+
         {props.children}
-        
+
       </Link>
     );
   }
+
+  const Logout = () => {
+    console.log('Logging Out'); return;
+    localStorage.removeItem('authToken');
+    router.push('/');
+  }
+
+
+
   return (
     <div className={Nav.dropdown} ref={dropdownRef}>
       <DropdownItem>
         <div className={Nav.dropbox}>
           <div className={Nav.dropcontent}>
-            <p>Hello Anjal</p>
-            <p>asdf1234@gmail.com</p>
+            {
+              user ? <p>{'Hello  ' + user.name}</p> : <p>{'-'}</p>
+            }
+
+            <p>{user ? user.email : '-'}</p>
           </div>
         </div>
       </DropdownItem>
-          <DropdownItem>
-          <div className={Nav.dropcontent}>
-            <Link href="/profile"><a>My Profile</a></Link>
-           
-            </div>
-           
-            </DropdownItem>
-            <hr className={Nav.horizline}/>
-          <DropdownItem>
-          <div className={Nav.dropcontent}>
+      <DropdownItem>
+        <div className={Nav.dropcontent}>
+          <Link href="/profile"><a>My Profile</a></Link>
+
+        </div>
+
+      </DropdownItem>
+      <hr className={Nav.horizline} />
+      <DropdownItem>
+        <div className={Nav.dropcontent}>
           <Link href="/orderpage"><a> Orders and Price enquiries</a></Link>
-            
-            </div>
-            </DropdownItem>
-            <hr className={Nav.horizline}/>
-            <DropdownItem>
-          <div className={Nav.dropcontent}>
-          <Link href="/Sell"><a>Sell Orders</a></Link>
-            
-            </div>
-            </DropdownItem>
-            <hr className={Nav.horizline}/>
-          <DropdownItem>
-          <div className={Nav.dropcontent}>
-          <Link href="/Wishlist"><a> Wishlist </a></Link>
-            </div>
-            </DropdownItem>
-            <hr className={Nav.horizline}/>
-          <DropdownItem>
-          <div className={Nav.dropcontent}>
-          <Link href="/cart"><a> Cart</a></Link>
 
         </div>
       </DropdownItem>
       <hr className={Nav.horizline} />
       <DropdownItem>
         <div className={Nav.dropcontent}>
-          Logout
+          <Link href="/Sell"><a>Sell Orders</a></Link>
+
         </div>
       </DropdownItem>
+      <hr className={Nav.horizline} />
+      <DropdownItem>
+        <div className={Nav.dropcontent}>
+          <Link href="/Wishlist"><a> Wishlist </a></Link>
+        </div>
+      </DropdownItem>
+      <hr className={Nav.horizline} />
+      <DropdownItem>
+        <div className={Nav.dropcontent}>
+          <Link href="/cart"><a> Cart</a></Link>
+
+        </div>
+      </DropdownItem>
+      <hr className={Nav.horizline} />
+      {/* <DropdownItem>
+        <div onClick={Logout} className={Nav.dropcontent}>
+          Logout
+        </div>
+      </DropdownItem> */}
+      <div onClick={Logout} className={Nav.dropcontent}>
+        Logout
+      </div>
     </div>
   );
 }
 const Navbar = () => {
   const [state, setState] = useState(false);
+
+  const router = useRouter();
+  const { user } = useContext(Context);
+
   useEffect(() => {
     let auth = localStorage.getItem('authToken');
     if (auth) {
       console.log(auth);
       setState(true);
     }
-  }, [])
+  }, [router, user])
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const classes = useStyles();
   const [active, setActive] = useState(false);
   return (
-
     <>
 
 
@@ -257,42 +288,39 @@ const Navbar = () => {
 
       </Modal>
 
-    <div className={Nav.main}>
-      <div className={Nav.container}>
-      <div className={Nav.img}>
-          <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
-            width={150}
-            height={60}
-          /></a></Link>
-        </div>
-        <div className={Nav.hidetitles}>
-          
-          <Search placeholder="Search all Products" data={BookData} />
-          
-          <div className={Nav.nav_right}>
-          <li className={Nav.nav_item}><Link href="/"><a>HOME</a></Link></li>
-            <li className={Nav.nav_item}>
-            <button className={Nav.buysbtn}>
-           
-              <Link href="/ecommerce"><a className={Nav.textcol}>BUY</a></Link></button></li>
-            <li className={Nav.nav_item}><button className={Nav.buysbtn}><Link href="/Sell"><a className={Nav.textcol}>SELL</a></Link></button></li>
-            <li className={Nav.nav_item}><Link href="/blogs/"><a>BLOG</a></Link></li>
-            <li className={Nav.nav_item}><Link href="/about"><a>ABOUT US</a></Link></li>
-            {/* <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li> */}
-            <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
-            {
-                state?
-                
-                <button className={Nav.login}><Link href="/auth/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
-                  :  
-                  
-                  <> 
-                       <NavItem className={Nav.pnavitem}>           
-                       <DropdownMenu></DropdownMenu>
-                       </NavItem>
- 
-                    </>
-                  
+      <div className={Nav.main}>
+        <div className={Nav.container}>
+          <div className={Nav.img}>
+            <Link href="/"><a><Image src="/Metal_Station_Logo.png" alt="logo"
+              width={150}
+              height={60}
+            /></a></Link>
+          </div>
+          <div className={Nav.hidetitles}>
+
+            <Search placeholder="Search all Products" data={BookData} />
+
+            <div className={Nav.nav_right}>
+              <li className={Nav.nav_item}><Link href="/"><a>HOME</a></Link></li>
+              <li className={Nav.nav_item}>
+                <button className={Nav.buysbtn}>
+
+                  <Link href="/ecommerce"><a className={Nav.textcol}>BUY</a></Link></button></li>
+              <li className={Nav.nav_item}><button className={Nav.buysbtn}><Link href="/Sell"><a className={Nav.textcol}>SELL</a></Link></button></li>
+              <li className={Nav.nav_item}><Link href="/blogs/"><a>BLOG</a></Link></li>
+              <li className={Nav.nav_item}><Link href="/about"><a>ABOUT US</a></Link></li>
+              {/* <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li> */}
+              <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
+              {
+                state ?
+                  <>
+                    <NavItem className={Nav.pnavitem}>
+                      <DropdownMenu></DropdownMenu>
+                    </NavItem>
+
+                  </>
+                  :
+                  <button className={Nav.login}><Link href="/authenticate/login"><a className={Nav.textcol}>Log in </a></Link><i className="fa-solid fa-angle-right"></i> </button>
               }
             </div>
           </div>
@@ -334,7 +362,7 @@ const Navbar = () => {
                 /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
               </ul>
             </div>
-          
+
           </div>
 
         </div>

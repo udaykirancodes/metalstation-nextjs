@@ -1,11 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import Navbar from '../../components/Navbar'
 import Link from 'next/link'
 import Filters from '../../components/ProductsPage/Filters'
 import SingleProduct from '../../components/ProductsPage/SingleProduct'
 import Pagination from "../../components/Pagination"
-import Footer from "../../components/Footer"
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
@@ -17,10 +15,13 @@ export default function Products() {
 
   const router = useRouter();
 
-
+  const [filters, setFilters] = useState([]);
   // variables for bottom show or not 
   const [sortShow, setSortShow] = useState(false);
   const [filterShow, setFilterShow] = useState(false);
+
+  const [min, setMin] = useState(10000000); // initially max
+  const [max, setMax] = useState(1); // initially min 
 
   const openSort = () => {
     setFilterShow(false);
@@ -41,14 +42,14 @@ export default function Products() {
   // data fetching 
   const getdata = async () => {
     console.log(currentPage);
-    const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}`);
+    const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}&min=${min}&max=${max}`);
     if (data.success) {
       setProducts(data.pagination);
     }
   }
   useEffect(() => {
     getdata();
-  }, [currentPage])
+  }, [currentPage, filters])
   useEffect(() => {
     document.title = "Metal Station - Buy"
   }, []);
@@ -56,7 +57,7 @@ export default function Products() {
 
   // filters 
 
-  const [filters, setFilters] = useState([]);
+
   const remove = (min, max) => { // remove applied filters 
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
@@ -66,13 +67,19 @@ export default function Products() {
     });
     let newF = filters.filter((f) => f.min != min && f.max != max);
     setFilters(newF);
+    handleAllFilters(); // to set min & max again after removing the filter 
+    setcurrentPage(1);
   }
 
-  const [min, setMin] = useState(100000); // initially max
-  const [max, setMax] = useState(0); // initially min 
-  useEffect(() => {
-    console.log(min, max);
-  }, [min, max])
+
+  // useEffect(() => {
+  //   console.log(min, max);
+  //   if (!min && !max) {
+  //     setMax(1);
+  //     setMin(10000000);
+  //   }
+  //   getdata();
+  // }, [min, max])
   const handleAllFilters = (e) => {
     let tempFilters = [];
     setFilters([]);
@@ -95,8 +102,14 @@ export default function Products() {
     // console.log('Max Array : ',maxArray);
     setMin(minArray[0]);
     setMax(maxArray[minArray.length - 1]);
+    setcurrentPage(1);
   }
+
   const clearAllFilters = () => {
+    handleAllFilters(); // to set min & max again after removing the filter 
+    setcurrentPage(1);
+    setMin(100000000) // intial values 
+    setMax(1);
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
       element.checked = false;  // unchecking all the checkboxes
@@ -105,6 +118,22 @@ export default function Products() {
   }
   // arrow 
   const [arrowUp, setArrowUp] = useState(false);
+
+  // product sorting :: 
+  const sortByPrice = (n) => {
+    if (n) {
+      let res = products.results.sort((a, b) => (a.price > b.price ? n : -n));
+      let s = {
+        ...products,
+        results: res
+      }
+      setProducts(s)
+    }
+  }
+  const radioSortHelper = (e) => {
+    let value = parseInt(e.target.value);
+    sortByPrice(value);
+  }
   return (
     <>
       {/* <Navbar scroll={true} /> */}
@@ -201,10 +230,10 @@ export default function Products() {
               })
             }
 
-            <select name="" id="" className="mobile_none form-selector text_blue">
-              <option value="">Sort By : Relevance </option>
-              <option value="">Sort By : Relevance </option>
-              <option value="">Sort By : Relevance </option>
+            <select className="mobile_none form-selector text_blue" onChange={(e) => sortByPrice(parseInt(e.target.value))}>
+              <option value="">Sort By</option>
+              <option value="1">Price : Low  - High</option>
+              <option value="-1">Price : High - Low</option>
             </select>
           </div>
           {/* products */}
@@ -246,18 +275,13 @@ export default function Products() {
             <li className='filter_header'>Sort By </li>
             <i className="uil  uil-times close_icon" onClick={close}></i>
           </div>
-
           <label className='filter_label'>
-            <span className='input_text'>Relevance</span>
-            <input type="radio" className='checkbox' name="radio" />
+            <span className='input_text'>Price - Low to High</span>
+            <input type="radio" className='checkbox' name="radio" onChange={(e) => radioSortHelper(e)} value={1} /> { /* 1 for ascentding sort*/}
           </label>
           <label className='filter_label'>
-            <span className='input_text'>Price - low to high</span>
-            <input type="radio" className='checkbox' name="radio" />
-          </label>
-          <label className='filter_label'>
-            <span className='input_text'>Price - high to low</span>
-            <input type="radio" className='checkbox' name="radio" />
+            <span className='input_text'>Price - High to Low</span>
+            <input type="radio" className='checkbox' name="radio" onChange={(e) => radioSortHelper(e)} value={-1} /> { /* -1 for ascentding sort*/}
           </label>
         </ul>
       </div>

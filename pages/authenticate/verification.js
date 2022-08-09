@@ -1,12 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import vfCss from '../../styles/NewVerfication.module.css'
 import Image from 'next/image'
 import OtpInput from "react-otp-input";
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { EmailVerificationUrl } from '../../urls';
+import Context from '../../context/Context';
 
 const NewVerification = () => {
+  const router = useRouter();
   const [otp, setOtp] = useState('');
   const handleChange = (code) => setOtp(code);
+
+  const { setuser } = useContext(Context);
+
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    let email = localStorage.getItem('email');
+    if (!email) {
+      router.push('/authenticate/register');
+    }
+    setEmail(email);
+  }, [])
+
+  const [error, setError] = useState('');
+
+  const handleSubmit = async () => {
+    const newOtp = parseInt(otp);
+    const res = await fetch(EmailVerificationUrl, {
+      method: 'POST',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email: email, otp: newOtp })
+    })
+    const data = await res.json();
+    console.log(data);
+    if (data.success) {
+      localStorage.setItem('authToken', data.authToken);
+      setuser(data.user);
+      router.push('/');
+    }
+    else {
+      setError(data.msg);
+      setTimeout(() => {
+        setError('')
+      }, 2000);
+    }
+  }
+
   return (
     <>
       <div className="container">
@@ -19,9 +63,13 @@ const NewVerification = () => {
           <div className={vfCss.verifyRight}>
             <div className="verifyHeader">
               <h1 className={vfCss.verifyhead}>OTP Verification</h1>
+              {
+                error && <p className='text_red'>{error}</p>
+              }
             </div>
             <div className="verifyForm">
               <div className="verifyemail my-4">
+
                 <label htmlFor="email">OTP is send to your email</label><br />
                 <OtpInput
                   value={otp}
@@ -49,9 +97,9 @@ const NewVerification = () => {
             </div>
             <div className="verifyBottom">
               <div className="verifyBtn">
-                <Link href="/Authenticate/NewResetPass"><a><button className={vfCss.verifybtn}>
+                <button onClick={handleSubmit} className={vfCss.verifybtn}>
                   Send OTP
-                </button></a></Link>
+                </button>
               </div>
             </div>
           </div>
