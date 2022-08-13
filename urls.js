@@ -31,6 +31,8 @@ export const EmailVerificationUrl = backendurl + 'auth/user/verify';
 export const ResetRequestUrl = backendurl + 'auth/user/reset';
 export const AddToWishlistUrl = backendurl + 'wishlist/add';
 export const AddToCartUrl = backendurl + 'cart/add';
-export const RemoveFromCartUrl = backendurl + 'cart/delete';
+export const RemoveFromCartUrl = backendurl + 'cart/remove';
 export const GetUserCartUrl = backendurl + 'cart/getall';
+export const UpdateQuantityInCart = backendurl + 'cart/update';
+export const PlaceOrderUrl = backendurl + 'orders/';
 

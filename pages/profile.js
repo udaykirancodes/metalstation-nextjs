@@ -14,6 +14,7 @@ const Profile = () => {
   // category bar arrow 
   const [arrowUp, setArrowUp] = useState(false);
 
+  console.log(user.name + '777777777777777');
   const [name, setName] = useState(user.name);
   const [phone, setPhone] = useState(user.phone);
 

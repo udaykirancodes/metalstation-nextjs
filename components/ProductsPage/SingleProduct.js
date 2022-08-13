@@ -27,17 +27,19 @@ export default function SingleProduct({ product }) {
     setLiked(true);
     addToWishlist(id, product);
   }
-  const singleDetail = (id) => {
-    singleProductDetail(id);
-    router.push('/ecommerce')
-  }
+  // const singleDetail = (id) => {
+  //   singleProductDetail(id);
+  //   router.push('/ecommerce')
+  // }
   return (
     <>
-      <div onClick={() => singleDetail(product._id)} className="singleProduct">
-        <div className="productTop">
-          <Image src={src} layout='fill' alt='Image' />
-        </div>
-        <div className="productBottom">
+      <div className="singleProduct">
+        <Link href={link}>
+          <div className="productTop" >
+            <Image src={src} layout='fill' alt='Image' />
+          </div>
+        </Link>
+        <div className="productBottom" >
           <div className="product_text_container">
             <div className="icon_container" onClick={() => add(product._id)}>
               {

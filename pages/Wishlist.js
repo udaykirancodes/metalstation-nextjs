@@ -119,8 +119,8 @@ const Wishlist = () => {
           </div>
         </div>
         {/* <div className={cartCss.mobgoback}> */}
-          <Link href="/ecommerce" >
-            <a style={{marginLeft:'0.5rem', color:'#24A1FD'}}><i className="fa-solid fa-arrow-left-long goback"></i>Go back</a></Link>
+        <Link href="/ecommerce" >
+          <a style={{ marginLeft: '0.5rem', color: '#24A1FD' }}><i className="fa-solid fa-arrow-left-long goback"></i>Go back</a></Link>
         {/* </div> */}
         <section className={wlCss.wishlist}>
 
@@ -154,7 +154,7 @@ const Wishlist = () => {
                       <h6 className={wlCss.price}>{item.price}</h6>
                     </div>
                     <div className={wlCss.wishlist_button}>
-                      <button className={wlCss.wishlistbtn} onClick={() => addToCart(item._id, item)}><i className="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                      <button className={wlCss.wishlistbtn} onClick={() => addToCart(item._id, 1)}><i className="fa-solid fa-cart-shopping"></i>Add to cart</button>
                       {/* <button className={wlCss.wishlistbuybtn}>Buy Now</button> */}
                     </div>
                   </div>
