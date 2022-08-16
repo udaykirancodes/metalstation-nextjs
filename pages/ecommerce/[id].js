@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import data from "../../components/crouseldata";
 import Card from "../../components/ProductCard"
 import productCss from '../../styles/Product.module.css'
-import Link from 'next/link'
 import MobCrousel from '../components/MobCarousel'
 import Crousel from '../components/crousel'
 
@@ -27,7 +27,7 @@ const Product = () => {
   useEffect(() => {
     document.title = "Metal Station - Blogs"
     const getdata = async () => {
-      let { data } = await axios.get(SingleBlogUrl + `/${name}`);
+      let { data } = await axios.get(SingleBlogUrl + `/${id}`);
       // let data = await res.json(); 
       console.log(data);
       if (data.success) {

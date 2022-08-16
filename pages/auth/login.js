@@ -39,7 +39,6 @@ const Login = () => {
       },
       body: JSON.stringify(input)
     })
-    // let {resp} = await axios.post(UserLogin , input)
     const data = await res.json();
     if (data.success) {
       let authToken = data.authToken;

@@ -12,8 +12,8 @@ const Sell = () => {
         <p><Link href="/"><a>Home-</a></Link><b>Sell</b></p>
         <h1>Sell your Scrap product to Us.</h1>
       </div>
-      <Detail/>
-      <Howitwork/>
+      <Detail />
+      <Howitwork />
       {/* <Sellimg/> */}
       {/* <ImagePreview/> */}
     </>

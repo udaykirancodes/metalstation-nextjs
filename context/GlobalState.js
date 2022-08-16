@@ -106,6 +106,10 @@ export default function GlobalState({ children }) {
 
 
     const fetchUserData = async () => {
+        let authToken = localStorage.getItem('authToken');
+        if (!authToken) {
+            return;
+        }
         fetchWishlist();
         fetchUser();
     }

@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import BookData from "../pages/Data.json";
 import Context from "../context/Context";
 import { useRouter } from "next/router";
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const useStyles = makeStyles((theme) => ({
   hamburber: {
@@ -103,19 +104,20 @@ const useStyles = makeStyles((theme) => ({
 
 
 function NavItem(props) {
-
   const [open, setOpen] = useState(false);
   const { user } = useContext(Context);
-
-
   return (
     <li className={`${Nav.nav_item} ${Nav.pnavitem}  `}>
-      {/* <Link href="#" > */}
-      <div onClick={() => setOpen(!open)}>
+      {/* <OutsideClickHandler
+        onOutsideClick={() => {
+          setOpen(false);
+        }}
+      > */}
+      <a onClick={() => setOpen(!open)}>
         <Image src='/user.png' alt='' height={30} width={30} />
         <p className={Nav.username} style={{ textAlign: 'center' }}>{user ? user.name : ' - '}</p>
-      </div>
-      {/* </Link> */}
+      </a>
+      {/* </OutsideClickHandler> */}
       {open && props.children}
     </li>
   );
@@ -164,20 +166,17 @@ function DropdownMenu() {
           <Link href="/profile"><a>My Profile</a></Link>
 
         </div>
-
       </DropdownItem>
       <hr className={Nav.horizline} />
       <DropdownItem>
         <div className={Nav.dropcontent}>
-          <Link href="/orderpage"><a> Orders and Price enquiries</a></Link>
-
+          <Link href="/orders"><a> Orders and Price enquiries</a></Link>
         </div>
       </DropdownItem>
       <hr className={Nav.horizline} />
       <DropdownItem>
         <div className={Nav.dropcontent}>
           <Link href="/Sell"><a>Sell Orders</a></Link>
-
         </div>
       </DropdownItem>
       <hr className={Nav.horizline} />
@@ -190,7 +189,6 @@ function DropdownMenu() {
       <DropdownItem>
         <div className={Nav.dropcontent}>
           <Link href="/cart"><a> Cart</a></Link>
-
         </div>
       </DropdownItem>
       <hr className={Nav.horizline} />

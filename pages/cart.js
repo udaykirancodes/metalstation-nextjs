@@ -33,7 +33,6 @@ const Cart = () => {
             }
         })
         const data = await res.json();
-        console.log('xxxxxxx')
         console.log(data.cart[0]);
         if (data.success) {
             if (data.cart.length) {
@@ -46,7 +45,6 @@ const Cart = () => {
                 setCart(a);
             }
         }
-
     }
     // remove from cart 
     const removeFromCart = async (id) => {

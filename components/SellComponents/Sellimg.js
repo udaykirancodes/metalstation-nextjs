@@ -3,14 +3,13 @@ import sCss from '../../styles/Sell.module.css'
 import ImagePreview from './ImagePreview';
 
 
-const Sellimg = ({onSubmission}) => {
+const Sellimg = ({ onSubmission }) => {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
   const uploadToClient = (event) => {
     if (event.target.files && event.target.files[0]) {
       const i = event.target.files[0];
-
       setImage(i);
       setCreateObjectURL(URL.createObjectURL(i));
     }
@@ -34,7 +33,7 @@ const Sellimg = ({onSubmission}) => {
             <h4>Select Image</h4>
             <input type="file" name="myImage" onChange={uploadToClient} multiple /> */}
             {/* <MultipleImageUploadComponent onSubmission={onSubmission}/> */}
-            <ImagePreview onSubmission={onSubmission}/>
+            <ImagePreview onSubmission={onSubmission} />
           </div>
         </div>
       </section>

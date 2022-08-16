@@ -35,4 +35,10 @@ export const RemoveFromCartUrl = backendurl + 'cart/remove';
 export const GetUserCartUrl = backendurl + 'cart/getall';
 export const UpdateQuantityInCart = backendurl + 'cart/update';
 export const PlaceOrderUrl = backendurl + 'orders/';
+export const GetUserEnquiryUrl = backendurl + 'enquiry/getuser';
+export const GetUserOrdersUrl = backendurl + 'orders/getuser';
+export const GetSingleOrderUrl = backendurl + 'orders/'; // + order id  
 
+
+// Enquiry : pending , processing , confirmed
+// Orders  : ordered , shipped , placed 

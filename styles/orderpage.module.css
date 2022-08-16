@@ -85,8 +85,8 @@
 }
 .delivaryEstimate{
   display: flex;
-  width: 98%;
-  height: 25%;
+  width: 100%;
+  height: max-content;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 4px;
   margin-bottom: 1rem;
