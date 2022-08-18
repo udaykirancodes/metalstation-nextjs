@@ -3,7 +3,7 @@ import sCss from '../../styles/Sell.module.css'
 import ImagePreview from './ImagePreview';
 
 
-const Sellimg = ({ onSubmission }) => {
+const Sellimg = ({ onSubmission, details, setDetails }) => {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
@@ -16,15 +16,16 @@ const Sellimg = ({ onSubmission }) => {
   };
 
   const uploadToServer = async (event) => {
-    const body = new FormData();
-    body.append("file", image);
-    const response = await fetch("/api/file", {
-      method: "POST",
-      body
-    });
+    // const body = new FormData();
+    // body.append("file", image);
+    // const response = await fetch("/api/file", {
+    //   method: "POST",
+    //   body
+    // });
   };
   return (
     <>
+
       <section className={sCss.imageSection}>
         <div className="container">
           <h4 className={sCss.Sellheader}>Add some images of the product you want to sell</h4>
@@ -33,7 +34,7 @@ const Sellimg = ({ onSubmission }) => {
             <h4>Select Image</h4>
             <input type="file" name="myImage" onChange={uploadToClient} multiple /> */}
             {/* <MultipleImageUploadComponent onSubmission={onSubmission}/> */}
-            <ImagePreview onSubmission={onSubmission} />
+            <ImagePreview onSubmission={onSubmission} details={details} setDetails={setDetails} />
           </div>
         </div>
       </section>

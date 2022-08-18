@@ -319,9 +319,9 @@ const Cart = () => {
                                                 <div className={cartCss.content}>
                                                     <Link href="/ecommerce"><a><h3 className={cartCss.producttitle}>{item.name}</h3></a></Link>
                                                     <p className="unit">Quantity :
-                                                        <button onClick={() => updateQuantity(item.productid, parseInt(item.quantity) - 1)} className={cartCss.btn} style={{ margin: '5px' }}>  <i className="fa-solid fa-minus">-</i></button>
+                                                        <button onClick={() => updateQuantity(item.productid, parseInt(item.quantity) - 1)} className={cartCss.btn} style={{ margin: '5px' }}>  <i className="fa-solid fa-minus"></i></button>
                                                         <span>{item.quantity}</span>
-                                                        <button onClick={() => updateQuantity(item.productid, parseInt(item.quantity) + 1)} className={cartCss.btn} style={{ margin: '5px' }}>  <i className="fa-solid fa-plus">+</i></button>
+                                                        <button onClick={() => updateQuantity(item.productid, parseInt(item.quantity) + 1)} className={cartCss.btn} style={{ margin: '5px' }}>  <i className="fa-solid fa-plus"></i></button>
                                                         <small className={cartCss.ton}>Tons</small></p>
                                                     <h4 className={cartCss.price}>&#8377;{' ' + product.price}</h4>
                                                     <p>Delivered by &nbsp;<span className={cartCss.bold}>{' Within 1 Week of Order Placed'}</span></p>

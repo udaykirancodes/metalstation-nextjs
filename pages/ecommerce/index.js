@@ -41,15 +41,27 @@ export default function Products() {
 
   // data fetching 
   const getdata = async () => {
-    console.log(currentPage);
-    const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}&min=${min}&max=${max}`);
-    if (data.success) {
-      setProducts(data.pagination);
+    // console.log(currentPage);
+    if (min === 10000000) {
+      min = '';
     }
+    if (max === 1) {
+      max = ''
+    }
+    // const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}&min=${min}&max=${max}`);
+    const res = await fetch(GetAllProducts, {
+      method: 'GET',
+    })
+    const data = await res.json();
+    if (data.success) {
+      setProducts(data.pagination)
+    }
+
   }
   useEffect(() => {
-    getdata();
-  }, [currentPage, filters])
+    // getdata();
+    console.log(min, max);
+  }, [currentPage, filters, min, max])
   useEffect(() => {
     document.title = "Metal Station - Buy"
   }, []);
@@ -134,6 +146,15 @@ export default function Products() {
     let value = parseInt(e.target.value);
     sortByPrice(value);
   }
+  const [category, setCategory] = useState('');
+  const [subcategory, setSubcategory] = useState('');
+  function setValues(a, b) {
+    setCategory(a);
+    setSubcategory(b);
+  }
+  useEffect(() => {
+    console.log(category, subcategory);
+  }, [category, subcategory])
   return (
     <>
       {/* <Navbar scroll={true} /> */}
@@ -155,39 +176,39 @@ export default function Products() {
               <div className="onHoverCategories" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)}>
                 <ul className='onHover-ul light-bg'>
                   <li className='onHover-li-main'>STEEL</li>
-                  <li className='onHover-li'>Steel Rod</li>
-                  <li className='onHover-li'>Steel Pipe</li>
-                  <li className='onHover-li'>Steel Wire</li>
-                  <li className='onHover-li'>Steel Bar</li>
-                  <li className='onHover-li'>Steel Foundary</li>
+                  <li className='onHover-li' onClick={() => setValues('steel', 'rod')}>Steel Rod</li>
+                  <li className='onHover-li' onClick={() => setValues('steel', 'pipe')}>Steel Pipe</li>
+                  <li className='onHover-li' onClick={() => setValues('steel', 'wire')}>Steel Wire</li>
+                  <li className='onHover-li' onClick={() => setValues('steel', 'bar')}>Steel Bar</li>
+                  <li className='onHover-li' onClick={() => setValues('steel', 'foundary')}>Steel Foundary</li>
                 </ul>
                 <ul className='onHover-ul light-bg-2'>
                   <li className='onHover-li-main'>ALUMINIUM</li>
-                  <li className='onHover-li'>Aluminium Rod</li>
-                  <li className='onHover-li'>Aluminium Pipe</li>
-                  <li className='onHover-li'>Aluminium Wire</li>
-                  <li className='onHover-li'>Aluminium Bar</li>
-                  <li className='onHover-li'>Aluminium Foundary</li>
+                  <li className='onHover-li' onClick={() => setValues('aluminium', 'rod')}>Aluminium Rod</li>
+                  <li className='onHover-li' onClick={() => setValues('aluminium', 'pipe')}>Aluminium Pipe</li>
+                  <li className='onHover-li' onClick={() => setValues('aluminium', 'wire')}>Aluminium Wire</li>
+                  <li className='onHover-li' onClick={() => setValues('aluminium', 'bar')}>Aluminium Bar</li>
+                  <li className='onHover-li' onClick={() => setValues('aluminium', 'foundary')}>Aluminium Foundary</li>
                 </ul>
                 <ul className='onHover-ul light-bg'>
                   <li className='onHover-li-main'>COPPER</li>
-                  <li className='onHover-li'>Copper Rod</li>
-                  <li className='onHover-li'>Copper Pipe</li>
-                  <li className='onHover-li'>Copper Wire</li>
-                  <li className='onHover-li'>Copper Bar</li>
-                  <li className='onHover-li'>Copper Foundary</li>
+                  <li className='onHover-li' onClick={() => setValues('copper', 'rod')}>Copper Rod</li>
+                  <li className='onHover-li' onClick={() => setValues('copper', 'pipe')}>Copper Pipe</li>
+                  <li className='onHover-li' onClick={() => setValues('copper', 'wire')}>Copper Wire</li>
+                  <li className='onHover-li' onClick={() => setValues('copper', 'bar')}>Copper Bar</li>
+                  <li className='onHover-li' onClick={() => setValues('copper', 'foundary')}>Copper Foundary</li>
                 </ul>
                 <ul className='onHover-ul light-bg-2'>
                   <li className='onHover-li-main'>MACHINERY</li>
-                  <li className='onHover-li'>Steel Rod</li>
-                  <li className='onHover-li'>Steel Pipe</li>
-                  <li className='onHover-li'>Steel Wire</li>
+                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
+                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
+                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
                 </ul>
                 <ul className='onHover-ul light-bg'>
                   <li className='onHover-li-main'>AUTO PARTS</li>
-                  <li className='onHover-li'>Steel Rod</li>
-                  <li className='onHover-li'>Steel Pipe</li>
-                  <li className='onHover-li'>Steel Wire</li>
+                  <li className='onHover-li' onClick={() => setValues('autoparts', '')}>Auto Parts</li>
+                  <li className='onHover-li' onClick={() => setValues('autoparts', '')}>Auto Parts</li>
+                  <li className='onHover-li' onClick={() => setValues('autoparts', '')}>Auto Parts</li>
                 </ul>
               </div>
             </div>

@@ -1,91 +1,111 @@
-import React from 'react'
-import { useState, useContext, useRef } from 'react'
-import sCss from '../../styles/Sell.module.css'
-import Context from '../../context/Context'
-import MultipleImageUploadComponent from './MultipleImageUploadComponent'
+import React, { useState } from 'react'
 import Sellimg from './Sellimg'
+import sCss from '../../styles/Sell.module.css'
 const Detail = () => {
-  const context = useContext(Context)
-  const {sellProduct, getSell, addSell} = context;
-
-
-  const [type, setType] = useState('metal')
-
-
-  const [details, setDetails] = useState({type:"", phone:"", materialName:"", Origin:""})
-
-  const ref = useRef(null)
-    const refClose = useRef(null)
-
-
-  const onSubmission=(e)=>{
-    addSell(details.type, details.phone, details.materialName, details.Origin);
-    // refClose.current.click()
-    console.log(details);
-    setDetails({type:"", phone:"", materialName:"", Origin:""});
-    e.preventDefault();
+  const [details, setDetails] = useState({});
+  const handleChange = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value })
+    // console.log(details)
   }
-  const onChange=(e)=>{
-    setDetails({...details, [e.target.name]:e.target.value})
-  }
-  console.log(type);
   return (
     <>
       <div className="detailSection" style={{ marginBottom: '2%' }}>
         <div className="container">
           <h4 className={sCss.Sellheader}>Enter details of the product you want to sell</h4>
+
           <div className={sCss.detail_container}>
+
+
             <form action="#" className={sCss.detail_form}>
-              <div className={sCss.leftform}>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Type:</label><br />
-                  <select name="type" id="type" className={sCss.inputField} onChange={(e)=> setType(e.target.value)} >
-                    <option name='type' value={details.type} >Choose...</option>
-                    <option value="automobile">automobile</option>
-                    <option value="metal">metal</option>
-                  </select>
+              <div className={sCss.formcontain}>
+                <div className={sCss.leftform}>
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Business Name :</label> <br />
+                    <input type="text"
+                      name="business"
+                      className={sCss.inputField} onChange={(e) => handleChange(e)}
+                    /><br /><br />
+                  </div>
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Phone Number:</label> <br />
+                    <input type="tel"
+                      name="phone"
+                      className={sCss.inputField} onChange={(e) => handleChange(e)}
+                    /><br /><br />
+                  </div>
                 </div>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Phone:</label><br />
-                  <input className={sCss.inputField} type="text" name='phone' value={details.phone} onChange={onChange} />
+                <div className={sCss.rightform} >
+
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Email ID :</label> <br />
+                    <input type="email"
+                      name="email"
+                      className={sCss.inputField} onChange={(e) => handleChange(e)}
+                    /><br /><br />
+                  </div>
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>City:</label> <br />
+                    <input type="text" className={sCss.inputField}
+                      name="city"
+                      onChange={(e) => handleChange(e)}
+                    /> <br /><br /></div>
+                </div>
+
+
+              </div>
+              <div className={sCss.formcontain}>
+                <div className={sCss.leftform}>
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Category :</label> <br />
+                    <select name="category" onChange={(e) => handleChange(e)} id="type" className={sCss.inputField} >
+                      <option value="">Choose...</option>
+                      <option value="Aluminium">Aluminium </option>
+                      <option value="Copper">Copper</option>
+                      <option value="Iron">Machinery</option>
+                      <option value="Steel">Steel</option>
+                      <option value="Auto Parts">Auto Parts</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <br /><br />
+                  </div>
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Quantity:</label> <br />
+                    <input type="text"
+                      name='quantity'
+                      className={sCss.inputField} onChange={(e) => handleChange(e)}
+                    /><br /><br />
+                  </div>
+                </div>
+                <div className={sCss.rightform} >
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Material Name:</label> <br />
+                    <input type="text" className={sCss.inputField}
+                      name="material"
+                      onChange={(e) => handleChange(e)}
+                    /> <br /><br /></div>
+
+                  <div className={sCss.input_data}>
+                    <label htmlFor="type" className={sCss.form_label}>Unit:</label> <br />
+                    <input type="text" className={sCss.inputField}
+                      name="unit"
+                      onChange={(e) => handleChange(e)}
+                    /> <br /><br /></div>
                 </div>
               </div>
-              <div className={sCss.rightform} style={{ display: `${type==='metal'? "block":"none"}` }}>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Material Name:</label><br />
-                  <select name="materialName" id="materialname" className={sCss.inputField} value={details.materialName} onChange={onChange}>
-                    <option value="volvo">Choose...</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                </div>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Origin:</label><br />
-                  <input className={sCss.inputField} type="text" name='Origin' value={details.Origin} onChange={onChange}/>
-                </div>
-              </div>
-              <div className={sCss.rightform} style={{ display: `${type==='metal'? "none":"block"}` }}>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Material Name2:</label><br />
-                  <select name="materialname" id="materialname" className={sCss.inputField} value={details.materialName} onChange={onChange}>
-                    <option value="volvo">Choose...</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                </div>
-                <div className={sCss.input_data}>
-                  <label htmlFor="" className={sCss.form_label}>Origin:</label><br />
-                  <input className={sCss.inputField} type="text" value={details.Origin} onChange={onChange} />
-                </div>
+              <div className={sCss.dinput_data}>
+                <label htmlFor="type" className={sCss.form_label}>Any Other Detail :</label> <br />
+                <input type="text"
+                  name="others"
+                  className={sCss.inputField} onChange={(e) => handleChange(e)}
+                /><br /><br />
               </div>
             </form>
+
           </div>
+          {/* <button className={sCss.addformbtn} onClick={addProduct} type="submit" >Submit</button> */}
         </div>
-      </div>
-      {/* <MultipleImageUploadComponent/> */}
-      <Sellimg onSubmission={onSubmission} />
+      </div >
+      <Sellimg details={details} setDetails={setDetails} />
     </>
   )
 }

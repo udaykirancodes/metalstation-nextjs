@@ -2,12 +2,13 @@ import React from 'react'
 import nhcCss from '../../styles/NewHomeComponent.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const NewHomeComponent = () => {
   return (
     <div className={nhcCss.home}>
-      <Carousel autoPlay='true'>
+      <Carousel autoPlay='true'  >
         <div className={nhcCss.homeComponent}>
           <div className={nhcCss.homeImg}>
             <Image layout='fill' src="/homeImg1.png" alt="" />

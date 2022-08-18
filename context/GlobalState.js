@@ -54,7 +54,7 @@ export default function GlobalState({ children }) {
             }
         })
         const data = await res.json();
-        console.log('Wishlist : ', data);
+        // console.log('Wishlist : ', data);
         if (data.success) {
             // console.log(data.products);
             setWishlist(data.products);
@@ -78,7 +78,7 @@ export default function GlobalState({ children }) {
             }
         });
         const json = await response.json();
-        console.log(json);
+        // console.log(json);
         setSellProdtuct(json)
     }
 
@@ -140,14 +140,14 @@ export default function GlobalState({ children }) {
         let data = await res.json();
         if (data.success) {
             // remove item from the frontend 
-            console.log(id);
+            // console.log(id);
             let newList = wishlist.filter((item) => item._id != id);
             setWishlist(newList);
         }
     }
     // add to wishlist 
     const addToWishlist = async (id, product) => {
-        console.log('addToWishList')
+        // console.log('addToWishList')
         let authToken = localStorage.getItem('authToken');
         if (!authToken) {
             router.push('/');

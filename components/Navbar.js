@@ -128,6 +128,8 @@ function DropdownMenu() {
 
   const { user } = useContext(Context)
 
+  const router = useRouter();
+
   const dropdownRef = useRef(null);
 
   function DropdownItem(props) {
@@ -141,7 +143,7 @@ function DropdownMenu() {
   }
 
   const Logout = () => {
-    console.log('Logging Out'); return;
+    console.log('Logging Out');
     localStorage.removeItem('authToken');
     router.push('/');
   }

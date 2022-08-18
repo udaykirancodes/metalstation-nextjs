@@ -262,13 +262,11 @@ width: 35vw;
   }
   .detailleft ul li{
     margin-bottom: 12px;
- 
- 
   }
 
 .infor{
   color: black;
-  width: 20vw;
+  width: 50vw;
  
 }
 .trackContainer h2{
@@ -285,10 +283,29 @@ margin-left: 16vw;
   width: 8vw;
   height: auto;
   max-width: 800px;
-  margin: 0 auto;
   position: relative;
 } 
 
 
-
-
+@media screen and (max-width:648px){
+  .order_top{
+    width: 95vw;
+  }
+  .order_image_container{
+    width: 45vw;
+  }
+  .order_title_container{
+    width: 50vw;
+  }
+  .detailbox{
+    width: 90vw;
+  }
+  .detailbox1{
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width:290px){
+.order_top{
+margin-bottom: 1rem;
+}
+}

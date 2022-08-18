@@ -38,6 +38,7 @@ export const PlaceOrderUrl = backendurl + 'orders/';
 export const GetUserEnquiryUrl = backendurl + 'enquiry/getuser';
 export const GetUserOrdersUrl = backendurl + 'orders/getuser';
 export const GetSingleOrderUrl = backendurl + 'orders/'; // + order id  
+export const AddSellUrl = backendurl + 'sell/add'; // + order id  
 
 
 // Enquiry : pending , processing , confirmed
