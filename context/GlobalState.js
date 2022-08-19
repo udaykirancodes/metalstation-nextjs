@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import Context from './Context'
 
-import { AllSellUrl } from '../urls';
 
-import { SellProductUrl } from '../urls';
 
 import { GetWishList } from '../urls';
 import { useEffect } from 'react';
 
-import { AddToWishlistUrl, GetUserCartUrl, GetUserInfo, RemoveFromWishlistUrl, RemoveFromCartUrl, AddToCartUrl } from '../urls';
+import { AddToWishlistUrl, EnquireUrl, GetUserInfo, RemoveFromWishlistUrl, RemoveFromCartUrl, AddToCartUrl } from '../urls';
 export default function GlobalState({ children }) {
     const [user, setuser] = useState({
         name: '',
@@ -195,23 +193,29 @@ export default function GlobalState({ children }) {
     }
 
     // Fetching Single Product
-    const fetchSingleProductDetails = async (id) => {
-        const res = await fetch(GetfetchSingleProductDetails, {
-            method: 'GET',
-            headers: {
-                'content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                productid: id
+    const EnquiryPrice = async (id) => {
+        let authToken = localStorage.getItem('authToken');
+        if (authToken) {
+            const res = await fetch(EnquireUrl, {
+                method: 'POST',
+                headers: {
+                    'content-Type': 'application/json',
+                    'authToken': authToken
+
+                },
+                body: JSON.stringify({
+                    productid: id
+                })
             })
-        })
-        const data = await res.json();
-        if (data.success) {
-            setSingleProductDetail(data);
+            const data = await res.json();
+            if (data.success) {
+                return true
+            }
+            return false
         }
     }
     return (
-        <Context.Provider value={{ user, setuser, wishlist, fetchUser, addToCart, setWishlist, fetchUserData, removeFromWishlist, addToWishlist, singleProductDetail }}>
+        <Context.Provider value={{ user, setuser, wishlist, fetchUser, addToCart, setWishlist, fetchUserData, removeFromWishlist, addToWishlist, singleProductDetail, EnquiryPrice }}>
             {children}
         </Context.Provider>
     )

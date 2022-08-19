@@ -1,0 +1,37 @@
+{
+    "success": true,
+    "product": {
+      "_id": "62e7641cdf3a86d77c284a23",
+      "name": "Name of the product",
+      "shortDescription": "hello",
+      "description": "Description of the product",
+      "category": "steel",
+      "subCategory": [],
+      "table": [
+        {
+          "fieldName": "Field Name 1",
+          "value": "Value 1"
+        },
+        {
+          "fieldName": "Field Name 1",
+          "value": "Value 1"
+        },
+        {
+          "fieldName": "Field Name 1",
+          "value": "Value 1"
+        },
+        {
+          "fieldName": "Field Name 1",
+          "value": "Value 1"
+        }
+      ],
+      "isDeleted": false,
+      "price": null,
+      "img": [],
+      "createdAt": "2022-08-01T05:26:52.795Z",
+      "updatedAt": "2022-08-01T05:26:52.795Z",
+      "__v": 0,
+      "maxPrice": 5000,
+      "minPrice": 3000
+    }
+  }

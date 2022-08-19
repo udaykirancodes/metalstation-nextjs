@@ -48,8 +48,7 @@ const SingleOrderPage = () => {
     useEffect(() => {
         // fetch single order 
         fetchOrder();
-
-    }, [id])
+    }, [id, router])
 
     const getEstimatedDate = (date) => {
         let newdate = new Date(date);

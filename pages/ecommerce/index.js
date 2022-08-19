@@ -15,6 +15,8 @@ export default function Products() {
 
   const router = useRouter();
 
+  const [category, setCategory] = useState('');
+  const [subcategory, setSubcategory] = useState('');
   const [filters, setFilters] = useState([]);
   // variables for bottom show or not 
   const [sortShow, setSortShow] = useState(false);
@@ -42,26 +44,34 @@ export default function Products() {
   // data fetching 
   const getdata = async () => {
     // console.log(currentPage);
-    if (min === 10000000) {
-      min = '';
-    }
-    if (max === 1) {
-      max = ''
-    }
-    // const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}&min=${min}&max=${max}`);
-    const res = await fetch(GetAllProducts, {
-      method: 'GET',
-    })
-    const data = await res.json();
+    // if (min === 10000000 || min === undefined) {
+    //   min = '';
+    // }
+    // if (max === 1 || max === undefined) {
+    //   max = ''
+    // }
+    const { data } = await axios.get(GetAllProducts + `?page=${currentPage}&limit=${perPage}}&min=${min}&max=${max}&category=${category}`);
+    // let url = GetAllProducts + `?page=${currentPage}&limit=${perPage}`;
+    // const res = await fetch(GetAllProducts, {
+    //   method: 'GET',
+    // })
+    // const data = await res.json();
+
     if (data.success) {
       setProducts(data.pagination)
     }
 
   }
   useEffect(() => {
-    // getdata();
+    console.log(router.query.category);
+    // console.log(router.query)
+    if (router.query.category) {
+      // setCategory(router.query)
+    }
+    // router.query.category = category;
+    getdata();
     console.log(min, max);
-  }, [currentPage, filters, min, max])
+  }, [currentPage, filters, min, category, max])
   useEffect(() => {
     document.title = "Metal Station - Buy"
   }, []);
@@ -85,13 +95,11 @@ export default function Products() {
 
 
   // useEffect(() => {
-  //   console.log(min, max);
-  //   if (!min && !max) {
-  //     setMax(1);
-  //     setMin(10000000);
-  //   }
-  //   getdata();
-  // }, [min, max])
+  //   setTimeout(() => {
+  //     setCategory('');
+  //     setSubcategory('');
+  //   }, 5000);
+  // }, [category])
   const handleAllFilters = (e) => {
     let tempFilters = [];
     setFilters([]);
@@ -122,6 +130,7 @@ export default function Products() {
     setcurrentPage(1);
     setMin(100000000) // intial values 
     setMax(1);
+    console.log('Cleared');
     const checkedDoc = document.querySelectorAll('.checkboxA');
     checkedDoc.forEach(element => {
       element.checked = false;  // unchecking all the checkboxes
@@ -146,15 +155,15 @@ export default function Products() {
     let value = parseInt(e.target.value);
     sortByPrice(value);
   }
-  const [category, setCategory] = useState('');
-  const [subcategory, setSubcategory] = useState('');
+
   function setValues(a, b) {
     setCategory(a);
     setSubcategory(b);
   }
-  useEffect(() => {
-    console.log(category, subcategory);
-  }, [category, subcategory])
+  // useEffect(() => {
+  //   console.log(category, subcategory);
+
+  // }, [category, subcategory])
   return (
     <>
       {/* <Navbar scroll={true} /> */}
@@ -170,7 +179,7 @@ export default function Products() {
           <div className="category_bar_left mobile_none">
             <div className="all-category-hover">
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span className="category_text" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)} >All Categories {arrowUp ? <i className="uil uil-angle-up arrow-icon" style={{ fontSize: '16px' }}></i> : <i className="uil uil-angle-down arrow-icon"></i>}  </span>
+                <span className="category_text" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)} onClick={() => setValues('', '')}>All Categories {arrowUp ? <i className="uil uil-angle-up arrow-icon" style={{ fontSize: '16px' }}></i> : <i className="uil uil-angle-down arrow-icon"></i>}  </span>
               </div>
 
               <div className="onHoverCategories" onMouseEnter={() => setArrowUp(true)} onMouseLeave={() => setArrowUp(false)}>
@@ -200,9 +209,9 @@ export default function Products() {
                 </ul>
                 <ul className='onHover-ul light-bg-2'>
                   <li className='onHover-li-main'>MACHINERY</li>
-                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
-                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
-                  <li className='onHover-li' onClick={() => setValues('machinary', '')}>Machinary Part</li>
+                  <li className='onHover-li' onClick={() => setValues('machinery', '')}>Machinary Part</li>
+                  <li className='onHover-li' onClick={() => setValues('machinery', '')}>Machinary Part</li>
+                  <li className='onHover-li' onClick={() => setValues('machinery', '')}>Machinary Part</li>
                 </ul>
                 <ul className='onHover-ul light-bg'>
                   <li className='onHover-li-main'>AUTO PARTS</li>
@@ -212,10 +221,11 @@ export default function Products() {
                 </ul>
               </div>
             </div>
-            <span className="category_text">STEEL</span>
-            <span className="category_text">ALUMINIUM</span>
-            <span className="category_text">COPPER</span>
-            <span className="category_text">IRON</span>
+            <span className="category_text" onClick={() => setValues('steel', '')}>STEEL</span>
+            <span className="category_text" onClick={() => setValues('aluminium', '')}>ALUMINIUM</span>
+            <span className="category_text" onClick={() => setValues('copper', '')}>COPPER</span>
+            <span className="category_text" onClick={() => setValues('machinery', '')}>MACHINERY</span>
+            <span className="category_text" onClick={() => setValues('autoparts', '')}>AUTO PARTS</span>
           </div>
           <div className="category_bar_right">
             <Link href={"/Wishlist"}>
@@ -235,10 +245,10 @@ export default function Products() {
       </div>
 
       <div className="buy_container">
-        <div className="buy_left">
+        <div className="buy_left" style={{ zIndex: 1 }}>
           <div className="filters_top another_box mobile_none">
             <p className="filters_text">Filters</p>
-            <p className="filters_text" onClick={() => clearAllFilters()}>Clear All</p>
+            <p className="filters_text" style={{ zIndex: 1000 }} onClick={() => clearAllFilters()}>Clear All</p>
           </div>
           <Filters handleAllFilters={handleAllFilters} />
         </div>
@@ -314,8 +324,8 @@ export default function Products() {
           </div>
           <li className='filter_header'>Price</li>
           <label className='filter_label'>
-            <span className='input_text'>&#8377; 0-10,000  </span>
-            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={0} max={10000} name="radio" />
+            <span className='input_text'>&#8377; 1,000-10,000  </span>
+            <input type="checkbox" className='checkboxA' onChange={(e) => handleAllFilters(e)} min={1000} max={10000} name="radio" />
           </label>
           <label className='filter_label'>
             <span className='input_text'>&#8377;   10,000 - 20,000</span>

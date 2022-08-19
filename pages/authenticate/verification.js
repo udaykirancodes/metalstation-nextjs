@@ -23,7 +23,7 @@ const NewVerification = () => {
       router.push('/authenticate/register');
     }
     setEmail(email);
-  }, [])
+  }, [router])
 
   const [error, setError] = useState('');
 

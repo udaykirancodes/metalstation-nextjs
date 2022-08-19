@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
 import data from "../../components/crouseldata";
 import Card from "../../components/ProductCard"
 import productCss from '../../styles/Product.module.css'
-import MobCrousel from '../components/MobCarousel'
-import Crousel from '../components/crousel'
+import MobCrousel from '../../components/MobCarousel'
+import Crousel from '../../components/crousel'
+import { useRouter } from 'next/router';
+import axios from "axios";
+import { GetSingleProductUrl } from "../../urls"
+import Context from '../../context/Context';
 
 
 const Product = () => {
 
+  const { EnquiryPrice, addToCart } = useContext(Context);
 
   const router = useRouter();
   const { id } = router.query;
@@ -21,25 +26,50 @@ const Product = () => {
   //Quantity
   const initialCount = 1
   const [count, setCount] = useState(initialCount);
+  const [description, setDescription] = useState([])
   // category bar arrow 
   const [arrowUp, setArrowUp] = useState(false);
+  const [table, setTable] = useState([])
 
   useEffect(() => {
     document.title = "Metal Station - Blogs"
     const getdata = async () => {
-      let { data } = await axios.get(SingleBlogUrl + `/${id}`);
-      // let data = await res.json(); 
-      console.log(data);
+      let { data } = await axios.get(GetSingleProductUrl + `/${id}`);
       if (data.success) {
-        setblog(data.data);
+        setproduct(data.product);
+        setDescription(data.product.description.split('.'));
+        // if (data.product.table.length > 0) {
+        //   let t = await JSON.parse(data.product.table)
+        // }
+        setTable(data.product.table);
         setloading(false);
       }
       else {
-        router.push('/blogs');
+        router.push('/ecommerce');
       }
     }
     getdata();
-  }, [id])
+  }, [id, router])
+
+  const MoveToCart = async () => {
+    if (localStorage.getItem('authToken')) {
+      await addToCart(product._id, count);
+      router.push('/cart')
+    }
+  }
+  const EnquiryPriceFunction = async () => {
+    if (localStorage.getItem('authToken')) {
+      let response = await EnquiryPrice(id);
+      if (response) {
+        router.push('/enquirypage')
+      }
+    }
+    else {
+      router.push('/authenticate/login')
+    }
+  }
+  // addToWishlist(id,product)
+  //addToCart(id , 1)
 
   if (loading) {
     return <>
@@ -51,7 +81,7 @@ const Product = () => {
       <div className="category_bar_container">
         <div className="category_bar container">
           <div className="go_back desktop_none">
-            <Link href="/">
+            <Link href="/ecommerce">
               <>
                 <i className="uil uil-arrow-left icon"></i> Back
               </>
@@ -154,54 +184,79 @@ const Product = () => {
               <div className={productCss.card}>
                 <div className={productCss.card_content}>
                   <div className={productCss.display}>
-                    <h1 className={productCss.card_title}>Aluminium Scrap</h1>
+                    <h1 className={productCss.card_title}>{product.name}</h1>
                     <div className={productCss.heart}>
                       <Link href="/cart">
                         <a><i className="uil uil-heart"></i></a>
                       </Link>
                     </div>
                   </div>
-                  <p className={productCss.card_text}>Recycled Aluminium scrap from blast furnace.</p>
+                  <p className={productCss.card_text}>{product.shortDescription}</p>
                   <br />
                   <p>Minimum order quantity : <b>1 Ton</b></p>
                   <p className="unit">Quantity : &nbsp;
-                    <button onClick={() => setCount(count - 1)} className={productCss.quantbtn}>  <i className="fa-solid fa-minus"></i></button>
+                    <button style={{ margin: '10px' }} onClick={() => setCount(count - 1)} className={productCss.quantbtn}>  <i className="fa-solid fa-minus"></i></button>
                     <span>{count}</span>
-                    <button onClick={() => setCount(count + 1)} className={productCss.quantbtn}>  <i className="fa-solid fa-plus"></i></button>
+                    <button style={{ margin: '10px' }} onClick={() => setCount(count + 1)} className={productCss.quantbtn}>  <i className="fa-solid fa-plus"></i></button>
                   </p>
-                  <p>Dimensions:<br />
-                    <span >&emsp;&#x2022; Length:  <b>10 meters</b></span><br />
-                    <span> &emsp;&#x2022; Diameters:  <b>10 meters</b></span>
-                  </p>
+                  {
+                    product.details &&
+                    <p>Dimensions:<br />
+                      {
+                        product.details.length &&
+                        <span >&emsp;&#x2022; Length :  <b>{product.details.length}</b></span>
+                      }
+                      <br />
+                      {
+                        product.details.weight &&
+                        <span> &emsp;&#x2022; Weight :  <b>{product.details.weight}</b></span>
+                      }
+                    </p>
+                  }
                   <br />
-                  <h5 className={productCss.price}>₹1,39,999 - ₹1,49,999</h5>
+                  {
+                    product.price ?
+                      <h5 className={productCss.price}>₹{product.price}</h5>
+                      :
+                      <h5 className={productCss.price}>₹{product.minPrice} - ₹{product.maxPrice}</h5>
+
+                  }
                   &emsp;
                   <button className={productCss.doubtbtn}>
                     <i className="fa-solid fa-phone"></i>
-                    &nbsp;Any Doubts?</button><br />
 
+                    &nbsp;Any Doubts?</button><br />
 
                   <p> Contact us to get more details about the product.</p>
 
-                  <div className={productCss.btn}>
-                    <button className={productCss.button}>
-                      <i className="uil  uil-shopping-cart-alt"></i>
-                      <Link href='/cart'>
-                        <a>
-                          Add to Cart
-                        </a>
-                      </Link>
-                    </button>
-                    &emsp;
-                    <button className={productCss.buybutton}>
-                      <Link href='/ecommerce'>
-                        <a>
-                          Buy Now
-                        </a>
-                      </Link>
-                    </button>
-                  </div>
-
+                  {
+                    product.price ? // if price is there show buttons 
+                      <div className={productCss.btn}>
+                        <button className={productCss.button} onClick={() => addToCart(product._id, count)}>
+                          <i className="uil  uil-shopping-cart-alt"></i>
+                          <a>
+                            Add to Cart
+                          </a>
+                        </button>
+                        &emsp;
+                        <button className={productCss.buybutton} onClick={MoveToCart}>
+                          <a>
+                            Buy Now
+                          </a>
+                        </button>
+                      </div>
+                      : // if price is not there 
+                      <>
+                        <div className={productCss.btn}>
+                          <button className={productCss.button} onClick={() => EnquiryPriceFunction(product._id)}>
+                            <i className="uil  uil-shopping-cart-alt"></i>
+                            <a>
+                              Enquire Price
+                            </a>
+                          </button>
+                        </div>
+                      </>
+                  }
                 </div>
               </div>
             </li>
@@ -214,52 +269,33 @@ const Product = () => {
         <div className={productCss.confirmation}>
           <div className={productCss.tableconfirmationLeft}>
             <h2 className={productCss.underline}>Product  Overview</h2>
-            <table className={productCss.table}>
-              <tbody>
-                <tr>
-                  <th>Product Name:</th>
-                  <td>Aluminum rod 99.9% pure scrap</td>
-                </tr>
-                <tr>
-                  <th>Place of  Origin :</th>
-                  <td>India</td>
-                </tr>
-                <tr>
-                  <th>Model Number :</th>
-                  <td>6000 series</td>
-                </tr>
-                <tr>
-                  <th>Al Content :</th>
-                  <td>99.9% min
-                  </td>
-                </tr>
-                <tr>
-                  <th>Color  :</th>
-                  <td>Silver White
-                  </td>
-                </tr>
-                <tr>
-                  <th>Product Grade :</th>
-                  <td>6063
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            {
+              table.length > 0 &&
+              <table className={productCss.table}>
+                <tbody>
+                  {
+                    table.map((t, index) => {
+                      return (
+                        <tr key={index}>
+                          <th>{t.fieldName}</th>
+                          <td>{t.value}</td>
+                        </tr>
+                      )
+                    })
+                  }
+                </tbody>
+              </table>
+            }
           </div>
           <div className={productCss.confirmationRight}>
             <div className={productCss.description}>
               <h2 className={productCss.underline}>Product Description</h2>
               <ul>
-                <li>Large Retina OLED display</li>
-                <li>attend calls and reply to messages using the GPS model</li>
-                <li>use fitness app on your iphone to see your daily activity trends</li>
-                <li>track your workouts like swimming, cycling, dancing, jogging, running, yoga get notified in case of irregular heart rhythms
-                </li>
-                <li> It has a Swim Proof design</li>
-                <li>With Call Function</li>
-                <li>Touchscreen</li>
-                <li> Fitness & Outdoor</li>
-                <li>Battery Runtime: Upto 18 hrs</li>
+                {
+                  description.map((desc, index) => {
+                    return <li key={index}>{desc}</li>
+                  })
+                }
               </ul>
             </div>
           </div>

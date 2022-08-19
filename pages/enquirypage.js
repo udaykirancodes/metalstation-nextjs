@@ -81,7 +81,7 @@ const Enquiry = () => {
         let ord = {};
         ord.phone = user.phone;
         ord.price = enquiry.price;
-        ord.location = user.address;
+        ord.address = user.address;
         ord.products = [{
             productid: enquiry.product_data[0]._id,   // getting product id 
             quantity: 1

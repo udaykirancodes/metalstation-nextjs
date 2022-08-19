@@ -167,7 +167,7 @@ const Orderpage = () => {
                             let color = getColorFromStatus(details.status);
                             let link = '/orders/' + order._id;
                             return (
-                                <Link href={link}>
+                                <Link key={index} href={link}>
                                     <div key={index} className={orderCss.delivaryEstimate}>
                                         <div className={orderCss.estimateImg}>
                                             <Image
