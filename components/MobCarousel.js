@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Image from 'next/image'
 import Croucss from '../styles/Carousel.module.css'
+
 const Carousel = ({ images }) => {
   const carousel = useRef();
   const [count, setCount] = useState(0);
@@ -31,11 +32,11 @@ const Carousel = ({ images }) => {
   return (
     <div className={Croucss.carouselcontainer}>
       <div
-        className={`${Croucss.carouselbtn } ${Croucss.leftbtn}`}
+        className={`${Croucss.carouselbtn} ${Croucss.leftbtn}`}
         onClick={() => incrementCarousel(-1)}
       />
       <div
-        className={`${Croucss.carouselbtn } ${Croucss.rightbtn}`}
+        className={`${Croucss.carouselbtn} ${Croucss.rightbtn}`}
         onClick={() => incrementCarousel(1)}
       />
       <div className={Croucss.carousel} ref={carousel}>
@@ -47,8 +48,8 @@ const Carousel = ({ images }) => {
             }
           >
             <Image src={img.src} alt="img of carousel" className={Croucss.img}
-            height={500}
-            width={500}
+              height={500}
+              width={500}
             />
             <p>{img.title}</p>
           </div>
