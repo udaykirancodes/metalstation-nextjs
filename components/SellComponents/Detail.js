@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sellimg from './Sellimg'
 import sCss from '../../styles/Sell.module.css'
+import ImgUpload from './ImagePreview'
 const Detail = () => {
   const [details, setDetails] = useState({});
   const handleChange = (e) => {
@@ -105,7 +106,8 @@ const Detail = () => {
           {/* <button className={sCss.addformbtn} onClick={addProduct} type="submit" >Submit</button> */}
         </div>
       </div >
-      <Sellimg details={details} setDetails={setDetails} />
+      {/* <Sellimg details={details} setDetails={setDetails} /> */}
+      <ImgUpload details={details} setDetails={setDetails} />
     </>
   )
 }

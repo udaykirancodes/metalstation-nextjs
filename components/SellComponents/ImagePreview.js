@@ -5,26 +5,42 @@ import sCss from '../../styles/Sell.module.css'
 import { AddSellUrl } from "../../urls";
 import { useRouter } from 'next/router';
 const ImagePreview = ({ onSubmission, details, setDetails }) => {
+  const [multipleFiles, setMultipleFiles] = useState('');
+  const [multipleProgress, setMultipleProgress] = useState(0);
   const [selectedImages, setSelectedImages] = useState([]);
-  const [files, setfiles] = useState();
-  const router = useRouter();
-  const onSelectFile = (e) => {
+  const router = useRouter()
+  const mulitpleFileOptions = {
+    onUploadProgress: (progressEvent) => {
+      const { loaded, total } = progressEvent;
+      const percentage = Math.floor(((loaded / 1000) * 100) / (total / 1000));
+      setMultipleProgress(percentage);
+    }
+  }
+
+  const MultipleFileChange = (e) => {
+
     const selectedFiles = e.target.files;
     const selectedFilesArray = Array.from(selectedFiles);
+
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
     });
     setSelectedImages((previousImages) => previousImages.concat(imagesArray));
-
-    // FOR BUG IN CHROME
-    e.target.value = "";
-  };
+    setMultipleFiles(e.target.files);
+    // setMultipleProgress(0);
+  }
 
   function deleteHandler(image) {
     setSelectedImages(selectedImages.filter((e) => e !== image));
     URL.revokeObjectURL(image);
   }
-  const uploadFiles = async () => {
+
+  function deleteButton() {
+    setSelectedImages(selectedImages.filter((e) => e !== image));
+    URL.revokeObjectURL(image);
+  }
+
+  const UploadMultipleFiles = async () => {
     let formdata = new FormData();
     // console.log(files)
     formdata.append('email', details.email)
@@ -37,13 +53,14 @@ const ImagePreview = ({ onSubmission, details, setDetails }) => {
     formdata.append('units', details.units)
     formdata.append('others', details.others)
     // here are the images 
-    if (files) {
-      console.log('files are there');
-      for (const file of files) {
-        // console.log(file)
-        formdata.append('images', file, file.name);
-      };
+    for (let i = 0; i < multipleFiles.length; i++) {
+      formdata.append('images', multipleFiles[i]);
     }
+    console.log(formdata.get('images'))
+    console.log(formdata.get('images'))
+    // await multipleFilesUpload(formdata, mulitpleFileOptions);
+    // props.getMultiple();
+
     // send to server 
     const res = await fetch(AddSellUrl, {
       method: "POST",
@@ -62,32 +79,35 @@ const ImagePreview = ({ onSubmission, details, setDetails }) => {
   return (
     <div className="container">
       <section className={iPCss.ImagePreview}>
+        {/* <div className={iPCss.ImageInputContainer}> */}
         <label className={iPCss.ImageLabel}>
           + Add Images
           <br />
           <input
             type="file"
             name="images"
-            // onChange={(e) => onSelectFile(e, e.target.files)}
-            onChange={onSelectFile} // this is working fine
+            onChange={(e) => MultipleFileChange(e)}
             multiple
             accept="image/png , image/jpeg, image/webp, application/pdf"
             className={iPCss.ImagePreviewInput}
           />
         </label>
-        <div className="imageContainer"></div>
         <br />
+
         <input className={iPCss.ImagePreviewInput} type="file" multiple />
+
         {selectedImages.length === 0 ? "" : <div className={iPCss.images}>
           {selectedImages &&
             selectedImages.map((image, index) => {
               return (
                 <div key={image} className={iPCss.image}>
                   <Image className={iPCss.preview} src={image}
+
                     height={200}
                     width={300}
                     alt="upload" />
                   <div className="ImgDelete">
+
                     <button className={iPCss.ImageDelete} onClick={() => deleteHandler(image)}>
                       x
                     </button>
@@ -98,9 +118,9 @@ const ImagePreview = ({ onSubmission, details, setDetails }) => {
             })}
         </div>}
         <div className={sCss.buttons}>
-          <button className={sCss.cancelbtn}>Cancel</button>
-          {/* <button className={sCss.savebtn} onClick={uploadFiles}>Save as draft</button> */}
-          <button className={sCss.submitbtn} onClick={uploadFiles}>Submit</button>
+          <button className={sCss.cancelbtn} onClick={() => deleteButton()}>Cancel</button>
+          <button className={sCss.savebtn}>Save as draft</button>
+          <button className={sCss.submitbtn} onClick={() => UploadMultipleFiles()}>Submit</button>
         </div>
       </section>
     </div>

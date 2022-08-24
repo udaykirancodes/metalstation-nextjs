@@ -197,4 +197,11 @@ padding-right: 1rem;
   margin: auto;
   border: 1px solid #24A1FD;
 }
-
+.imguprow{
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.UpContain{
+  margin-top: 2rem;
+}
