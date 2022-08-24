@@ -41,6 +41,7 @@ export const GetSingleOrderUrl = backendurl + 'orders/'; // + order id
 export const AddSellUrl = backendurl + 'sell/add'; // + order id  
 export const EnquireUrl = backendurl + 'enquiry/add';
 export const GetSingleProductUrl = backendurl + 'products/find/' // + object id of single product 
+export const GetFeaturedProducts = backendurl + '/products/featured'
 
 // Enquiry : pending , processing , confirmed
 // Orders  : ordered , shipped , placed 
