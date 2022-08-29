@@ -8,7 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 const NewHomeComponent = () => {
   return (
     <div className={nhcCss.home}>
-      <Carousel autoPlay='true'  >
+      <Carousel autoPlay='true' showThumbs={false} >
         <div className={nhcCss.homeComponent}>
           <div className={nhcCss.homeImg}>
             <Image layout='fill' src="/homeImg1.png" alt="" />
@@ -30,7 +30,11 @@ const NewHomeComponent = () => {
                   <div className="center or">or</div>
                   <span className='line'></span>
                 </div>
-                <div className="home_button center"><Link href="/Sell"><a>Sell Scrap</a></Link></div>
+                <div className="home_button center">
+                  <Link href="/Sell">
+                    <a>Sell Scrap</a>
+                  </Link>
+                </div>
                 <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
                 <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
               </div>

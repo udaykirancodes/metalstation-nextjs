@@ -485,3 +485,54 @@ transition-timing-function: linear;
   margin-left: 0.4rem;
   padding: 15px;
   }
+
+
+   /* Product Page Crousel */
+   .crCarousel{
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 4rem;
+    margin-left:1rem;
+  }
+  .crCarousel.crCarousel-slider .control-arrow{
+    border-bottom: 4px solid #24A1FD;
+  border-left: 4px solid #24A1FD;
+  
+  }
+   .crCarousel-root{
+    margin-left: 2rem;
+  } 
+  
+  .crCarousel.crCarousel-slider {
+    margin: 0px auto;
+    overflow: visible;
+    
+  }
+  
+  .crCarousel .slide {
+    color: white;
+    background: rgb(0, 0, 0);
+  }
+  
+  .crCarousel .slideholder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+   .crCarousel .slide img {
+    margin: 30px;
+    width: 35%;
+    height: 200px;
+    object-fit: contain;
+  }  
+  
+  .crCarousel .slide iframe {
+    margin: 30px;
+    width: 35%;
+  }
+  
+  .crCarousel .control-dots {
+    bottom: -40px;
+  } 

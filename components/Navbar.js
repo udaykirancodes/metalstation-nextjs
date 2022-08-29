@@ -214,7 +214,6 @@ const Navbar = () => {
   useEffect(() => {
     let auth = localStorage.getItem('authToken');
     if (auth) {
-      console.log(auth);
       setState(true);
     }
   }, [router, user])

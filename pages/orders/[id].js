@@ -66,7 +66,7 @@ const SingleOrderPage = () => {
     function shippedCheck() {
         let status = order.items[0].status;
         status = status.toLowerCase();
-        if (status === 'packed' || status === 'shipped') {
+        if (status === 'packed' || status === "shipped" || status === "delivered") {
             return true;
         }
         return false;

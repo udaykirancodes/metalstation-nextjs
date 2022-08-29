@@ -10,6 +10,7 @@ import axios from "axios";
 import { GetSingleProductUrl } from "../../urls"
 import Context from '../../context/Context';
 
+import Cr from '../../components/Cr';
 
 const Product = () => {
 
@@ -177,10 +178,12 @@ const Product = () => {
       <div className={productCss.container}>
         <div className={productCss.confirmation}>
           <div className={productCss.confirmationLeft}>
-            <Crousel />
+            {/* <Crousel /> */}
+
+            <Cr img={product.img} />
           </div>
           <div className={productCss.mobcrouselconfirmationLeft}>
-            <MobCrousel images={data} />
+            <Cr img={product.img} />
           </div>
           <div className={productCss.confirmationRight}>
             <li className={productCss.cards_item}>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import cartCss from '../styles/Cart.module.css'
-import CartcardCss from '../styles/Cartcard.module.css'
-import productcardCss from '../styles/ProductCard.module.css'
+import cartCss from '../../styles/Cart.module.css'
+import CartcardCss from '../../styles/Cartcard.module.css'
+import productcardCss from '../../styles/ProductCard.module.css'
 import { AiOutlineLeft } from 'react-icons/ai'
 import { AiOutlineRight } from 'react-icons/ai'
-import { backendurl, GetAllProducts } from '../urls'
+import { backendurl, GetFeaturedProducts } from '../../urls'
 const Demo1 = () => {
   const [products, setproducts] = useState([])
   useEffect(() => {
     async function getdata() {
-      let res = await fetch(GetAllProducts, {
+      let res = await fetch(GetFeaturedProducts, {
         method: "GET",
         headers: {
           'content-Type': 'application/json'
@@ -19,7 +19,9 @@ const Demo1 = () => {
       })
       let data = await res.json();
       if (data.success) {
-        setproducts(data.pagination.results);
+        console.log(data.products);
+        console.log('Hellooooo')
+        setproducts(data.products);
       }
     }
     getdata()
@@ -51,6 +53,7 @@ const Demo1 = () => {
         <AiOutlineLeft className='slider-icon left' onClick={slideLeft} />
         <div id="cartslider">
           {
+            products.length > 0 &&
             products.map((product, index) => {
               let link = '/ecommerce/' + product._id;
               return (

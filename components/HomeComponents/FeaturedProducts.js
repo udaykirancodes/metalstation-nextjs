@@ -1,25 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
-import { GetFeaturedProducts } from "../../urls";
-
+import FeaturedHelper from "./FeaturedHelper"
 export default function FeaturedProducts() {
         const [products, setproducts] = useState([])
-        useEffect(() => {
-                async function getdata() {
-                        let res = await fetch(GetFeaturedProducts, {
-                                method: "GET",
-                                headers: {
-                                        'content-Type': 'application/json'
-                                }
-                        })
-                        let data = await res.json();
-                        console.log(data)
-                        if (data.success) {
-                                setproducts(data.pagination.results);
-                        }
-                }
-                getdata()
-        }, [])
         const slides = [1, 2, 3, 4, 5, 6, 7, 8];
         const slideRight = () => {
                 var slider = document.getElementById("slider");
@@ -44,7 +26,7 @@ export default function FeaturedProducts() {
                                         <div className="title_container">
                                                 <h2 className="page_title">Featured Products</h2>
                                         </div>
-                                        <div id="cartslider">
+                                        {/* <div id="cartslider">
                                                 {
                                                         products.map((product, index) => {
                                                                 let link = '/ecommerce/' + product._id;
@@ -92,6 +74,10 @@ export default function FeaturedProducts() {
                                                                 )
                                                         })
                                                 }
+                                        </div> */}
+                                        <div className='container'>
+                                                {/* <Card /> */}
+                                                <FeaturedHelper />
                                         </div>
                                 </section>
                         </div>
