@@ -19,8 +19,6 @@ const Demo1 = () => {
       })
       let data = await res.json();
       if (data.success) {
-        console.log(data.products);
-        console.log('Hellooooo')
         setproducts(data.products);
       }
     }
