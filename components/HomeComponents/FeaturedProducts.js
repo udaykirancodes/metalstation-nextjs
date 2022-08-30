@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import FeaturedHelper from "./FeaturedHelper"
+import { GetFeaturedProducts } from '../../urls'
 export default function FeaturedProducts() {
         const [products, setproducts] = useState([])
+        useEffect(() => {
+                async function getdata() {
+                        let res = await fetch(GetFeaturedProducts, {
+                                method: "GET",
+                                headers: {
+                                        'content-Type': 'application/json'
+                                }
+                        })
+                        let data = await res.json();
+                        if (data.success) {
+                                setproducts(data.products);
+                        }
+                }
+                getdata()
+        }, [])
         const slides = [1, 2, 3, 4, 5, 6, 7, 8];
         const slideRight = () => {
                 var slider = document.getElementById("slider");
@@ -21,12 +37,14 @@ export default function FeaturedProducts() {
         }
         return (
                 <>
-                        <div className="page">
-                                <section className="container">
-                                        <div className="title_container">
-                                                <h2 className="page_title">Featured Products</h2>
-                                        </div>
-                                        {/* <div id="cartslider">
+                        {
+                                products.length > 0 &&
+                                <div className="page">
+                                        <section className="container">
+                                                <div className="title_container">
+                                                        <h2 className="page_title">Featured Products</h2>
+                                                </div>
+                                                {/* <div id="cartslider">
                                                 {
                                                         products.map((product, index) => {
                                                                 let link = '/ecommerce/' + product._id;
@@ -75,12 +93,13 @@ export default function FeaturedProducts() {
                                                         })
                                                 }
                                         </div> */}
-                                        <div className='container'>
-                                                {/* <Card /> */}
-                                                <FeaturedHelper />
-                                        </div>
-                                </section>
-                        </div>
+                                                <div className='container'>
+                                                        {/* <Card /> */}
+                                                        <FeaturedHelper />
+                                                </div>
+                                        </section>
+                                </div>
+                        }
 
                 </>
         )
