@@ -9,7 +9,7 @@ const NewRegister = () => {
   const router = useRouter();
   const [error, setError] = useState('')
   useEffect(() => {
-    document.title = 'Metal Station - Login';
+    document.title = 'Metal Station - Register';
   }, [])
 
   const [input, setInput] = useState({

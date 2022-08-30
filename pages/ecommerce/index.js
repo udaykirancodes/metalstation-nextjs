@@ -64,6 +64,7 @@ export default function Products() {
   }
   useEffect(() => {
     console.log(router.query.category);
+    document.title = "Metal Station - Buy"
     // console.log(router.query)
     if (router.query.category) {
       // setCategory(router.query)

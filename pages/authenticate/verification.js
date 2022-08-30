@@ -14,10 +14,10 @@ const NewVerification = () => {
   const handleChange = (code) => setOtp(code);
 
   const { setuser } = useContext(Context);
-
   const [email, setEmail] = useState('');
 
   useEffect(() => {
+    document.title = "Metal Station"
     let email = localStorage.getItem('email');
     if (!email) {
       router.push('/authenticate/register');

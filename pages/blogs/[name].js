@@ -26,12 +26,14 @@ export default function Blogs() {
                         if (data.success) {
                                 setblog(data.data);
                                 setloading(false);
+                                document.title = blog.title
                         }
                         else {
                                 router.push('/blogs');
                         }
                 }
                 getdata();
+
         }, [name])
 
 

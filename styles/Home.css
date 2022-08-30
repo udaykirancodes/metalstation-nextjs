@@ -211,7 +211,8 @@ border-radius: 61px;
   border-radius: 10px;
   box-shadow: var(--shadow);
   padding: 1rem ;
-  height: max-content;
+  height: 180px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -293,7 +294,7 @@ border-radius: 61px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: auto;
+  height: max-content;
 }
 .testimonial .blog_title{
   font-size: var(--h3-heading);

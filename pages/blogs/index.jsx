@@ -20,7 +20,6 @@ export default function Blogs() {
 
         const [Data , setData] = useState({
                 results : [] // just not to get error 
-
         }); 
 
 
@@ -45,8 +44,6 @@ export default function Blogs() {
         }
         useEffect(() => {
                 document.title="Metal Station - Blogs"
-
-                
                 getCategories()
         }, [])
         

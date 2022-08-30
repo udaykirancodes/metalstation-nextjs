@@ -17,6 +17,7 @@ const NewResetPass = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [email, setEmail] = useState('');
 
+  useEffect(() => { document.title = "Metal Station" }, [])
   useEffect(() => {
     let email = localStorage.getItem('email');
     if (!email) {

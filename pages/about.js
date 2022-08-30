@@ -5,9 +5,13 @@ import Whychooseus from '../components/AboutComponents/Whychooseus'
 import Service from '../components/AboutComponents/Service'
 import abCss from '../styles/About.module.css'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'Metal Station - About Us'
+  }, [])
   return (
     <>
       <div className="container">

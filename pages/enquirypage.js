@@ -104,6 +104,7 @@ const Enquiry = () => {
         }
     }
     useEffect(() => {
+        document.title = 'Metal Station - Enquiry'
         let authToken = localStorage.getItem('authToken');
         if (!authToken) {
             router.push('/authenticate/login');

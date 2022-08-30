@@ -33,15 +33,13 @@ const Product = () => {
   const [table, setTable] = useState([])
 
   useEffect(() => {
-    document.title = "Metal Station - Blogs"
+    document.title = "Metal Station"
     const getdata = async () => {
       let { data } = await axios.get(GetSingleProductUrl + `/${id}`);
       if (data.success) {
         setproduct(data.product);
+        document.title = data.product.name
         setDescription(data.product.description.split('.'));
-        // if (data.product.table.length > 0) {
-        //   let t = await JSON.parse(data.product.table)
-        // }
         setTable(data.product.table);
         setloading(false);
       }

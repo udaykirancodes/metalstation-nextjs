@@ -4,12 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ResetRequestUrl } from '../../urls'
+import { useEffect } from 'react'
 
 const NewForgotpass = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('')
 
+  useEffect(() => { document.title = "Metal Station" }, [])
 
   const RequestOtp = async () => {
 

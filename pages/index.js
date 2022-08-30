@@ -42,16 +42,11 @@ export default function Home({ wishlist, addToWishlist }) {
       <HomeCards />
       <WhyChooseUs />
       <HowItWorks />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <FeaturedProducts />
-      <Category />
+      {/* <Category /> */}
       <Testimonials />
       <Contact wishlist={wishlist} addToWishlist={addToWishlist} />
-      {/* <Order/> */}
-      {/* <Footer /> */}
-      {/* <Wishlist wishlist={wishlist}/> */}
-      {/* <Sell/> */}
-      {/* <Sell2/> */}
     </>
   )
 }
