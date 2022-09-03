@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 const Footer = () => {
+
     return (
         <>
             <div className="footer">
@@ -17,26 +19,75 @@ const Footer = () => {
                     </div>
                     <div className="footer_options">
                         <ul className="footer_tags">
-                            <li className="footer_text headtag">BUY OUR PRODUCTS</li>
-                            <li className="footer_text">Buy from categories</li>
-                            <li className="footer_text">Buy from featured products</li>
-                            <li className="footer_text">Buy scrap</li>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text headtag">BUY OUR PRODUCTS</li>
+                            </Link>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text">Buy Steel</li>
+                            </Link>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text">Buy Aluminium</li>
+                            </Link>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text">Buy Iron</li>
+                            </Link>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text">Buy Copper</li>
+                            </Link>
+                            <Link href="/ecommerce" >
+                                <li className="footer_text">Buy Scrap</li>
+                            </Link>
                         </ul>
                         <ul className="footer_tags">
-                            <li className="footer_text headtag">SELL YOUR PRODUCTS</li>
-                            <li className="footer_text">Sell Car</li>
-                            <li className="footer_text">Sell Bike</li>
-                            <li className="footer_text">Sell Scrap</li>
+                            <Link href="/Sell" >
+                                <li className="footer_text headtag">SELL YOUR PRODUCTS</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Sell Steel</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Sell Aluminium</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Sell Iron</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Sell Copper</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Sell Scrap</li>
+                            </Link>
                         </ul>
                         <ul className="footer_tags">
-                            <li className="footer_text headtag">SCRAP YOUR VEICLE</li>
-                            <li className="footer_text">Scrap your car</li>
-                            <li className="footer_text">Scrap your bike</li>
+                            <Link href="/Sell" >
+                                <li className="footer_text headtag">SCRAP YOUR VEICLE</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Scrap Car</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Scrap Truck</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Scrap Excavator</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Scrap Bike</li>
+                            </Link>
+                            <Link href="/Sell" >
+                                <li className="footer_text">Scrap Machinery</li>
+                            </Link>
                         </ul>
                         <ul className="footer_tags">
                             <li className="footer_text headtag">CONTACT US ON</li>
-                            <li className="footer_text">WhatsApp : +91  </li>
-                            <li className="footer_text">Email : metalstation22@gmail.com</li>
+                            <li className="footer_text">
+                                <a href="https://wa.me/+918977672395">
+                                    WhatsApp : +91 8977672395
+                                </a>
+                            </li>
+                            <li className="footer_text">
+                                <a href="mailto:metalstation22@gmail.com">Email : metalstation22@gmail.com</a>
+                            </li>
                         </ul>
                         <ul className="footer_tags">
                             <li className="footer_text headtag">Follow Us </li>
@@ -44,7 +95,7 @@ const Footer = () => {
                                 <a href="">
                                     <i className="uil fa-brands fa-instagram"></i>
                                 </a>
-                                <a href="https://wa.me/+919381400582">
+                                <a href="https://wa.me/+918977672395">
                                     <i className="uil fa-brands fa-whatsapp"></i>
                                 </a>
                                 <a href="">

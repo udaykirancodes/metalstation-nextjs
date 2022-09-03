@@ -2,9 +2,18 @@ import React from 'react'
 import Image from 'next/image'
 export default function HowItWorks() {
         const data = [
-                "Fill information and Add Pictures Fill in the material information and add relevant pictures",
-                "Evaluation & Inspiration Our Executive will inspect and evaluate the material",
-                "Pickup & Logistics Hassle Free Loading and Logistics will be provided for Pickup"
+                {
+                        arr: ["Fill information and Add Pictures", "Fill int he material information and add relevant pictures"],
+                        src: "/Fill_in_details.jpg"
+                },
+                {
+                        arr: ["Evaluation & Inspiration", "Our Executive will inspect and evalutate the material"],
+                        src: "/Inspection.jpg"
+                },
+                {
+                        arr: ["Pickup & Logistics", "Hassle Free Loading and Logistics will be provided for Pickup"],
+                        src: "/Logistics.jpg"
+                },
         ]
         return (
                 <>
@@ -17,17 +26,20 @@ export default function HowItWorks() {
                                                 {
                                                         data.map((item, index) => {
                                                                 return (
-                                                                        <div key={index} className="single_card">
-                                                                                <div className="blogTop">
-                                                                                        <Image src="/metal.png" alt="Blog_Image" className="blogImage"
+                                                                        <div key={index} className="single_card" >
+                                                                                <div className="blogTop" style={{ height: 'max-content' }}>
+                                                                                        <Image src={item.src} alt="Blog_Image" className="blogImage"
                                                                                                 height={250}
                                                                                                 width={400}
                                                                                         />
                                                                                 </div>
                                                                                 <div className="blogBottom">
-                                                                                        <div className="details">
-                                                                                                {/* <h5 className="blog_title howitworks">Lorem ipsum dolor sit.</h5> */}
-                                                                                                <p className="blog_desc howitworks">{item}</p>
+                                                                                        <div className="details" style={{ marginTop: '10px' }}>
+                                                                                                {
+                                                                                                        item.arr.map((det, i) => {
+                                                                                                                return <p key={i} className="blog_desc howitworks">{det}</p>
+                                                                                                        })
+                                                                                                }
                                                                                         </div>
                                                                                 </div>
                                                                         </div>

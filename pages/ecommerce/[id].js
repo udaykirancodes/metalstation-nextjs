@@ -236,14 +236,14 @@ const Product = () => {
                   {
                     product.price ? // if price is there show buttons 
                       <div className={productCss.btn}>
-                        <button className={productCss.button} onClick={() => addToCart(product._id, count)}>
+                        <button className={productCss.button} onClick={() => addToCart(product._id, count)} style={{ width: '150px', height: '40px' }}>
                           <i className="uil  uil-shopping-cart-alt"></i>
                           <a>
                             Add to Cart
                           </a>
                         </button>
                         &emsp;
-                        <button className={productCss.buybutton} onClick={MoveToCart}>
+                        <button className={productCss.buybutton} onClick={MoveToCart} style={{ width: '150px', height: '40px' }}>
                           <a>
                             Buy Now
                           </a>

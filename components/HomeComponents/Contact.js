@@ -18,7 +18,11 @@ export default function Contact({ addToWishlist }) {
                                     <i className="uil uil-phone"></i>
                                 </div>
                                 <div className="contact_details">
-                                    <p className="contact_field">Call us at <span className="text_red">+91 8977672395</span></p>
+                                    <p className="contact_field">Call us at <span className="text_red">
+                                        <a href="tel:+918977672395">
+                                            +91 8977672395
+                                        </a>
+                                    </span></p>
                                     <p className="contact_text">Speak with one of our customer support executive</p>
                                 </div>
                             </div>
@@ -36,7 +40,7 @@ export default function Contact({ addToWishlist }) {
                             <h4 className='text_red contact_filed contact_highlight text_center'>Want to sell a Scrap ?</h4>
                             <div className="contact_details_2">
                                 <div className="contact_image_container">
-                                    <Image src="/metal.png" alt='hello' layout='fill' className='image'
+                                    <Image style={{ borderRadius: '10px' }} src="/sell_your_scrap.jpg" alt='hello' layout='fill' className='image'
 
                                     />
                                 </div>

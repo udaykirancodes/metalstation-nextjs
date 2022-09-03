@@ -194,14 +194,14 @@ function DropdownMenu() {
         </div>
       </DropdownItem>
       <hr className={Nav.horizline} />
-      {/* <DropdownItem>
+      <DropdownItem>
         <div onClick={Logout} className={Nav.dropcontent}>
           Logout
         </div>
-      </DropdownItem> */}
-      <div onClick={Logout} className={Nav.dropcontent}>
+      </DropdownItem>
+      {/* <div onClick={Logout} className={Nav.dropcontent}>
         Logout
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -222,6 +222,11 @@ const Navbar = () => {
   const handleShow = () => setShow(true);
   const classes = useStyles();
   const [active, setActive] = useState(false);
+  const Logout = () => {
+    console.log('Logging Out');
+    localStorage.removeItem('authToken');
+    router.push('/');
+  }
   return (
     <>
 
@@ -342,11 +347,11 @@ const Navbar = () => {
                 <li> <Image src="/buy.png" alt="" className="img"
                   height={30}
                   width={30}
-                /><p className="nav_link"><Link href="/buy"><a>Buy Scrap </a></Link></p></li>
+                /><p className="nav_link"><Link href="/ecommerce"><a>Buy </a></Link></p></li>
                 <li> <Image src="/sell.png" alt="" className="img"
                   height={30}
                   width={30}
-                /><p className="nav_link"><Link href="/sellscrap"><a> Sell Scrap </a></Link></p></li>
+                /><p className="nav_link"><Link href="/Sell"><a> Sell </a></Link></p></li>
                 <li><Image src="/blog.png" alt="" className="img"
                   height={30}
                   width={30}
@@ -359,6 +364,8 @@ const Navbar = () => {
                   height={30}
                   width={30}
                 /><p className="nav_link"><Link href="/about"><a>FAQ </a></Link></p></li>
+                <li style={{ marginTop: '16px', fontSize: '20px' }}>
+                  <p onClick={Logout} className="nav_link">Log Out </p></li>
               </ul>
             </div>
 

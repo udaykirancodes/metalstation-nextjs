@@ -139,8 +139,8 @@ const Cart = () => {
     }
 
 
-    const [deliveryCharge, setDeliveryCharge] = useState(1000) // initial price ; 
-    const [convenienceFee, setConvenienceFee] = useState(1000) // initial price ; 
+    const [deliveryCharge, setDeliveryCharge] = useState(0) // initial price ; 
+    const [convenienceFee, setConvenienceFee] = useState(0) // initial price ; 
 
     function getTotalProductsPrice() {
         let sum = 0;
@@ -275,7 +275,7 @@ const Cart = () => {
 
             </div>
             <div className="container">
-                <div className={cartCss.smallbox}>
+                <div className={cartCss.smallbox} style={{ maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>
                     <div className={cartCss.smallcontent}>
                         <p>Delivered to &nbsp;<span className={cartCss.bold}> {name} , {address.pincode}</span></p>
                         <p>{address.location}, {address.town} , {address.city}, {address.state}</p>
@@ -312,7 +312,7 @@ const Cart = () => {
                                 cart.products.map((item, index) => {
                                     const product = item.product[0]; // backend is designed in the way to give an array {so taking the first object is required product}
                                     return (
-                                        <div key={index} className={cartCss.delivaryEstimate}>
+                                        <div key={index} className={cartCss.delivaryEstimate} style={{ marginTop: '10px', marginBottom: '10px', maxWidth: "95vw", height: "auto" }}>
                                             <div className={cartCss.estimateImg}>
                                                 <Image layout='fill' src={backendurl + product.img[0]} alt="" />
                                             </div>
@@ -353,7 +353,7 @@ const Cart = () => {
 
                         {
                             // cart.products.length > 0 &&
-                            <div className={cartCss.cartRight}>
+                            <div className={cartCss.cartRight} style={{ maxWidth: '100vw' }}>
                                 <div className={cartCss.rightbar}>
                                     <h2>PRICE DETAILS <small>({ } items)</small></h2>
                                     <hr />
@@ -406,11 +406,11 @@ const Cart = () => {
                     </div>
                 </div>
 
-                <div className={cartCss.scrollcontainer}>
+                {/* <div className={cartCss.scrollcontainer}>
                     <div className={cartCss.floating}>
                         <Link href="/payment"><a> <p className={cartCss.category}>Place Order</p></a></Link>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

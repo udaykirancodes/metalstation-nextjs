@@ -35,8 +35,8 @@ const NewHomeComponent = () => {
                     <a>SELL</a>
                   </Link>
                 </div>
-                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station <br /> Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell <br /> Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>
@@ -63,8 +63,8 @@ const NewHomeComponent = () => {
                   <span className='line'></span>
                 </div>
                 <div className="home_button center"><Link href="/Sell"><a>SELL</a></Link></div>
-                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station <br /> Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell <br /> Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>
@@ -91,8 +91,8 @@ const NewHomeComponent = () => {
                   <span className='line'></span>
                 </div>
                 <div className="home_button center"><Link href="/Sell"><a>SELL</a></Link></div>
-                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station <br /> Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell <br /> Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>

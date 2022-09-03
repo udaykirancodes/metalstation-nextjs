@@ -39,9 +39,9 @@ const Cr = ({ img }) => {
         }
       >
         {img.length !== 0 &&
-          img.map(data => (
+          img.map((data, index) => (
             <>
-              <div className="slide-holder">
+              <div key={index} className="slide-holder">
                 <Image
                   height={400}
                   width={400}

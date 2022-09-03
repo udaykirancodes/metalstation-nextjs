@@ -1,50 +1,56 @@
 import React from 'react'
-import sCss from '../../styles/Sell.module.css'
 import Image from 'next/image'
-
-const Howitwork = () => {
+export default function HowItWorks() {
+  const data = [
+    {
+      arr: ["Fill information and Add Pictures", "Fill int he material information and add relevant pictures"],
+      src: "/Fill_in_details.jpg"
+    },
+    {
+      arr: ["Evaluation & Inspiration", "Our Executive will inspect and evalutate the material"],
+      src: "/Inspection.jpg"
+    },
+    {
+      arr: ["Pickup & Logistics", "Hassle Free Loading and Logistics will be provided for Pickup"],
+      src: "/Logistics.jpg"
+    },
+  ]
   return (
-    <section className={sCss.Howitwork}>
-      <div className="container">
-        <h4 className={sCss.Sellheader}>How it Works?</h4>
-        <div className={sCss.howItWorkContainer}>
-          <div className={sCss.howContainer}>
-            <div className={sCss.cont_Img}>
-              <Image layout='fill' src="/metal.png" alt="" />
-            </div>
-            <div className={sCss.info}>
-
-            <h1 className={sCss.cont_title}>Enter your details online</h1>
-            <p className={sCss.cont_Info}>More info regarding entering
-              details in short</p>
-            </div>
+    <>
+      <div className="page">
+        <section className="container">
+          <div className="title_container">
+            <h2 className="page_title">How it Works ?</h2>
           </div>
-          <div className={sCss.howContainer}>
-            <div className={sCss.cont_Img}>
-              <Image layout='fill' src="/metal.png" alt="" />
-            </div>
-            <div className={sCss.info}>
-
-            <h1 className={sCss.cont_title}>Enter your details online</h1>
-            <p className={sCss.cont_Info}>More info regarding entering
-              details in short</p>
-            </div>
+          <div className="card_container">
+            {
+              data.map((item, index) => {
+                return (
+                  <div key={index} className="single_card" >
+                    <div className="blogTop" style={{ height: 'max-content' }}>
+                      <Image src={item.src} alt="Blog_Image" className="blogImage"
+                        height={250}
+                        width={400}
+                      />
+                    </div>
+                    <div className="blogBottom">
+                      <div className="details" style={{ marginTop: '10px' }}>
+                        {
+                          item.arr.map((det, i) => {
+                            return <p key={i} className="blog_desc howitworks">{det}</p>
+                          })
+                        }
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
-          <div className={sCss.howContainer}>
-            <div className={sCss.cont_Img}>
-              <Image layout='fill' src="/metal.png" alt="" />
-            </div>
-            <div className={sCss.info}>
 
-            <h1 className={sCss.cont_title}>Enter your details online</h1>
-            <p className={sCss.cont_Info}>More info regarding entering
-              details in short</p>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
+
+    </>
   )
 }
-
-export default Howitwork

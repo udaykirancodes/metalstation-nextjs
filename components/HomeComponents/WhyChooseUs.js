@@ -4,15 +4,15 @@ export default function WhyChooseUs() {
         const data = [
                 {
                         title: "Trust and Assurance",
-                        desc: "Trust & Trade Assurance Trade with Confidence Ethical business policy On-Time Shipment"
+                        desc: ["Trust & Trade", "", "Ethical business policy", "On-Time Shipment"]
                 },
                 {
                         title: "Quick and Best Price",
-                        desc: "Quick Quotation & Assured Sale Get the Best Price for your material Your Sale is Our Responsibility"
+                        desc: ["Quick Quotation & Assured Sale", "Get the Best Price for your material", "Your Sale is Our Responsibility"]
                 },
                 {
                         title: "Pickup and Drop",
-                        desc: "Instant Pickup & Hassle Free Loading of your Material  Simple & Transparent Process"
+                        desc: ["Instant Pickup & Hassle Free Loading of your Material", "Simple & Transparent Process"]
                 }
         ]
         return (
@@ -31,8 +31,11 @@ export default function WhyChooseUs() {
                                                                                         <h5 className="card_title">{item.title}</h5>
                                                                                 </div>
                                                                                 <div className="card_footer">
-                                                                                        <p className="card_description">{item.desc}
-                                                                                        </p>
+                                                                                        {
+                                                                                                item.desc.map((con, i) => {
+                                                                                                        return <p key={i} className="card_description">{con}</p>
+                                                                                                })
+                                                                                        }
                                                                                 </div>
                                                                         </div>
                                                                 )

@@ -9,10 +9,10 @@ export default function HomeCards() {
                                 <div className="container home_card_container">
                                         <div className="home_card">
                                                 <div className="home_card_top">
-                                                        <div className="home_card_image_container">
-                                                                <Image alt="Image" src="/metal.png" layout='fill' />
+                                                        <div className="home_card_image_container" style={{ width: '100px' }}>
+                                                                <Image alt="Image" src="/buy_pic.png" layout='fill' />
                                                         </div>
-                                                        <div className="home_card_title_container">
+                                                        <div className="home_card_title_container" style={{ marginRight: '100px' }}>
                                                                 <Link href="/AllCategory"><a><h3 className="home_card_title">Buying</h3></a></Link>
                                                         </div>
                                                 </div>
@@ -23,10 +23,10 @@ export default function HomeCards() {
                                         </div>
                                         <div className="home_card">
                                                 <div className="home_card_top">
-                                                        <div className="home_card_image_container">
-                                                                <Image alt="Image" src="/metal.png" layout='fill' />
+                                                        <div className="home_card_image_container" style={{ width: '100px' }}>
+                                                                <Image alt="Image" src="/sell_pic.png" layout='fill' />
                                                         </div>
-                                                        <div className="home_card_title_container">
+                                                        <div className="home_card_title_container" style={{ marginRight: '100px' }}>
                                                                 <Link href="/Sell"><a><h3 className="home_card_title">Selling</h3></a></Link>
                                                         </div>
                                                 </div>
@@ -39,11 +39,11 @@ export default function HomeCards() {
                                         </div>
                                         <div className="home_card">
                                                 <div className="home_card_top">
-                                                        <div className="home_card_image_container">
-                                                                <Image alt="Image" src="/metal.png" layout='fill' />
+                                                        <div className="home_card_image_container" style={{ width: '100px' }}>
+                                                                <Image alt="Image" src="/Logistics.jpg" layout='fill' />
                                                         </div>
-                                                        <div className="home_card_title_container">
-                                                                <h3 className="home_card_title">Logistics</h3>
+                                                        <div className="home_card_title_container" style={{ marginRight: '100px' }}>
+                                                                <h3 className="home_card_title" >Logistics</h3>
                                                         </div>
                                                 </div>
                                                 <div className="home_card_bottom">
