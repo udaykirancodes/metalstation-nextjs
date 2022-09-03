@@ -21,14 +21,14 @@ export default function HomeComponent() {
             </div>
             <div className="home_right">
               <div className="right_container">
-                <div className="home_button center"><Link href="/ecommerce"><a>Buy Scrap</a></Link></div>
+                <Link href="/ecommerce"><div className="home_button center"><a>BUY</a></div></Link>
                 <div className="or_box center">
                   <span className='line'></span>
                   <div className="center or">or</div>
                   <span className='line'></span>
                 </div>
-                <div className="home_button center"><Link href="/Sell"><a>Sell Scrap</a></Link></div>
-                <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
+                <Link href="/Sell"><div className="home_button center"><a>STELL</a></div></Link>
+                <div className="trust_text text_center"><span className=''>Join Metal Station Build your Business as Strong as Steel</span></div>
                 <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
               </div>
             </div>

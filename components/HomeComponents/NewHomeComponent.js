@@ -24,7 +24,7 @@ const NewHomeComponent = () => {
             </div>
             <div className={nhcCss.homeRight}>
               <div className="right_container">
-                <div className="home_button center"><Link href="/ecommerce"><a>Buy Scrap</a></Link></div>
+                <div className="home_button center"><Link href="/ecommerce"><a>BUY</a></Link></div>
                 <div className="or_box center">
                   <span className='line'></span>
                   <div className="center or">or</div>
@@ -32,11 +32,11 @@ const NewHomeComponent = () => {
                 </div>
                 <div className="home_button center">
                   <Link href="/Sell">
-                    <a>Sell Scrap</a>
+                    <a>SELL</a>
                   </Link>
                 </div>
-                <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>
@@ -56,15 +56,15 @@ const NewHomeComponent = () => {
             </div>
             <div className={nhcCss.homeRight}>
               <div className="right_container">
-                <div className="home_button center"><Link href="/ecommerce"><a>Buy Scrap</a></Link></div>
+                <div className="home_button center"><Link href="/ecommerce"><a>BUY</a></Link></div>
                 <div className="or_box center">
                   <span className='line'></span>
                   <div className="center or">or</div>
                   <span className='line'></span>
                 </div>
-                <div className="home_button center"><Link href="/Sell"><a>Sell Scrap</a></Link></div>
-                <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
+                <div className="home_button center"><Link href="/Sell"><a>SELL</a></Link></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>
@@ -84,15 +84,15 @@ const NewHomeComponent = () => {
             </div>
             <div className={nhcCss.homeRight}>
               <div className="right_container">
-                <div className="home_button center"><Link href="/ecommerce"><a>Buy Scrap</a></Link></div>
+                <div className="home_button center"><Link href="/ecommerce"><a>BUY</a></Link></div>
                 <div className="or_box center">
                   <span className='line'></span>
                   <div className="center or">or</div>
                   <span className='line'></span>
                 </div>
-                <div className="home_button center"><Link href="/Sell"><a>Sell Scrap</a></Link></div>
-                <div className="trust_text text_center"><span className='lighttext'>Trusted by 50,000+ customers</span></div>
-                <div className="bottom_right text_center"><span className='lighttext'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, accusantium?</span></div>
+                <div className="home_button center"><Link href="/Sell"><a>SELL</a></Link></div>
+                <div className="trust_text text_center"><span className='lighttext'>Join Metal Station Build your Business as Strong as Steel</span></div>
+                <div className="bottom_right text_center"><span className='lighttext'>Buy {'&'} Sell Steel , Aluminium,Copper, Old Machinery, Scrap Vehicle, Motor Parts</span></div>
               </div>
             </div>
           </div>

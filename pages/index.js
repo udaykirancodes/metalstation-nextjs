@@ -45,7 +45,7 @@ export default function Home({ wishlist, addToWishlist }) {
       {/* <AboutUs /> */}
       <FeaturedProducts />
       {/* <Category /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact wishlist={wishlist} addToWishlist={addToWishlist} />
     </>
   )

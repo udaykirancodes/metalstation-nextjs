@@ -27,7 +27,7 @@ const Whychooseus = () => {
                     {
                         data.map((item, index) => {
                             return (
-                                <div className={abCss.AboutwhyChooseUs}>
+                                <div key={index} className={abCss.AboutwhyChooseUs}>
                                     <div className={abCss.AboutwhyChooseUs_inside}>
                                         <div className={abCss.AboutwhyChooseUsImage}>
 

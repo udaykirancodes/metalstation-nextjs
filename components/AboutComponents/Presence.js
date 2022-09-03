@@ -9,7 +9,7 @@ const Presence = () => {
             <div className={abCss.AboutPresence}>
                 <div className={abCss.AboutPresenceInsideLeft}>
                     <h1 className={abCss.AboutPresenceInsideLeftHeading}>Our presence in the offline market</h1>
-                    <p> We're determined to enhance our business on digital fronts to better provide our services, and to reach out to more clients. We're scrutinizing the complete enterprise resource planning process to meet the digital standards, thereby developing on supplier base and customer relationship.</p>
+                    <p> We{"'"}re determined to enhance our business on digital fronts to better provide our services, and to reach out to more clients. We &apos; re scrutinizing the complete enterprise resource planning process to meet the digital standards, thereby developing on supplier base and customer relationship.</p>
                 </div>
                 <div className={abCss.AboutPresenceImg}>
                     <Image layout='fill' src='/metal.png' alt="" />

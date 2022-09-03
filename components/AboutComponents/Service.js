@@ -12,7 +12,8 @@ const Service = () => {
                     <div className={abCss.ServiceLeft}>
                         <div className={abCss.serviceLeftInfo}>
                             <h3 className={abCss.ServiceTitle}>Start As Buyer</h3>
-                            <p className={abCss.ServiceText}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci at dolor voluptatem aspernatur laudantium excepturi ea earum culpa sunt fugiat cupiditate, quas laboriosam accusantium, nobis harum rerum? Reiciendis, explicabo iste.</p>
+                            <p className={abCss.ServiceText}>Develop your portfolio by getting products & materials sourced across all states of India.
+                                You can rely on our Ethical Business Policy and Trade with Assurance.</p>
                             <Link href="/AllCategory"><a><button className={abCss.buyBtn}>Buy Scrap</button></a></Link>
                         </div>
                         <div className={abCss.ServiceLeftImg}>
@@ -25,7 +26,10 @@ const Service = () => {
                         </div>
                         <div className={abCss.serviceRightInfo}>
                             <h3 className={abCss.ServiceTitle}>Start As Seller</h3>
-                            <p className={abCss.ServiceText}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci at dolor voluptatem aspernatur laudantium excepturi ea earum culpa sunt fugiat cupiditate, quas laboriosam accusantium, nobis harum rerum? Reiciendis, explicabo iste.</p>
+                            <p className={abCss.ServiceText}>
+                                Sell your material for across all the states of India and get the Best Price.
+                                Achieve multifold growth in your Business. Guaranteed secure payments, regularly
+                            </p>
                             <Link href="/Sell"><a><button className={abCss.buyBtn}>Sell Scrap</button></a></Link>
                         </div>
                     </div>
