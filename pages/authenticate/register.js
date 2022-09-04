@@ -82,23 +82,23 @@ const NewRegister = () => {
             <div className="registerForm">
               <div className="registerName">
                 <label htmlFor="name"><b>Name</b></label><br />
-                <input type="text" name='name' value={input.name} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your name here' />
+                <input type="text" name='name' value={input.name} required={true} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your name here' />
               </div>
               <div className="registeremail">
                 <label htmlFor="email"><b>Email</b></label><br />
-                <input type="email" name='email' value={input.email} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your email here' />
+                <input type="email" name='email' value={input.email} required={true} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your email here' />
               </div>
               <div className="registerPhone">
                 <label htmlFor="phone"><b>Mobile Number</b></label><br />
-                <input type="tel" name='phone' value={input.phone} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your phone number here' />
+                <input type="tel" name='phone' value={input.phone} required={true} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Enter your phone number here' />
               </div>
               <div className="registerpassword">
                 <label htmlFor="password"><b>Password</b></label><br />
-                <input type="password" name='password' value={input.password} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Password' />
+                <input type="password" name='password' value={input.password} required={true} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Password' />
               </div>
               <div className="registerCpassword">
                 <label htmlFor="Cpassword"><b>Confirm Password</b></label><br />
-                <input type="password" name='confirmPassword' value={input.confirmPassword} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Confirm Password' />
+                <input type="password" name='confirmPassword' value={input.confirmPassword} required={true} onChange={(e) => handleChange(e)} className={rgCss.InputField} placeholder='Confirm Password' />
               </div>
               <div className={rgCss.forgot}>
                 <div className="Rememberme">

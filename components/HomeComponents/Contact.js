@@ -46,7 +46,7 @@ export default function Contact({ addToWishlist }) {
                                 </div>
                                 <div className="contact_extra center">
                                     {/* <button onClick={() => { addToWishlist(100, 'Aluminum Scrap', 1, '1,39, 999', 'Recycled Aluminium scrap from blast furnace') }} className="button">Sell Scrap Vehicles</button> */}
-                                    <Link href="/Sell"><a><button className="button">Sell your Scrap for Best</button></a></Link>
+                                    <Link href="/Sell"><a><button className="button">Sell Your Scrap</button></a></Link>
                                     <p className="contact_text_small text_center">Fill your details for instant quotation for the mateial and sell it on the same day </p>
 
                                 </div>
