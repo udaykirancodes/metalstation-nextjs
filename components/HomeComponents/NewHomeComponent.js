@@ -4,8 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { useEffect } from 'react';
 
 const NewHomeComponent = () => {
+  useEffect(() => {
+    document.title = "Metal Station";
+  }, [])
   return (
     <div className={nhcCss.home}>
       <Carousel autoPlay='true' showThumbs={false} >

@@ -18,11 +18,12 @@ import Sell from "./Sell";
 import Sell2 from "./Sell2";
 import Context from "../context/Context";
 import NewHomeComponent from "../components/HomeComponents/NewHomeComponent";
+import { useRouter } from "next/router";
 
 export default function Home({ wishlist, addToWishlist }) {
   // console.log(wishlist, addToWishlist);
   const { fetchUserData } = useContext(Context);
-
+  const router = useRouter();
   const getData = () => {
     // this function get all the data like wishlist,cart if the user is logged in 
     let authToken = localStorage.getItem('authToken');
@@ -31,9 +32,11 @@ export default function Home({ wishlist, addToWishlist }) {
     }
   }
   useEffect(() => {
-    document.title = 'Metal Station';
     getData(); // this function get all the data like wishlist,cart if the user is logged in 
   }, [])
+  useEffect(() => {
+    document.title = 'Metal Station';
+  })
   return (
     <>
       {/* <Navbar/> */}

@@ -73,9 +73,12 @@ export default function Products() {
     getdata();
     console.log(min, max);
   }, [currentPage, filters, min, category, max])
+
+
+
   useEffect(() => {
-    document.title = "Metal Station - Buy"
-  }, []);
+    document.title = 'Metal Station - Buy';
+  })
 
 
   // filters 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect } from 'react'
 const Footer = () => {
 
     return (

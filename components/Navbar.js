@@ -148,8 +148,6 @@ function DropdownMenu() {
     router.push('/');
   }
 
-
-
   return (
     <div className={Nav.dropdown} ref={dropdownRef}>
       <DropdownItem>
@@ -314,7 +312,8 @@ const Navbar = () => {
               <li className={Nav.nav_item}><Link href="/blogs/"><a>BLOG</a></Link></li>
               <li className={Nav.nav_item}><Link href="/about"><a>ABOUT US</a></Link></li>
               {/* <li className={Nav.nav_item}><i className="fa-solid fa-magnifying-glass"></i></li> */}
-              <li className={Nav.nav_item}><i className="fa-regular fa-bell" onClick={handleShow}></i></li>
+              {/* <li className={Nav.nav_item}>
+                <i className="fa-regular fa-bell" onClick={handleShow}></i></li> */}
               {
                 state ?
                   <>

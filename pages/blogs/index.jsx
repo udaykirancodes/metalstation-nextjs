@@ -12,7 +12,7 @@ import axios from 'axios'
 import {AllBlgos , BlogCategories} from '../../urls'; 
 import { useRouter } from 'next/router'
 
-const postsPerPage = 3 ; 
+const postsPerPage = 6 ; 
 
 export default function Blogs() {
 
@@ -43,7 +43,7 @@ export default function Blogs() {
                 }
         }
         useEffect(() => {
-                document.title="Metal Station - Blogs"
+                document.title = 'Metal Station - Blogs'
                 getCategories()
         }, [])
         

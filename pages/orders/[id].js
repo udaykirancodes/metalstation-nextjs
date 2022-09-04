@@ -47,7 +47,7 @@ const SingleOrderPage = () => {
     const [user, setUser] = useState({});
     useEffect(() => {
         // fetch single order 
-        document.title = "Metal Station - Order"
+        document.title = 'Metal Station - Orders';
         fetchOrder();
     }, [id, router])
 

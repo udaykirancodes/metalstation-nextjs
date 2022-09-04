@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { AddToWishlistUrl, EnquireUrl, GetUserInfo, RemoveFromWishlistUrl, RemoveFromCartUrl, AddToCartUrl } from '../urls';
 export default function GlobalState({ children }) {
     const [user, setuser] = useState({
-        name: '',
+        name: ' - ',
         phone: '',
         address: {
             location: '',
@@ -35,6 +35,7 @@ export default function GlobalState({ children }) {
         })
         const data = await res.json();
         if (data.success) {
+            console.log(data);
             // console.log(data.products);
             setuser(data.user);
         }
@@ -108,8 +109,8 @@ export default function GlobalState({ children }) {
         if (!authToken) {
             return;
         }
-        fetchWishlist();
         fetchUser();
+        fetchWishlist();
     }
 
     useEffect(() => {

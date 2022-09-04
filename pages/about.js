@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 
 const About = () => {
   useEffect(() => {
-    document.title = 'Metal Station - About Us'
+    document.title = 'Metal Station - About Us';
   }, [])
   return (
     <>

@@ -113,7 +113,7 @@ const Cart = () => {
     const [name, setName] = useState(user.name);
     const [phone, setPhone] = useState(user.phone);
     useEffect(() => {
-        document.title = 'Metal Station - Cart'
+        document.title = 'Metal Station - Cart';
         let authToken = localStorage.getItem('authToken');
         if (!authToken) {
             router.push('/');

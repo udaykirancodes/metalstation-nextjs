@@ -10,13 +10,16 @@ import { useContext } from 'react'
 import Context from '../context/Context'
 import { useRouter } from 'next/router'
 import { RemoveFromWishlistUrl } from '../urls';
+import { useEffect } from 'react'
 
 
 const Wishlist = () => {
   const router = useRouter();
   const { wishlist, removeFromWishlist, addToCart } = useContext(Context);
 
-
+  useEffect(() => {
+    document.title = 'Metal Station - Wishlist';
+  }, [])
   const [arrowUp, setArrowUp] = useState(false)
 
   return (

@@ -37,7 +37,7 @@ const Orderpage = () => {
 
     useEffect(() => {
         fetchOrders()
-        document.title = "Metal Station - Orders"
+        document.title = 'Metal Station - Orders';
     }, []);
 
     const getColorFromStatus = (status) => {

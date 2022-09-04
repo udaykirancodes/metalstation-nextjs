@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function Contact({ addToWishlist }) {
+
+    useEffect(() => {
+        document.title = "Metal Station";
+    }, [])
     return (
         <>
             <div className="page">

@@ -4,8 +4,13 @@ import Howitwork from '../components/SellComponents/Howitwork'
 import Sellimg from '../components/SellComponents/Sellimg'
 import Link from 'next/link'
 import ImagePreview from '../components/SellComponents/ImagePreview'
+import { useEffect } from 'react'
 
 const Sell = () => {
+
+  useEffect(() => {
+    document.title = 'Metal Station - Sell'
+  }, [])
   return (
     <>
       <div className="container">

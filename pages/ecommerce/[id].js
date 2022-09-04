@@ -33,7 +33,7 @@ const Product = () => {
   const [table, setTable] = useState([])
 
   useEffect(() => {
-    document.title = "Metal Station"
+    document.title = 'Metal Station'
     const getdata = async () => {
       let { data } = await axios.get(GetSingleProductUrl + `/${id}`);
       if (data.success) {
