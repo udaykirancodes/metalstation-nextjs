@@ -4,15 +4,15 @@ export default function HowItWorks() {
         const data = [
                 {
                         arr: ["Fill information and Add Pictures", "Fill int he material information and add relevant pictures"],
-                        src: "/Fill_in_details.jpg"
+                        src: "/Fill_in_details.JPG"
                 },
                 {
                         arr: ["Evaluation & Inspiration", "Our Executive will inspect and evalutate the material"],
-                        src: "/Inspection.jpg"
+                        src: "/Inspection.JPG"
                 },
                 {
                         arr: ["Pickup & Logistics", "Hassle Free Loading and Logistics will be provided for Pickup"],
-                        src: "/Logistics.jpg"
+                        src: "/Logistics.JPG"
                 },
         ]
         return (
