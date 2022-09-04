@@ -10,7 +10,7 @@ export default function HomeCards() {
                                         <div className="home_card">
                                                 <div className="home_card_top">
                                                         <div className="home_card_image_container" style={{ width: '100px' }}>
-                                                                <Image alt="Image" src="/buy_pic.png" layout='fill' />
+                                                                <Image alt="Image" src="/Refund-rafiki 1.svg" layout='fill' />
                                                         </div>
                                                         <div className="home_card_title_container" style={{ marginRight: '100px' }}>
                                                                 <Link href="/AllCategory"><a><h3 className="home_card_title">Buying</h3></a></Link>
@@ -24,7 +24,7 @@ export default function HomeCards() {
                                         <div className="home_card">
                                                 <div className="home_card_top">
                                                         <div className="home_card_image_container" style={{ width: '100px' }}>
-                                                                <Image alt="Image" src="/sell_pic.png" layout='fill' />
+                                                                <Image alt="Image" src="/Select-cuate 1.svg" layout='fill' />
                                                         </div>
                                                         <div className="home_card_title_container" style={{ marginRight: '100px' }}>
                                                                 <Link href="/Sell"><a><h3 className="home_card_title">Selling</h3></a></Link>
@@ -40,7 +40,7 @@ export default function HomeCards() {
                                         <div className="home_card">
                                                 <div className="home_card_top">
                                                         <div className="home_card_image_container" style={{ width: '100px' }}>
-                                                                <Image alt="Image" src="/Logistics.jpg" layout='fill' />
+                                                                <Image alt="Image" src="/Car finance-cuate 1.svg" layout='fill' />
                                                         </div>
                                                         <div className="home_card_title_container" style={{ marginRight: '100px' }}>
                                                                 <h3 className="home_card_title" >Logistics</h3>

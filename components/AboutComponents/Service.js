@@ -16,13 +16,13 @@ const Service = () => {
                                 You can rely on our Ethical Business Policy and Trade with Assurance.</p>
                             <Link href="/AllCategory"><a><button className={abCss.buyBtn}>Buy Scrap</button></a></Link>
                         </div>
-                        <div className={abCss.ServiceLeftImg}>
-                            <Image layout='fill' src="/metal.png" alt="" />
+                        <div className={abCss.ServiceLeftImg} >
+                            <Image layout='fill' src="/buy_pic.png" alt="" />
                         </div>
                     </div>
                     <div className={abCss.ServiceRight}>
-                        <div className={abCss.ServiceRightImg}>
-                            <Image layout='fill' src="/metal.png" alt="" />
+                        <div className={abCss.ServiceRightImg} >
+                            <Image layout='fill' src="/sell_pic.png" alt="" />
                         </div>
                         <div className={abCss.serviceRightInfo}>
                             <h3 className={abCss.ServiceTitle}>Start As Seller</h3>
