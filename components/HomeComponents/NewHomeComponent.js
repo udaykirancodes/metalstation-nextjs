@@ -23,7 +23,7 @@ const NewHomeComponent = () => {
                 <h6 className="top_title text_center"> <span className='graytext'>Your one-stop station for</span>  </h6>
                 <br />
                 <h2 className="top_big text_center"><span className='graytext'>TRADING</span>  <span className='text_blue'>SCRAP</span> </h2>
-                <h6 className="bottom_title text_center graytext"> Iron {'&'} Stell </h6>
+                <h6 className="bottom_title text_center graytext"> Iron {'&'} Steel </h6>
               </div>
             </div>
             <div className={nhcCss.homeRight}>

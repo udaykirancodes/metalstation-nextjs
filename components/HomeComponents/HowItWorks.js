@@ -7,7 +7,7 @@ export default function HowItWorks() {
                         src: "/Fill_in_details.JPG"
                 },
                 {
-                        arr: ["Evaluation & Inspiration", "Our Executive will inspect and evalutate the material"],
+                        arr: ["Evaluation & Inspection", "Our Executive will inspect and evalutate the material"],
                         src: "/Inspection.JPG"
                 },
                 {

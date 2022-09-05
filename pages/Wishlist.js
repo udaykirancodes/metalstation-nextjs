@@ -47,13 +47,13 @@ const Wishlist = () => {
 
         </div> */}
         <div className="category_bar container">
-          <div className="go_back desktop_none">
-            <Link href="/">
+          <Link href="/">
+            <div className="go_back desktop_none">
               <>
                 <i className="uil uil-arrow-left icon"></i> Back
               </>
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="category_bar_left mobile_none">
             <div className="all-category-hover">
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

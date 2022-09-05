@@ -42,7 +42,7 @@ export default function Contact({ addToWishlist }) {
                             </div>
                         </div>
                         <div className="contact_box">
-                            <h4 className='text_red contact_filed contact_highlight text_center'>Want to sell a Scrap ?</h4>
+                            <h4 className='text_red contact_filed contact_highlight text_center'>Want to sell Scrap ?</h4>
                             <div className="contact_details_2">
                                 <div className="contact_image_container">
                                     <Image style={{ borderRadius: '10px' }} src="/sell_your_scrap.jpg" alt='hello' layout='fill' className='image'

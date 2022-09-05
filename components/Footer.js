@@ -105,7 +105,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <p className="copy_right text_center">&copy; All Rights Resersed - Bismilla Enterprises</p>
+                    <p className="copy_right text_center">&copy; All Rights reserved - Bismilla Enterprises</p>
                 </div>
 
             </div>
